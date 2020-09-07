@@ -11,7 +11,7 @@ using LockingPolicy = Thalmic.Myo.LockingPolicy;
 // Allows access to one or more Myo armbands, which must be immediate children of the GameObject this script is attached
 // to. ThalmicHub is a singleton; only one ThalmicHub instance is allowed in a scene, which can be accessed through
 // ThalmicHub.instance. ThalmicHub will persist across scene changes.
-public class ThalmicHub : MonoBehaviour
+public class ThalmicHub : MonoBehaviour //, IThalmicHub
 {
     // The single instance of ThalmicHub. Set during Awake.
     public static ThalmicHub instance {
@@ -91,7 +91,7 @@ public class ThalmicHub : MonoBehaviour
         }
 
         if (_myos.Count < 1) {
-            string errorMessage = "The ThalmicHub's GameObject must have at least one child with a ThalmicMyo component.";
+            string errorMessage = "The ThalmicHub's GameObject must have at least one child with a ThalmicMyo_Unity component.";
 #if UNITY_EDITOR
             EditorUtility.DisplayDialog ("Thalmic Hub has no Myo children", errorMessage, "OK");
 #else
