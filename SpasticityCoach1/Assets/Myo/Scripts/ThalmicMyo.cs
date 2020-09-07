@@ -1,11 +1,14 @@
-﻿using UnityEngine;
+
+using UnityEngine;
 using System.Collections;
+
 
 using Arm = Thalmic.Myo.Arm;
 using XDirection = Thalmic.Myo.XDirection;
 using VibrationType = Thalmic.Myo.VibrationType;
 using Pose = Thalmic.Myo.Pose;
 using UnlockType = Thalmic.Myo.UnlockType;
+using StreamEmg = Thalmic.Myo.StreamEmg;
 
 // Represents a Myo armband. Myo's orientation is made available through transform.localRotation, and other properties
 // like the current pose are provided explicitly below. All spatial data about Myo is provided following Unity
@@ -32,11 +35,15 @@ public class ThalmicMyo : MonoBehaviour {
 
     // Myo's current accelerometer reading, representing the acceleration due to force on the Myo armband in units of
     // g (roughly 9.8 m/s^2) and following Unity coordinate system conventions.
-    public Vector3 accelerometer;
+    public UnityEngine.Vector3 accelerometer;
 
     // Myo's current gyroscope reading, representing the angular velocity about each of Myo's axes in degrees/second
     // following Unity coordinate system conventions.
-    public Vector3 gyroscope;
+    public UnityEngine.Vector3 gyroscope;
+
+    // Additional lines of code for Emg streaming
+    public Thalmic.Myo.Result streamEmg;
+    public int[] emg;
 
     // True if and only if this Myo armband has paired successfully, at which point it will provide data and a
     // connection with it will be maintained when possible.
@@ -64,24 +71,34 @@ public class ThalmicMyo : MonoBehaviour {
         _myo.NotifyUserAction ();
     }
 
+    // Start streaming as soon as Myo is synced
     void Start() {
+        if (isPaired) {
+            streamEmg = _myo.SetStreamEmg (_myoStreamEmg);
+        }
     }
 
     void Update() {
+        // Code for mapping motion to avatar elbow
         ClientRoutine1.elbowMyo = GetComponent<Transform>().rotation; //Supinate z, Internal rotation y, Bicep x,
+
         lock (_lock) {
             armSynced = _myoArmSynced;
             arm = _myoArm;
             xDirection = _myoXDirection;
             if (_myoQuaternion != null) {
-                transform.localRotation = new Quaternion(_myoQuaternion.Y, _myoQuaternion.Z, -_myoQuaternion.X, -_myoQuaternion.W);
+                transform.localRotation = new UnityEngine.Quaternion(_myoQuaternion.Y, _myoQuaternion.Z, -_myoQuaternion.X, -_myoQuaternion.W);
             }
             if (_myoAccelerometer != null) {
-                accelerometer = new Vector3(_myoAccelerometer.Y, _myoAccelerometer.Z, -_myoAccelerometer.X);
+                accelerometer = new UnityEngine.Vector3(_myoAccelerometer.Y, _myoAccelerometer.Z, -_myoAccelerometer.X);
             }
             if (_myoGyroscope != null) {
-                gyroscope = new Vector3(_myoGyroscope.Y, _myoGyroscope.Z, -_myoGyroscope.X);
+                gyroscope = new UnityEngine.Vector3(_myoGyroscope.Y, _myoGyroscope.Z, -_myoGyroscope.X);
             }
+            if (isPaired && streamEmg == Thalmic.Myo.Result.Success) {
+                emg = _myo.emgData;
+            }
+
             pose = _myoPose;
             unlocked = _myoUnlocked;
         }
@@ -118,6 +135,13 @@ public class ThalmicMyo : MonoBehaviour {
     void myo_OnGyroscopeData(object sender, Thalmic.Myo.GyroscopeDataEventArgs e) {
         lock (_lock) {
             _myoGyroscope = e.Gyroscope;
+        }
+    }
+
+    // Emg - New code
+    void myo_OnEmgData(object sender, Thalmic.Myo.EmgDataEventArgs e) {
+        lock (_lock) {
+            _myoEmg = e.Emg;
         }
     }
 
@@ -174,8 +198,12 @@ public class ThalmicMyo : MonoBehaviour {
     private Thalmic.Myo.Quaternion _myoQuaternion = null;
     private Thalmic.Myo.Vector3 _myoAccelerometer = null;
     private Thalmic.Myo.Vector3 _myoGyroscope = null;
+    private int[] _myoEmg = new int[7];
     private Pose _myoPose = Pose.Unknown;
     private bool _myoUnlocked = false;
+
+    // private variable for Emg
+    private StreamEmg _myoStreamEmg = StreamEmg.Enabled;
 
     private Thalmic.Myo.Myo _myo;
 }
