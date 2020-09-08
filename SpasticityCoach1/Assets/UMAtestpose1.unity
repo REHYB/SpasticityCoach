@@ -287,7 +287,8 @@ PrefabInstance:
       propertyPath: m_LocalScale.z
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 11400000, guid: 863250160b56e46dbb2d227833b7338a, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 863250160b56e46dbb2d227833b7338a, type: 3}
 --- !u!1 &423688387
 GameObject:
@@ -808,6 +809,33 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6ae233dea2246ea87607cb732ed939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1450426465 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 863250160b56e46dbb2d227833b7338a,
+    type: 3}
+  m_PrefabInstance: {fileID: 272087768}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1450426466
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450426465}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e9d766c82b2b52449346917d4f3db5c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  armSynced: 0
+  unlocked: 0
+  arm: 0
+  xDirection: 0
+  pose: 65535
+  accelerometer: {x: 0, y: 0, z: 0}
+  gyroscope: {x: 0, y: 0, z: 0}
+  streamEmg: 0
+  emg: 
 --- !u!1 &1964258566
 GameObject:
   m_ObjectHideFlags: 0
