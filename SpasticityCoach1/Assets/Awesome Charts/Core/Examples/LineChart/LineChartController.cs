@@ -16,12 +16,13 @@ namespace AwesomeCharts {
 
         private void ConfigChart () {
             // accessing and editing current config
-            lineChart.Config.ValueIndicatorSize = 16;
+            lineChart.Config.ValueIndicatorSize = 2;   // size of point indicator on chart
+            lineChart.Config.ShowValueIndicators = true;    // decides whether line entry indicators (dots) should be draw or not
 
             // setting new config
             LineChartConfig config = new LineChartConfig
             {
-                ValueIndicatorSize = 16,
+                ValueIndicatorSize = 2,     // size of point indicator on chart
             };
             lineChart.Config = config;
         }
@@ -31,12 +32,12 @@ namespace AwesomeCharts {
             LineDataSet set = new LineDataSet();
             // Add entries to data set
             set.AddEntry(new LineEntry(0, 100));
-            set.AddEntry(new LineEntry(100, 50));
-            set.AddEntry(new LineEntry(150, 70));
-            set.AddEntry(new LineEntry(180, 130));
+            set.AddEntry(new LineEntry(10, 50));
+            set.AddEntry(new LineEntry(15, 70));
+            set.AddEntry(new LineEntry(30, 130));
             // Configure line
-            set.LineColor = Color.red;
-            set.LineThickness = 4;
+            set.LineColor = Color.yellow;
+            set.LineThickness = 2;
             set.UseBezier = true;
             // Add data set to chart data
             lineChart.GetChartData().DataSets.Add(set);

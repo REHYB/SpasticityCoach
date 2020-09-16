@@ -33,8 +33,7 @@ namespace AwesomeCharts
 
         // Min X Value
         public override float GetMinPosition() {
-            return HasAnyData() ? DataSets.Select((dataSet) => dataSet.GetMinPosition()).Min() :
-                0;
+            return HasAnyData() ? DataSets.Select((dataSet) => dataSet.GetMinPosition()).Min() : 0;
         }
 
         // Max X Value

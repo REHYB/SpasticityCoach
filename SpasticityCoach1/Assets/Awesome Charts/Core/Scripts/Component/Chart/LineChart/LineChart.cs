@@ -511,59 +511,6 @@ namespace AwesomeCharts {
             }
 
             return result;
-        }
-
-        /*
-        // Added after comparing with PieChart.cs
-        public void AddEntryClickDelegate(EntryClickDelegate clickDelegate) {
-            if (!clickDelegates.Contains(clickDelegate))
-            {
-                clickDelegates.Add(clickDelegate);
-            }
-        }
-
-        // Added after comparing with PieChart.cs
-        public void RemoveEntryClickDelegate(EntryClickDelegate clickDelegate) {
-            if (clickDelegates.Contains(clickDelegate))
-            {
-                clickDelegates.Remove(clickDelegate);
-            }
-        }
-
-        // Added after comparing with PieChart.cs
-        private void OnEntryClick(int index, LineEntry entry) {
-            for (int i = 0; i < clickDelegates.Count; i++)
-            {
-                clickDelegates[i].Invoke(index, entry);
-            }
-        }
-
-        
-        // Added after comparing with PieChart.cs
-        public bool IsEntryAtPositionSelected(int position) {
-            return selectedEntries.Contains(data.DataSets.GetEntryAt(position));
-        }
-
-        // Added after comparing with PieChart.cs
-        public void SelectEntryAtPosition(int position) {
-            LineEntry entry = data.DataSets.GetEntryAt(position);
-            if (entry != null && !selectedEntries.Contains(entry))
-            {
-                selectedEntries.Add(entry);
-                SetDirty();
-            }
-        }
-
-        // Added after comparing with PieChart.cs
-        public void DeselectEntryAtPosition(int position) {
-            LineEntry entry = data.DataSets.GetEntryAt(position);
-            if (entry != null && selectedEntries.Contains(entry))
-            {
-                selectedEntries.Remove(entry);
-                SetDirty();
-            }
-        }
-        */
-        
+        }        
     }
 }

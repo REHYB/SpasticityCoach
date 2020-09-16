@@ -117,8 +117,13 @@ namespace AwesomeCharts {
             AxisValue verticalAxisBounds = GetVerticalAxisConfig ().Bounds;
             AxisValue horizontalAxisBounds = GetHorizontalAxisConfig ().Bounds;
 
-            float xMin = horizontalAxisBounds.MinAutoValue ? GetChartData ().GetMinPosition () : horizontalAxisBounds.Min;
-            float xMax = horizontalAxisBounds.MaxAutoValue ? GetChartData ().GetMaxPosition () : horizontalAxisBounds.Max;
+            // Added - different value for x-axis ----------------------------
+            //float xMin = horizontalAxisBounds.MinAutoValue ? GetChartData ().GetMinPosition () : horizontalAxisBounds.Min;
+            float xMin = horizontalAxisBounds.MinAutoValue ? GetChartData().GetMinPosition() : horizontalAxisBounds.X_Min;
+            // float xMax = horizontalAxisBounds.MaxAutoValue ? GetChartData ().GetMaxPosition () : horizontalAxisBounds.Max;
+            float xMax = horizontalAxisBounds.MaxAutoValue ? GetChartData().GetMaxPosition() : horizontalAxisBounds.X_Max;
+            // End of added
+
             float yMin = verticalAxisBounds.MinAutoValue ? GetClosestRoundValue (GetChartData ().GetMinValue (), GetChartData ().GetMinValue () < 0) :
                 verticalAxisBounds.Min;
             float yMax = verticalAxisBounds.MaxAutoValue ? GetClosestRoundValue (GetChartData ().GetMaxValue (), GetChartData ().GetMaxValue () > 0) :
