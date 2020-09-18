@@ -46,6 +46,11 @@ namespace Thalmic.Myo
 
         public int[] emgData = new int[7];
 
+        // Added to log timestamp -------------------------------------------------------------------------------------
+        public static string date;
+        public static string time;
+
+
         internal Hub Hub
         {
             get { return _hub; }
@@ -86,6 +91,18 @@ namespace Thalmic.Myo
         {
             libmyo.myo_notify_user_action(_handle, libmyo.UserActionType.Single, IntPtr.Zero);
         }
+
+        // Add function to return local device time --------------------------------------------------------------------------------------------------------------------------------
+        // My worry: delay and difference between actual time and written one. Althought it should be ok if all of them are delayed by the same amount of time ---------------------
+        static void GetTime(string[] args) {
+            DateTime now = DateTime.Now;
+            //Console.WriteLine(now.ToString("F"));
+
+            date = now.ToString("d");
+            time = now.ToString("T");
+        }
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+        // ------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
         internal void HandleEvent(libmyo.EventType type, DateTime timestamp, IntPtr evt)
         {
@@ -203,7 +220,7 @@ namespace Thalmic.Myo
                 libmyo.event_get_emg(evt, 4),
                 libmyo.event_get_emg(evt, 5),
                 libmyo.event_get_emg(evt, 6),
-                libmyo.event_get_emg(evt, 7)
+                libmyo.event_get_emg(evt, 7),
             };
 
             emgData = emg;

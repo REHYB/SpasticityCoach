@@ -203,7 +203,7 @@ public class ThalmicMyo : MonoBehaviour {
     private bool _myoUnlocked = false;
 
     // private variable for Emg
-    private StreamEmg _myoStreamEmg = StreamEmg.Enabled;
+    public StreamEmg _myoStreamEmg = StreamEmg.Enabled;
 
     private Thalmic.Myo.Myo _myo;
 }
