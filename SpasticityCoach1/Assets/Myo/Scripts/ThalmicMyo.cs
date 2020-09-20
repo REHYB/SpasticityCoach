@@ -1,6 +1,12 @@
 
 using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
+using System.Text;
+using System.IO;
+using System;
+
+using System.Linq;  // To convert EMG from system.array to system.list
 
 
 using Arm = Thalmic.Myo.Arm;
@@ -14,6 +20,7 @@ using StreamEmg = Thalmic.Myo.StreamEmg;
 // like the current pose are provided explicitly below. All spatial data about Myo is provided following Unity
 // coordinate system conventions (the y axis is up, the z axis is forward, and the coordinate system is left-handed).
 public class ThalmicMyo : MonoBehaviour {
+    public DateTime timestamp = new DateTime(2017, 1, 18);
 
     // True if and only if Myo has detected that it is on an arm.
     public bool armSynced;
@@ -97,6 +104,10 @@ public class ThalmicMyo : MonoBehaviour {
             }
             if (isPaired && streamEmg == Thalmic.Myo.Result.Success) {
                 emg = _myo.emgData;
+
+                // Added code lines to save emg data to CSV
+                CsvReadWrite csv = new CsvReadWrite();
+                csv.Save(emg, timestamp);
             }
 
             pose = _myoPose;
@@ -139,7 +150,9 @@ public class ThalmicMyo : MonoBehaviour {
     }
 
     // Emg - New code
-    void myo_OnEmgData(object sender, Thalmic.Myo.EmgDataEventArgs e) {
+    //void myo_OnEmgData(object sender, Thalmic.Myo.EmgDataEventArgs e) {
+    public void myo_OnEmgData(object sender, Thalmic.Myo.EmgDataEventArgs e)
+    {
         lock (_lock) {
             _myoEmg = e.Emg;
         }
@@ -190,16 +203,17 @@ public class ThalmicMyo : MonoBehaviour {
         }
     }
 
-    private Object _lock = new Object();
+    //private Object _lock = new Object();
+    private UnityEngine.Object _lock = new UnityEngine.Object();
 
     private bool _myoArmSynced = false;
     private Arm _myoArm = Arm.Unknown;
-    private XDirection _myoXDirection = XDirection.Unknown;
-    private Thalmic.Myo.Quaternion _myoQuaternion = null;
-    private Thalmic.Myo.Vector3 _myoAccelerometer = null;
-    private Thalmic.Myo.Vector3 _myoGyroscope = null;
-    private int[] _myoEmg = new int[7];
-    private Pose _myoPose = Pose.Unknown;
+    public XDirection _myoXDirection = XDirection.Unknown;
+    public Thalmic.Myo.Quaternion _myoQuaternion = null;
+    public Thalmic.Myo.Vector3 _myoAccelerometer = null;
+    public Thalmic.Myo.Vector3 _myoGyroscope = null;
+    public int[] _myoEmg = new int[7];
+    public Pose _myoPose = Pose.Unknown;
     private bool _myoUnlocked = false;
 
     // private variable for Emg
