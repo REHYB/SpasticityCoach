@@ -34,8 +34,8 @@ public class CsvReadWrite : MonoBehaviour
         rowData.Add(rowDataTemp);
 
         // You can add up the values in as many cells as you want.
-        for (int i = 0; i < 500; i++)        // Define here how many rows you want
-                                             // Fow now I am going to add 500 iterations, but in the future we would need to create an 'append' function
+        for (int i = 0; i < 10; i++)        // Define here how many rows you want
+                                             // Fow now I am going to add 10 iterations, but in the future we would need to create an 'append' function
                                              // Right now the script is created at the start of the app
         {
             rowDataTemp = new string[9];

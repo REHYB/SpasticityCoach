@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// This script controls the guided instructions with the avatar.
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -62,6 +64,7 @@ public class ClientRoutine1 : MonoBehaviour
                    routineStage = 1;
                 }
                 break;}
+
             case (1): {
                 instruction1 = "I'm your Instructor, Milo";
                 if (head_rot.x > -40) {
@@ -71,12 +74,14 @@ public class ClientRoutine1 : MonoBehaviour
                     routineStage = 2;
                 }
                 break;}
+
             case (2): {
                 instruction1 = "Let's begin your neuro assessment";
                 if (secondsNow >= 6) {
                     routineStage = 3;
                 }
                 break;}
+
             case (3): {
                 instruction1 = "Supinate your wrist";
                 head_rot = new Vector3(-40, 40, 0);
@@ -93,12 +98,14 @@ public class ClientRoutine1 : MonoBehaviour
                     instruction1 = "Bend your elbow at this speed";
                 }
                 break;}
+
             case (4): {
                     rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, 0, 0);
                 if ((secondsNow - secondsChange) > 3) {
                     routineStage = 5;
                 }
                 break;}
+
             case (5): {
                 if (rightElbow_rot_routine.y < elbowMotion) {
                         rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, rightElbow_rot_routine.y + elbowSpeed, 0);
@@ -109,6 +116,7 @@ public class ClientRoutine1 : MonoBehaviour
                     secondsChange = secondsNow;
                 }
                 break;}
+
             case (6): {
                 instruction1 = "Your turn, Bend your elbow with me";
                     rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, 0, 0);
@@ -116,13 +124,14 @@ public class ClientRoutine1 : MonoBehaviour
                     routineStage = 7;
                 }
                 break;}
+
             case (7): {
                 instruction1 = "Your turn, Bend your elbow with me";
                 if (rightElbow_rot_routine.y < elbowMotion) {
                         rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, rightElbow_rot_routine.y + elbowSpeed, 0);
                 }
                 if (rightElbow_rot_routine.y >= elbowMotion) {
-                        rightElbow_rot_routine.y = 0;
+                    rightElbow_rot_routine.y = 0;
                     secondsChange = secondsNow;
                     routineStage = 4;
                     if (elbowSpeedCounter == 0) {
@@ -140,6 +149,7 @@ public class ClientRoutine1 : MonoBehaviour
                     }
                 }
                 break;}
+
             case (8): {
                 instruction1 = "Assessment complete, Well Done!";
                 routineStage = 8;
