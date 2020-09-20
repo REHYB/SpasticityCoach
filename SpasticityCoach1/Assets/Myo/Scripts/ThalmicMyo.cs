@@ -20,8 +20,6 @@ using StreamEmg = Thalmic.Myo.StreamEmg;
 // like the current pose are provided explicitly below. All spatial data about Myo is provided following Unity
 // coordinate system conventions (the y axis is up, the z axis is forward, and the coordinate system is left-handed).
 public class ThalmicMyo : MonoBehaviour {
-    public DateTime timestamp = new DateTime(2017, 1, 18);
-
     // True if and only if Myo has detected that it is on an arm.
     public bool armSynced;
 
@@ -106,6 +104,7 @@ public class ThalmicMyo : MonoBehaviour {
                 emg = _myo.emgData;
 
                 // Added code lines to save emg data to CSV
+                var timestamp = DateTime.Now;   // Get current local time and date
                 CsvReadWrite csv = new CsvReadWrite();
                 csv.saveCSV(emg, timestamp);
             }
