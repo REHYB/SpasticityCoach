@@ -107,7 +107,7 @@ public class ThalmicMyo : MonoBehaviour {
 
                 // Added code lines to save emg data to CSV
                 CsvReadWrite csv = new CsvReadWrite();
-                csv.Save(emg, timestamp);
+                csv.saveCSV(emg, timestamp);
             }
 
             pose = _myoPose;
