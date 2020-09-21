@@ -6,7 +6,7 @@ using System.Collections;
 using System.Collections.Generic;
 
 namespace AwesomeCharts {
-    public class LineChartController : MonoBehaviour {
+    public class LineChartController_EMG01 : MonoBehaviour {
         public LineChart lineChart;
         public Texture2D graph_grad;
 
@@ -32,12 +32,25 @@ namespace AwesomeCharts {
             // Create data set for entries
             LineDataSet set = new LineDataSet();
 
-            // Add entries to data set
-            set.AddEntry(new LineEntry(0, 100));
-            set.AddEntry(new LineEntry(10, -150));
-            set.AddEntry(new LineEntry(15, 10));
-            set.AddEntry(new LineEntry(30, 130));
+            // Read CSV
+            DataFltr csvFltr = new DataFltr();
+            var values = csvFltr.readEMGCSV("EMG_data.csv");
+            int[] PodData = values.Item1;
 
+            // Add entries to data set
+            Debug.Log("Checking the size PodData: " + PodData.Length);
+
+            if (PodData.Length <= 50) {
+
+            }
+
+            else {
+                for (int i = 1; i < 50; i++)
+                {
+                    set.AddEntry(new LineEntry(i-1 , PodData[PodData.Length - i+1]));
+                }
+            }
+            
             // Set Colours
             Color solid_richblack = new Color(16/255f, 22/255f, 29/255f, 1);
 
@@ -66,5 +79,6 @@ namespace AwesomeCharts {
             // Refresh chart after data change
             lineChart.SetDirty();
         }
+
     }
 }

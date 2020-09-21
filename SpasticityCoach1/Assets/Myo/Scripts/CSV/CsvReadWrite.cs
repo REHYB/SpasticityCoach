@@ -23,28 +23,11 @@ public class CsvReadWrite : MonoBehaviour {
 
     public DateTime timestamp;
 
+    private int n_windows;
 
-    // ==================================== Read from CSV file ====================================
-    public void readCSV(string[] args) {
-        string filePath = getPath();
 
-        using (var reader = new StreamReader(filePath)) {
-            List<string> col01 = new List<string>();
-            List<string> col02 = new List<string>();
-
-            while (!reader.EndOfStream)
-            {
-                var line = reader.ReadLine();
-                var values = line.Split(',');
-
-                col01.Add(values[0]);
-                col02.Add(values[1]);
-            }
-        }
-    }
-
-    // ==================================== Save to CSV file ====================================
-    public void saveCSV(int[] emg_list, DateTime timestamp) {
+    // ==================================== Save EMG to CSV file ====================================
+    public void saveEMGCSV(string filename, int[] emg_list, DateTime timestamp) {
         string[] rowDataTemp = new string[9];
 
         emg_Pod01 = emg_list[0];
@@ -56,8 +39,6 @@ public class CsvReadWrite : MonoBehaviour {
         emg_Pod07 = emg_list[6];
         //emg_Pod08 = emg_list[7];  // There seem to be just 7 emg values coming from the myo
         emg_Pod08 = 0;
-
-        rowDataTemp = new string[9];
 
         rowDataTemp[0] = emg_Pod01.ToString();
         rowDataTemp[1] = emg_Pod02.ToString();
@@ -74,7 +55,7 @@ public class CsvReadWrite : MonoBehaviour {
             rowDataTemp[5] + ","+ rowDataTemp[6] + "," + rowDataTemp[7] + "," + timestamp + 
             Environment.NewLine;
 
-        string filePath = getPath();
+        string filePath = getPath(filename);
 
         // If the file doesn't exist, create it and add header
         if (!File.Exists(filePath)) {
@@ -102,18 +83,71 @@ public class CsvReadWrite : MonoBehaviour {
         File.AppendAllText(filePath, newLine);
     }
 
+    // ==================================== Save Averaged EMG to CSV file ====================================
+    public void saveAvgCSV(string filename, string[] dat_01, string[] dat_02, string[] dat_03, string[] dat_04, string[] dat_05, string[] dat_06, string[] dat_07, string[] dat_08) //, string[] dat_time)
+    {
+        int length = dat_01.Length;
+        string[] rowDataTemp = new string[8];
+
+        for (int i=0; i<length; i++)
+        {
+            rowDataTemp[0] = dat_01[i].ToString();
+            rowDataTemp[1] = dat_02[i].ToString();
+            rowDataTemp[2] = dat_03[i].ToString();
+            rowDataTemp[3] = dat_04[i].ToString();
+            rowDataTemp[4] = dat_05[i].ToString();
+            rowDataTemp[5] = dat_06[i].ToString();
+            rowDataTemp[6] = dat_07[i].ToString();
+            rowDataTemp[7] = dat_08[i].ToString();
+
+            string newLine = rowDataTemp[0] + "," + rowDataTemp[1] + "," +
+            rowDataTemp[2] + "," + rowDataTemp[3] + "," + rowDataTemp[4] + "," +
+            rowDataTemp[5] + "," + rowDataTemp[6] + "," + rowDataTemp[7] + "," + //dat_time +
+            Environment.NewLine;
+
+            string filePath = getPath(filename);
+
+            // If the file doesn't exist, create it and add header
+            if (!File.Exists(filePath))
+            {
+                // Creating First row of titles 
+                string[] rowHeader = new string[8];
+
+                rowHeader[0] = "Avg EMG - Pod01";
+                rowHeader[1] = "Avg EMG - Pod02";
+                rowHeader[2] = "Avg EMG - Pod03";
+                rowHeader[3] = "Avg EMG - Pod04";
+                rowHeader[4] = "Avg EMG - Pod05";
+                rowHeader[5] = "Avg EMG - Pod06";
+                rowHeader[6] = "Avg EMG - Pod07";
+                rowHeader[7] = "Avg EMG - Pod08";
+                //rowHeader[8] = "Start Timestamp";
+
+                string newHeader = rowHeader[0] + "," + rowHeader[1] + "," +
+                    rowHeader[2] + "," + rowHeader[3] + "," + rowHeader[4] + "," +
+                    rowHeader[5] + "," + rowHeader[6] + "," + rowHeader[7] + "," + //rowHeader[8] +
+                    Environment.NewLine;
+
+                File.WriteAllText(filePath, newHeader);
+            }
+
+            File.AppendAllText(filePath, newLine);
+        }
+
+    }
+
     // ==================================== Save Path ====================================
     // Following method is used to retrive the relative path as device platform
-    private string getPath()
+    public string getPath(string filename)
     {
         #if UNITY_EDITOR
-                return Application.dataPath + "/Myo/Scripts/CSV/" + "EMG_data.csv";
+                return Application.dataPath + "/Myo/Scripts/CSV/" + filename;
         #elif UNITY_ANDROID
-                return Application.persistentDataPath+"Saved_data.csv";
+                        return Application.persistentDataPath+filename;
         #elif UNITY_IPHONE
-                return Application.persistentDataPath+"/"+"Saved_data.csv";
+                        return Application.persistentDataPath+"/"+filename;
         #else
-                return Application.dataPath +"/"+"Saved_data.csv";
+                        return Application.dataPath +"/"+filename;
         #endif
     }
 }
