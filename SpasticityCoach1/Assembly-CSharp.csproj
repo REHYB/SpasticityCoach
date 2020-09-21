@@ -64,6 +64,8 @@
   <ItemGroup>
     <Compile Include="Assets\Awesome Charts\Core\Examples\BarChart\CustomAxisValueFormatterExample.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG01.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG02.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG03.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_Template.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\PieChart\PieChartController.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Scripts\Base\ACMonoBehaviour.cs" />

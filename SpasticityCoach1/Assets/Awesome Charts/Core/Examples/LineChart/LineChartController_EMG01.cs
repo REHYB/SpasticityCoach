@@ -40,6 +40,8 @@ namespace AwesomeCharts {
             // Add entries to data set
             Debug.Log("Checking the size PodData: " + PodData.Length);
 
+            set.AddEntry(new LineEntry(0, 0));
+
             if (PodData.Length <= 50) {
 
             }
@@ -47,7 +49,7 @@ namespace AwesomeCharts {
             else {
                 for (int i = 1; i < 50; i++)
                 {
-                    set.AddEntry(new LineEntry(i-1 , PodData[PodData.Length - i+1]));
+                    set.AddEntry(new LineEntry(i-1 , PodData[PodData.Length - i]));
                 }
             }
             
