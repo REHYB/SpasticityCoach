@@ -1,4 +1,6 @@
-﻿using System.Collections;
+﻿// This script controls and mimics the elbow rotation of the patient and visually translates that into the patient avatar.
+
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -22,8 +24,11 @@ public class ClientMotion : MonoBehaviour
         anim = GetComponent<Animator>();
         //lying in Default Humanoid pose on Ground
         ClientRoutine1.body_rot = new Vector3(-87f, 90f, 0f);
+        
+        // Local position and rotation of the complete body
         GetComponent<Transform>().localPosition = new Vector3(GetComponent<Transform>().localPosition.x, GetComponent<Transform>().localPosition.y - 0.2f, GetComponent<Transform>().localPosition.z);
         GetComponent<Transform>().localRotation = Quaternion.Euler(ClientRoutine1.body_rot);
+
         ClientRoutine1.rightShoulder_rot = new Vector3(0, 0, -58);
         ClientRoutine1.leftShoulder_rot = new Vector3(0, -5, 50);
     }
@@ -31,8 +36,10 @@ public class ClientMotion : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        rightElbow_rot = new Vector3 (90, ClientRoutine1.elbowMyo.x * 180, 0);
-//        Debug.Log(ClientRoutine1.elbowMyo.x + " : " + ClientRoutine1.elbowMyo.y + " : " + ClientRoutine1.elbowMyo.z);
+        // Fixed rotation of elbow by setting elbowMyo to the -y axis
+        rightElbow_rot = new Vector3(90, -ClientRoutine1.elbowMyo.y * 180, 0);
+        //        Debug.Log(ClientRoutine1.elbowMyo.x + " : " + ClientRoutine1.elbowMyo.y + " : " + ClientRoutine1.elbowMyo.z);
+        
     }
 
     void OnAnimatorIK(int layerIndex)
