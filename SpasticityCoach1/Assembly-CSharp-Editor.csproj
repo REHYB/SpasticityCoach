@@ -62,10 +62,10 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Editor\BarChartConfigEditor.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Editor\BarEntryDrawer.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Editor\ChartMenuItems.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Editor\LineEntryDrawer.cs" />
+    <Compile Include="Assets\Charts\Core\Scripts\Editor\BarChartConfigEditor.cs" />
+    <Compile Include="Assets\Charts\Core\Scripts\Editor\BarEntryDrawer.cs" />
+    <Compile Include="Assets\Charts\Core\Scripts\Editor\ChartMenuItems.cs" />
+    <Compile Include="Assets\Charts\Core\Scripts\Editor\LineEntryDrawer.cs" />
     <Compile Include="Assets\Tutorial_Info\Scripts\Editor\ReadmeEditor.cs" />
     <None Include="Assets\PlayServicesResolver\Editor\play-services-resolver_v1.2.115.0.txt" />
     <Reference Include="UnityEngine">
