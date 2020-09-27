@@ -85,22 +85,60 @@ public class CsvReadWrite : MonoBehaviour {
         File.AppendAllText(filePath, newLine);
     }
 
-    // ==================================== Save Averaged EMG to CSV file ====================================
-    public void saveAvgCSV(string filename, string[] dat_01, string[] dat_02, string[] dat_03, string[] dat_04, string[] dat_05, string[] dat_06, string[] dat_07, string[] dat_08) //, string[] dat_time)
-    {
-        int length = dat_01.Length;
+    // ==================================== Save processed EMG to CSV file ====================================
+    public void savePrcCSV(string filename, List<float> dat_01, List<float> dat_02, List<float> dat_03, List<float> dat_04, List<float> dat_05, List<float> dat_06, List<float> dat_07, List<float> dat_08) //, string[] dat_time)
+    {    
+        // Define Jagged array
+        float[][] jagged_dat = new float[8][]
+        {
+            dat_01.ToArray(),
+            dat_02.ToArray(),
+            dat_03.ToArray(),
+            dat_04.ToArray(),
+            dat_05.ToArray(),
+            dat_06.ToArray(),
+            dat_07.ToArray(),
+            dat_08.ToArray()
+        };
+
+        int len = jagged_dat[0].Length;
+
+        // Make sure that the size of the arrays are the same
+        for (int i=1; i < 8; i++)
+        {
+            if (jagged_dat[i].Length != len)
+            {
+                // Return new array with correct length
+                float[] newJagged_dat = new float[len];
+
+                for (int idx = 0; idx < len; idx++)
+                {
+                    newJagged_dat[i] = jagged_dat[0][i];
+                }
+            }
+            else { }
+        }
+        
+        // Prepare data to be converted to string
         string[] rowDataTemp = new string[8];
 
-        for (int i=0; i<length; i++)
+        for (int i=0; i<len; i++)
         {
-            rowDataTemp[0] = dat_01[i].ToString();
-            rowDataTemp[1] = dat_02[i].ToString();
-            rowDataTemp[2] = dat_03[i].ToString();
-            rowDataTemp[3] = dat_04[i].ToString();
-            rowDataTemp[4] = dat_05[i].ToString();
-            rowDataTemp[5] = dat_06[i].ToString();
-            rowDataTemp[6] = dat_07[i].ToString();
-            rowDataTemp[7] = dat_08[i].ToString();
+            for (int j = 0; j < 8; j++)
+            {
+                rowDataTemp[j] = jagged_dat[j][i].ToString();
+            }
+
+            /*
+            rowDataTemp[0] = jagged_dat[0][i].ToString();
+            rowDataTemp[1] = jagged_dat[1][i].ToString();
+            rowDataTemp[2] = jagged_dat[2][i].ToString();
+            rowDataTemp[3] = jagged_dat[3][i].ToString();
+            rowDataTemp[4] = jagged_dat[4][i].ToString();
+            rowDataTemp[5] = jagged_dat[5][i].ToString();
+            rowDataTemp[6] = jagged_dat[6][i].ToString();
+            rowDataTemp[7] = jagged_dat[7][i].ToString();
+            */
 
             string newLine = rowDataTemp[0] + "," + rowDataTemp[1] + "," +
             rowDataTemp[2] + "," + rowDataTemp[3] + "," + rowDataTemp[4] + "," +

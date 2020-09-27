@@ -259,6 +259,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1d9f55bf2ca4ac1b43b5d62c98c22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prc_emg_Pod01: []
+  prc_emg_Pod02: []
+  prc_emg_Pod03: []
+  prc_emg_Pod04: []
+  prc_emg_Pod05: []
+  prc_emg_Pod06: []
+  prc_emg_Pod07: []
+  prc_emg_Pod08: []
+  prc_emg_time: []
 --- !u!1001 &272087768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -465,10 +474,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -487,10 +496,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -650,7 +659,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineChart: {fileID: 297380232}
-  graph_grad: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+  graph_grad: {fileID: 0}
+  fr: 0
+  avg_emg_Pod02: []
 --- !u!1 &677556421
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +707,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineChart: {fileID: 2065230012}
-  graph_grad: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+  graph_grad: {fileID: 0}
 --- !u!1 &712938876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100158, guid: e8df3d267d7d965469313c7824cb5f69,
@@ -1250,7 +1261,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineChart: {fileID: 1830702383}
-  graph_grad: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+  graph_grad: {fileID: 0}
 --- !u!1 &1627719067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,8 +1300,15 @@ MonoBehaviour:
   i_emg_Pod07: 
   i_emg_Pod08: 
   emg_time: []
+  avg_emg_Pod01: []
+  avg_emg_Pod02: []
+  avg_emg_Pod03: []
+  avg_emg_Pod04: []
+  avg_emg_Pod05: []
+  avg_emg_Pod06: []
+  avg_emg_Pod07: []
+  avg_emg_Pod08: []
   avg_emg_time: []
-  avgPoints: []
   fr: 0
   avg_timestamp: []
 --- !u!4 &1627719069
@@ -1534,10 +1552,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -1556,10 +1574,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -1742,10 +1760,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -1764,10 +1782,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}

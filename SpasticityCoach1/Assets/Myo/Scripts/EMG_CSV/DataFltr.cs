@@ -138,12 +138,12 @@ public class DataFltr : MonoBehaviour
         //string[] avgPoints = new string[data.Length - frameSize + 1];
         for (int index = data.Length - frameSize; index < data.Length; index++)
         {
-            sum = sum + Math.Abs(data[index]);
+            sum = sum + Math.Abs(data[index-1]);
             // string result_str = result.ToString();
             count = count + 1;
         }
 
-        UnityEngine.Debug.Log("Counter for sum elements: " + count);
+        //UnityEngine.Debug.Log("Counter for sum elements: " + count);
 
         float result = sum / frameSize;
         sum = 0;
