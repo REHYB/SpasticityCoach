@@ -1,8 +1,11 @@
 ﻿// This script controls the guided instructions with the avatar.
 
 using AwesomeCharts;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Globalization;
+using System.IO;
 using UnityEngine;
 
 
@@ -11,9 +14,6 @@ public class ClientRoutine1 : MonoBehaviour
     public static string instruction1 = "Welcome to PIEGO"; //Personalized Independent Exercise Goals and Occupations
     public static Quaternion elbowMyo = new Quaternion(0, 0, 0, 0);
     public static int routineStage = 0;
-
-    // Lets other script know if the routine has finished and if they should save CSV
-    public static bool savePrcStat = false;
 
     Animator anim;
     //Transform head;
@@ -169,41 +169,59 @@ public class ClientRoutine1 : MonoBehaviour
             case (8):
                 {
                     instruction1 = "Saving patient data, please wait...";
+                    if ((secondsNow - secondsChange) > 4)
+                    {
+                            routineStage = 9;
+                    }
+                    break;
+                }
 
-                    savePrcStat = true;
-                    
+            case (9):
+                {
                     // ---------- Save moving average values to CSV ----------
+
                     // Get EMG pod data values
-                    //LineChartController_EMG02 LChart_EMG02 = new LineChartController_EMG02();
+                    prc_emg_Pod01 = LineChartController_EMG01.avg_emg_Pod01;
                     prc_emg_Pod02 = LineChartController_EMG02.avg_emg_Pod02;
-                    UnityEngine.Debug.Log("prc_emg_Pod02 size: " + prc_emg_Pod02.Count);
-                    UnityEngine.Debug.Log("prc_emg_Pod02 values: " + prc_emg_Pod02[3] + " and "+ prc_emg_Pod02[123]);
+                    prc_emg_Pod03 = LineChartController_EMG03.avg_emg_Pod03;
+                    prc_emg_Pod04 = LineChartController_EMG01.avg_emg_Pod01;
+                    prc_emg_Pod05 = LineChartController_EMG01.avg_emg_Pod01;
+                    prc_emg_Pod06 = LineChartController_EMG01.avg_emg_Pod01;
+                    prc_emg_Pod07 = LineChartController_EMG01.avg_emg_Pod01;
+                    prc_emg_Pod08 = LineChartController_EMG01.avg_emg_Pod01;
 
+                    // Read timestamps for processed EMG
+                    DataFltr csvFltr = new DataFltr();
+                    var values = csvFltr.readEMGCSV("EMG_data.csv");
+                    int len = prc_emg_Pod01.Count;
+
+
+                    // Convert string back to timestamp for CSV. 
+                    // Avoids the output in a CSV being System.string[] instead of the actual timestamp
+                    DateTime[] prc_emg_time = new DateTime[len];
+                    string[] emg_time = values.Item9;
+
+                    int counter = 0;
+                    for (int i=1; i<len; i++)
+                    {
+                        prc_emg_time[counter] = DateTime.ParseExact(emg_time[i], "yyyy-MM-dd H:mm:ss.fff", null);
+                        counter =+1;
+                    }
+
+                    // Write processed EMG into a CSV file
                     CsvReadWrite csv = new CsvReadWrite();                    // Elapsed time for saveCSV function: 4612 ms for 18,100 rows
-                    csv.savePrcCSV("EMG_Avg.csv", prc_emg_Pod02, prc_emg_Pod02, prc_emg_Pod02, prc_emg_Pod02, prc_emg_Pod02, prc_emg_Pod02, prc_emg_Pod02, prc_emg_Pod02);
+                    csv.savePrcCSV("EMG_processed.csv", prc_emg_Pod01, prc_emg_Pod02, prc_emg_Pod03, prc_emg_Pod04, prc_emg_Pod05, prc_emg_Pod06, prc_emg_Pod07, prc_emg_Pod08, prc_emg_time);
                     
-                    /*
-                    Debug.Log("Checking the size of avg_emg_Pod01: " + avg_emg_Pod01.Length);
-                    Debug.Log("Checking the size of avg_emg_Pod02: " + avg_emg_Pod02.Length);
-                    Debug.Log("Checking the size of avg_emg_Pod03: " + avg_emg_Pod03.Length);
-                    Debug.Log("Checking the size of avg_emg_Pod04: " + avg_emg_Pod04.Length);
-                    Debug.Log("Checking the size of avg_emg_Pod05: " + avg_emg_Pod05.Length);
-                    Debug.Log("Checking the size of avg_emg_Pod06: " + avg_emg_Pod06.Length);
-                    Debug.Log("Checking the size of avg_emg_Pod07: " + avg_emg_Pod07.Length);
-                    Debug.Log("Checking the size of avg_emg_Pod08: " + avg_emg_Pod08.Length);
-                    //Debug.Log("Checking the size of avg_timestamp: " + avg_timestamp.Length);
-                    */
 
-                    routineStage = 9;
+                    routineStage = 10;
                     break;
                 }
 
             // Save the processed EMG data in a CSV file at the end of the routine
-            case (9):
+            case (10):
                 {
                     instruction1 = "Assessment complete. Well Done!";
-                    routineStage = 9;
-                    savePrcStat = false;
+                    routineStage = 10;
                     break;
                 }
         }

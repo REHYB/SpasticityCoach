@@ -33,15 +33,6 @@ namespace AwesomeCharts
 
             // Plot data
             AddChartData(avg_emg_Pod02);
-
-            // Save CSV now? Read flag from ClientRoutine1
-            /*
-            if (ClientRoutine1.savePrcStat == true)
-            {
-                CsvReadWrite csv = new CsvReadWrite();                    // Elapsed time for saveCSV function: 4612 ms for 18,100 rows
-                csv.savePrcCSV("EMG_Avg.csv", avg_emg_Pod02, avg_emg_Pod02, avg_emg_Pod02, avg_emg_Pod02, avg_emg_Pod02, avg_emg_Pod02, avg_emg_Pod02, avg_emg_Pod02);
-            }
-            */
         }
 
         private void ConfigChart()

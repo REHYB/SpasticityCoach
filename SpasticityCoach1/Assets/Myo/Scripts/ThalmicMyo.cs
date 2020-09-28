@@ -156,7 +156,6 @@ public class ThalmicMyo : MonoBehaviour {
     }
 
     // Emg - New code
-    //void myo_OnEmgData(object sender, Thalmic.Myo.EmgDataEventArgs e) {
     public void myo_OnEmgData(object sender, Thalmic.Myo.EmgDataEventArgs e)
     {
         lock (_lock) {

@@ -11,11 +11,13 @@ namespace AwesomeCharts
     {
         public LineChart lineChart;
         public Texture2D graph_grad;
+        public int fr;
+        public static List<float> avg_emg_Pod03 = new List<float>();
+
 
         private void Update()   // Loop set to Update to get dynamic graphs
         {
             lineChart.Reset();  // Cleans the chart
-
             ConfigChart();
 
             // Read CSV
@@ -23,7 +25,14 @@ namespace AwesomeCharts
             var values = csvFltr.readEMGCSV("EMG_data.csv");
             int[] PodData = values.Item3;
 
-            AddChartData(PodData);
+
+            // Moving Avg Filter
+            fr = 5;    // Define the framesize of your block average window
+            avg_emg_Pod03.Add(csvFltr.MovingAvg(fr, PodData));     // Elapsed time for all MovingAvg (fr 10): 4 ms for 6,900 rows --> x2.45 = 9.8 ms
+
+
+            // Plot data
+            AddChartData(avg_emg_Pod03);
         }
 
         private void ConfigChart()
@@ -40,23 +49,24 @@ namespace AwesomeCharts
             lineChart.Config = config;
         }
 
-        private void AddChartData(int[] data)
+        private void AddChartData(List<float> data)
         {
             // Create data set for entries
             LineDataSet set = new LineDataSet();
 
             set.AddEntry(new LineEntry(0, 0));
 
-            if (data.Length <= 50)
+            if (data.Count <= 50)
             {
 
             }
 
             else
             {
+                // Only show last 50 values
                 for (int i = 1; i < 50; i++)
                 {
-                    set.AddEntry(new LineEntry(i - 1, data[data.Length - i]));
+                    set.AddEntry(new LineEntry(i - 1, data[data.Count - i]));
                 }
             }
 
