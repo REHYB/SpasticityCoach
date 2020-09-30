@@ -153,7 +153,7 @@ public class DataFltr : MonoBehaviour
     }
 
     // ==================================== Get Timestamps for Moving Avgs ====================================
-    public string[] MovingAvg_Time(int framerate, string[] timestamp)
+    public string[] BlockgAvg_Time(int framerate, string[] timestamp)
     {
         int length = timestamp.Length;
         //UnityEngine.Debug.Log("Checking the size of timestamp: " + length);

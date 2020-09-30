@@ -103,7 +103,7 @@ public class CsvReadWrite : MonoBehaviour {
 
         int len = jagged_dat[0].Length;
 
-        // Make sure that the size of the arrays are the same
+        // Make sure that the size of the EMG data arrays are the same
         for (int i=1; i < 8; i++)
         {
             if (jagged_dat[i].Length != len)
@@ -124,20 +124,21 @@ public class CsvReadWrite : MonoBehaviour {
 
         if (dat_time.Length != len)
         {
-            /*
             // Return new array with correct length
             int counter = 0;
-            for (int idx = dat_time.Length - dat_01.Count; idx < len; idx++)
-            {
+            for (int idx = dat_time.Length-len-1; idx<len; idx++) {
                 newTime_dat[counter] = dat_time[idx];
-                counter = +1;
+                counter = counter + 1;
+                UnityEngine.Debug.Log("Counter loop for timestamps: " + counter);
             }
-            */
-            newTime_dat = dat_time;
-
+            
         }
+
         else {
             newTime_dat = dat_time;
+            UnityEngine.Debug.Log("Length of the timestamp array and timestamps array are the same");
+            UnityEngine.Debug.Log("dat_time[3]= "+ dat_time[3]);
+
         }
 
         // Prepare data to be converted to string

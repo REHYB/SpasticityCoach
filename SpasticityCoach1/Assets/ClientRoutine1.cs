@@ -202,11 +202,12 @@ public class ClientRoutine1 : MonoBehaviour
                     string[] emg_time = values.Item9;
 
                     int counter = 0;
-                    for (int i=1; i<len; i++)
-                    {
+                    for (int i=1; i<len+1; i++) {
                         prc_emg_time[counter] = DateTime.ParseExact(emg_time[i], "yyyy-MM-dd H:mm:ss.fff", null);
-                        counter =+1;
+                        counter = counter + 1;
                     }
+
+                    UnityEngine.Debug.Log("Transformed timestamps from string to value: " + prc_emg_time.Length +"  "+ prc_emg_time[4]);
 
                     // Write processed EMG into a CSV file
                     CsvReadWrite csv = new CsvReadWrite();                    // Elapsed time for saveCSV function: 4612 ms for 18,100 rows
