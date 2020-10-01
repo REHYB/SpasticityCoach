@@ -38,72 +38,7 @@ public class DataFltr : MonoBehaviour
 
     // Main void
     public void Start()
-    {
-        /*
-        var values = readEMGCSV("EMG_data.csv");    // Elapsed time for function: 133ms for 16,886 rows
-
-        int[] i_emg_Pod01 = values.Item1;
-        int[] i_emg_Pod02 = values.Item2;
-        int[] i_emg_Pod03 = values.Item3;
-        int[] i_emg_Pod04 = values.Item4;
-        int[] i_emg_Pod05 = values.Item5;
-        int[] i_emg_Pod06 = values.Item6;
-        int[] i_emg_Pod07 = values.Item7;
-        int[] i_emg_Pod08 = values.Item8;
-        string[] emg_time = values.Item9;
-        
-
-        */
-        // ---------- Compute moving avg for each individual pod ----------
-        fr = 5;    // Define the framesize of your block average window
-        /*
-        string[] avg_emg_Pod01 = BlockAvg(fr, i_emg_Pod01);     // Block Averages for each EMG pod
-        string[] avg_emg_Pod02 = BlockAvg(fr, i_emg_Pod02);     // Elapsed time for all MovingAvg (fr 50): 1 ms for 16,886 rows
-        string[] avg_emg_Pod03 = BlockAvg(fr, i_emg_Pod03);     
-        string[] avg_emg_Pod04 = BlockAvg(fr, i_emg_Pod04);     
-        string[] avg_emg_Pod05 = BlockAvg(fr, i_emg_Pod05);     
-        string[] avg_emg_Pod06 = BlockAvg(fr, i_emg_Pod06);     
-        string[] avg_emg_Pod07 = BlockAvg(fr, i_emg_Pod07);
-        string[] avg_emg_Pod08 = BlockAvg(fr, i_emg_Pod08);
-
-        Stopwatch stopwatch = Stopwatch.StartNew();
-
-        avg_emg_Pod01.Add(MovingAvg(fr, i_emg_Pod01));     // Moving Averages for each EMG pod
-        avg_emg_Pod02.Add(MovingAvg(fr, i_emg_Pod02));     // Elapsed time for all MovingAvg (fr 10): 4 ms for 6,900 rows --> x2.45 = 9.8 ms
-
-        UnityEngine.Debug.Log("Avg EMG Pod 02: " + avg_emg_Pod02[0]);
-
-
-
-        avg_emg_Pod03.Add(MovingAvg(fr, i_emg_Pod03));
-        avg_emg_Pod04.Add(MovingAvg(fr, i_emg_Pod04));
-        avg_emg_Pod05.Add(MovingAvg(fr, i_emg_Pod05));
-        avg_emg_Pod06.Add(MovingAvg(fr, i_emg_Pod06));
-        avg_emg_Pod07.Add(MovingAvg(fr, i_emg_Pod07));
-        avg_emg_Pod08.Add(MovingAvg(fr, i_emg_Pod08));
-
-        stopwatch.Stop();
-        UnityEngine.Debug.Log("EMG MAvg Elapsed time (ms): " + stopwatch.ElapsedMilliseconds);
-
-        */
-        //string[] avg_timestamp = MovingAvg_Time(fr, emg_time);  // Timestamps for the starting time of the first item in the moving window
-
-        // ---------- Save moving average values to CSV ----------
-        //CsvReadWrite csv = new CsvReadWrite();                    // Elapsed time for saveCSV function: 4612 ms for 18,100 rows
-        //csv.saveAvgCSV("EMG_Avg.csv", avg_emg_Pod01, avg_emg_Pod02, avg_emg_Pod03, avg_emg_Pod04, avg_emg_Pod05, avg_emg_Pod06, avg_emg_Pod07, avg_emg_Pod08);
-
-        /*
-        Debug.Log("Checking the size of avg_emg_Pod01: " + avg_emg_Pod01.Length);
-        Debug.Log("Checking the size of avg_emg_Pod02: " + avg_emg_Pod02.Length);
-        Debug.Log("Checking the size of avg_emg_Pod03: " + avg_emg_Pod03.Length);
-        Debug.Log("Checking the size of avg_emg_Pod04: " + avg_emg_Pod04.Length);
-        Debug.Log("Checking the size of avg_emg_Pod05: " + avg_emg_Pod05.Length);
-        Debug.Log("Checking the size of avg_emg_Pod06: " + avg_emg_Pod06.Length);
-        Debug.Log("Checking the size of avg_emg_Pod07: " + avg_emg_Pod07.Length);
-        Debug.Log("Checking the size of avg_emg_Pod08: " + avg_emg_Pod08.Length);
-        //Debug.Log("Checking the size of avg_timestamp: " + avg_timestamp.Length);
-        */
-
+    {        
     }
     // ==================================== Simple "Block" Avg ====================================
     public string[] BlockAvg(int frameSize, int[] data)
@@ -131,12 +66,13 @@ public class DataFltr : MonoBehaviour
     }
 
     // ==================================== Simple Moving Avg Filter ====================================
-    public float MovingAvg(int frameSize, int[] data)
+    public float MovingAvg(int frameSize, List<int> data)
     {
         float sum = 0;
         int count = 0;
+        int len = data.Count;
         //string[] avgPoints = new string[data.Length - frameSize + 1];
-        for (int index = data.Length - frameSize; index < data.Length; index++)
+        for (int index = len - frameSize; index < len; index++)
         {
             sum = sum + Math.Abs(data[index-1]);
             // string result_str = result.ToString();

@@ -66,6 +66,11 @@
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG01.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG02.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG03.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG04.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG05.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG06.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG07.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG08.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_Template.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\PieChart\PieChartController.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Scripts\Base\ACMonoBehaviour.cs" />
@@ -163,6 +168,7 @@
     <Compile Include="Assets\Myo\Scripts\Myo.NET\Quaternion.cs" />
     <Compile Include="Assets\Myo\Scripts\Myo.NET\Vector3.cs" />
     <Compile Include="Assets\Myo\Scripts\Myo.NET\libmyo.cs" />
+    <Compile Include="Assets\Myo\Scripts\StoreEMG.cs" />
     <Compile Include="Assets\Myo\Scripts\ThalmicHub.cs" />
     <Compile Include="Assets\Myo\Scripts\ThalmicMyo.cs" />
     <Compile Include="Assets\MyoEMG\CsvReadWrite.cs" />

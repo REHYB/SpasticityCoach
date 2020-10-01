@@ -85,6 +85,111 @@ public class CsvReadWrite : MonoBehaviour {
         File.AppendAllText(filePath, newLine);
     }
 
+    // ==================================== Save raw EMG to CSV file ====================================
+    public void saveRawCSV(string filename, List<float> dat_01, List<float> dat_02, List<float> dat_03, List<float> dat_04, List<float> dat_05, List<float> dat_06, List<float> dat_07, List<float> dat_08, List<DateTime> dat_time)
+    {
+        // Define Jagged array
+        float[][] jagged_dat = new float[8][]
+        {
+            dat_01.ToArray(),
+            dat_02.ToArray(),
+            dat_03.ToArray(),
+            dat_04.ToArray(),
+            dat_05.ToArray(),
+            dat_06.ToArray(),
+            dat_07.ToArray(),
+            dat_08.ToArray()
+        };
+
+        int len = jagged_dat[0].Length;
+
+        // Make sure that the size of the EMG data arrays are the same
+        for (int i = 1; i < 8; i++)
+        {
+            if (jagged_dat[i].Length != len)
+            {
+                // Return new array with correct length
+                float[][] newJagged_dat = new float[len][];
+
+                for (int idx = 0; idx < len; idx++)
+                {
+                    newJagged_dat[i][idx] = jagged_dat[i][idx];
+                }
+            }
+            else { }
+        }
+
+        // Do the same for the timestamp array
+        DateTime[] newTime_dat = new DateTime[len];
+
+        if (dat_time.Count != len)
+        {
+            // Return new array with correct length
+            int counter = 0;
+            for (int idx = dat_time.Count - len - 1; idx < len; idx++)
+            {
+                newTime_dat[counter] = dat_time[idx];
+                counter = counter + 1;
+                UnityEngine.Debug.Log("Counter loop for timestamps: " + counter);
+            }
+
+        }
+
+        else
+        {
+            newTime_dat = dat_time.ToArray();
+            UnityEngine.Debug.Log("Length of the timestamp array and timestamps array are the same");
+            UnityEngine.Debug.Log("dat_time[3]= " + dat_time[3]);
+
+        }
+
+        // Prepare data to be converted to string
+        string[] rowDataTemp = new string[9];
+
+        for (int i = 0; i < len; i++)
+        {
+            for (int j = 0; j < 8; j++)
+            {
+                rowDataTemp[j] = jagged_dat[j][i].ToString();
+            }
+            rowDataTemp[8] = newTime_dat[i].ToString("yyyy-MM-dd HH:mm:ss.fff");
+
+            string newLine = rowDataTemp[0] + "," + rowDataTemp[1] + "," +
+            rowDataTemp[2] + "," + rowDataTemp[3] + "," + rowDataTemp[4] + "," +
+            rowDataTemp[5] + "," + rowDataTemp[6] + "," + rowDataTemp[7] + "," + rowDataTemp[8] +
+            Environment.NewLine;
+
+            string filePath = getPath(filename);
+
+            // If the file doesn't exist, create it and add header
+            if (!File.Exists(filePath))
+            {
+                // Creating First row of titles 
+                string[] rowHeader = new string[9];
+
+                rowHeader[0] = "Raw EMG - Pod01";
+                rowHeader[1] = "Raw EMG - Pod02";
+                rowHeader[2] = "Raw EMG - Pod03";
+                rowHeader[3] = "Raw EMG - Pod04";
+                rowHeader[4] = "Raw EMG - Pod05";
+                rowHeader[5] = "Raw EMG - Pod06";
+                rowHeader[6] = "Raw EMG - Pod07";
+                rowHeader[7] = "Raw EMG - Pod08";
+                rowHeader[8] = "Timestamp";
+
+                string newHeader = rowHeader[0] + "," + rowHeader[1] + "," +
+                    rowHeader[2] + "," + rowHeader[3] + "," + rowHeader[4] + "," +
+                    rowHeader[5] + "," + rowHeader[6] + "," + rowHeader[7] + "," + rowHeader[8] +
+                    Environment.NewLine;
+
+                File.WriteAllText(filePath, newHeader);
+            }
+
+            File.AppendAllText(filePath, newLine);
+        }
+
+    }
+
     // ==================================== Save processed EMG to CSV file ====================================
     public void savePrcCSV(string filename, List<float> dat_01, List<float> dat_02, List<float> dat_03, List<float> dat_04, List<float> dat_05, List<float> dat_06, List<float> dat_07, List<float> dat_08, DateTime[] dat_time)
     {    

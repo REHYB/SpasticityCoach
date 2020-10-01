@@ -51,7 +51,7 @@ public class ThalmicMyo : MonoBehaviour {
     [SerializeField]
     public Thalmic.Myo.Result streamEmg;
     [SerializeField]
-    public int[] emg;
+    public static int[] emg;
 
     // True if and only if this Myo armband has paired successfully, at which point it will provide data and a
     // connection with it will be maintained when possible.
@@ -107,11 +107,11 @@ public class ThalmicMyo : MonoBehaviour {
                 emg = _myo.emgData;
 
                 // Added code lines to save emg data to CSV
-                var timestamp = DateTime.Now;   // Get current local time and date
-
+                /*
                 string filename = "EMG_data.csv";
                 CsvReadWrite csv = new CsvReadWrite();
                 csv.saveEMGCSV(filename, emg, timestamp);
+                */
             }
 
             pose = _myoPose;
