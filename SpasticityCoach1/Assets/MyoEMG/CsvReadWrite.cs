@@ -27,7 +27,7 @@ public class CsvReadWrite : MonoBehaviour {
     private int n_windows;
 
 
-    // ==================================== Save EMG to CSV file ====================================
+    // ==================================== Save raw EMG to CSV file (array) ====================================
     public void saveEMGCSV(string filename, int[] emg_list, DateTime timestamp) {
         string[] rowDataTemp = new string[9];
 
@@ -85,11 +85,11 @@ public class CsvReadWrite : MonoBehaviour {
         File.AppendAllText(filePath, newLine);
     }
 
-    // ==================================== Save raw EMG to CSV file ====================================
-    public void saveRawCSV(string filename, List<float> dat_01, List<float> dat_02, List<float> dat_03, List<float> dat_04, List<float> dat_05, List<float> dat_06, List<float> dat_07, List<float> dat_08, List<DateTime> dat_time)
+    // ==================================== Save raw EMG to CSV file (list) ====================================
+    public void saveRawCSV(string filename, List<int> dat_01, List<int> dat_02, List<int> dat_03, List<int> dat_04, List<int> dat_05, List<int> dat_06, List<int> dat_07, List<int> dat_08, List<DateTime> dat_time)
     {
         // Define Jagged array
-        float[][] jagged_dat = new float[8][]
+        int[][] jagged_dat = new int[8][]
         {
             dat_01.ToArray(),
             dat_02.ToArray(),
@@ -193,6 +193,22 @@ public class CsvReadWrite : MonoBehaviour {
     // ==================================== Save processed EMG to CSV file ====================================
     public void savePrcCSV(string filename, List<float> dat_01, List<float> dat_02, List<float> dat_03, List<float> dat_04, List<float> dat_05, List<float> dat_06, List<float> dat_07, List<float> dat_08, DateTime[] dat_time)
     {    
+        // It seems like EMG data array 01 and 06 are always +1 element bigger than the other.
+        // If so, trim
+        while (dat_01.Count > dat_02.Count && dat_06.Count > dat_02.Count) {
+            dat_01.RemoveAt(dat_01.Count - 1);
+            dat_06.RemoveAt(dat_06.Count - 1);
+        }
+
+        // Check in terminal that the size of the timestamp array is the same
+        int len = dat_01.Count;
+        if (dat_time.Length == len) {
+            UnityEngine.Debug.Log("Length of the timestamp array and emg array are the same");
+        }
+        else {
+            UnityEngine.Debug.Log("Length of the timestamp array and emg array are NOT the same");
+        }
+
         // Define Jagged array
         float[][] jagged_dat = new float[8][]
         {
@@ -206,45 +222,15 @@ public class CsvReadWrite : MonoBehaviour {
             dat_08.ToArray()
         };
 
-        int len = jagged_dat[0].Length;
-
-        // Make sure that the size of the EMG data arrays are the same
-        for (int i=1; i < 8; i++)
-        {
-            if (jagged_dat[i].Length != len)
-            {
-                // Return new array with correct length
-                float[][] newJagged_dat = new float[len][];
-
-                for (int idx = 0; idx < len; idx++)
-                {
-                    newJagged_dat[i][idx] = jagged_dat[i][idx];
-                }
-            }
-            else { }
-        }
-
-        // Do the same for the timestamp array
-        DateTime[] newTime_dat = new DateTime[len];
-
-        if (dat_time.Length != len)
-        {
-            // Return new array with correct length
-            int counter = 0;
-            for (int idx = dat_time.Length-len-1; idx<len; idx++) {
-                newTime_dat[counter] = dat_time[idx];
-                counter = counter + 1;
-                UnityEngine.Debug.Log("Counter loop for timestamps: " + counter);
-            }
-            
-        }
-
-        else {
-            newTime_dat = dat_time;
-            UnityEngine.Debug.Log("Length of the timestamp array and timestamps array are the same");
-            UnityEngine.Debug.Log("dat_time[3]= "+ dat_time[3]);
-
-        }
+        UnityEngine.Debug.Log("----------------------------------------------");
+        UnityEngine.Debug.Log("Size of Processed EMG 01 (trimmed): " + jagged_dat[0].Length);
+        UnityEngine.Debug.Log("Size of Processed EMG 02 (trimmed): " + jagged_dat[1].Length);
+        UnityEngine.Debug.Log("Size of Processed EMG 03 (trimmed): " + jagged_dat[2].Length);
+        UnityEngine.Debug.Log("Size of Processed EMG 04 (trimmed): " + jagged_dat[3].Length);
+        UnityEngine.Debug.Log("Size of Processed EMG 05 (trimmed): " + jagged_dat[4].Length);
+        UnityEngine.Debug.Log("Size of Processed EMG 06 (trimmed): " + jagged_dat[5].Length);
+        UnityEngine.Debug.Log("Size of Processed EMG 07 (trimmed): " + jagged_dat[6].Length);
+        UnityEngine.Debug.Log("Size of Processed EMG 08 (trimmed): " + jagged_dat[7].Length);
 
         // Prepare data to be converted to string
         string[] rowDataTemp = new string[9];
@@ -255,7 +241,7 @@ public class CsvReadWrite : MonoBehaviour {
             {
                 rowDataTemp[j] = jagged_dat[j][i].ToString();
             }
-            rowDataTemp[8] = newTime_dat[i].ToString("yyyy-MM-dd HH:mm:ss.fff");
+            rowDataTemp[8] = dat_time[i].ToString("yyyy-MM-dd HH:mm:ss.fff");
 
             string newLine = rowDataTemp[0] + "," + rowDataTemp[1] + "," +
             rowDataTemp[2] + "," + rowDataTemp[3] + "," + rowDataTemp[4] + "," +

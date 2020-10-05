@@ -69,41 +69,19 @@ public class DataFltr : MonoBehaviour
     public float MovingAvg(int frameSize, List<int> data)
     {
         float sum = 0;
-        int count = 0;
         int len = data.Count;
         //string[] avgPoints = new string[data.Length - frameSize + 1];
         for (int index = len - frameSize; index < len; index++)
         {
             sum = sum + Math.Abs(data[index-1]);
             // string result_str = result.ToString();
-            count = count + 1;
         }
-
-        //UnityEngine.Debug.Log("Counter for sum elements: " + count);
 
         float result = sum / frameSize;
         sum = 0;
 
         return result;
 
-    }
-
-    // ==================================== Get Timestamps for Moving Avgs ====================================
-    public string[] BlockgAvg_Time(int framerate, string[] timestamp)
-    {
-        int length = timestamp.Length;
-        //UnityEngine.Debug.Log("Checking the size of timestamp: " + length);
-
-        string[] avg_emg_time = new string[length / framerate];
-
-        int counter = 0;
-        for (int i = 0; i < length; i =+ framerate) {
-            avg_emg_time[counter] = timestamp[i + (counter * framerate) +1];
-            counter = +1;
-            //UnityEngine.Debug.Log("Counter: " + counter);
-        }
-
-        return avg_emg_time;
     }
 
     // ==================================== Read from CSV file ====================================

@@ -105,13 +105,7 @@ public class ThalmicMyo : MonoBehaviour {
             }
             if (isPaired && streamEmg == Thalmic.Myo.Result.Success) {
                 emg = _myo.emgData;
-
-                // Added code lines to save emg data to CSV
-                /*
-                string filename = "EMG_data.csv";
-                CsvReadWrite csv = new CsvReadWrite();
-                csv.saveEMGCSV(filename, emg, timestamp);
-                */
+                UnityEngine.Debug.Log("Size of raw emg array (ThalmicMyo): " + emg.Length);
             }
 
             pose = _myoPose;

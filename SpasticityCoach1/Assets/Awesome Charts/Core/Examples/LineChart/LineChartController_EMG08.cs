@@ -20,25 +20,19 @@ namespace AwesomeCharts
             lineChart.Reset();  // Cleans the chart
             ConfigChart();
 
-            /*
-            // Read CSV
-            var values = csvFltr.readEMGCSV("EMG_data.csv");
-            int[] PodData = values.Item1;
-            */
-
-            // Don't read EMG from CSV, retrieve variable directly
-            // int[] PodData = ThalmicMyo.storeEMG08.ToArray();
             List<int> PodData = StoreEMG.storeEMG08;
-
 
             // Moving Avg Filter
             fr = 5;    // Define the framesize of your block average window
 
-            DataFltr csvFltr = new DataFltr();
-            avg_emg_Pod08.Add(csvFltr.MovingAvg(fr, PodData));     // Elapsed time for all MovingAvg (fr 10): 4 ms for 6,900 rows --> x2.45 = 9.8 ms
+            if (PodData.Count > fr)
+            {
+                DataFltr csvFltr = new DataFltr();
+                avg_emg_Pod08.Add(csvFltr.MovingAvg(fr, PodData));     // Elapsed time for all MovingAvg (fr 10): 4 ms for 6,900 rows --> x2.45 = 9.8 ms
 
-            // Plot data
-            AddChartData(avg_emg_Pod08);
+                // Plot data
+                AddChartData(avg_emg_Pod08);
+            }
         }
 
         private void ConfigChart()

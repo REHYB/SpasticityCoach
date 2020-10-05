@@ -2,6 +2,8 @@
 
 using UnityEngine;
 using UnityEditor;
+
+using System;
 using System.Collections;
 using System.Collections.Generic;
 
@@ -20,24 +22,19 @@ namespace AwesomeCharts
             lineChart.Reset();  // Cleans the chart
             ConfigChart();
 
-            /*
-            // Read CSV
-            var values = csvFltr.readEMGCSV("EMG_data.csv");
-            int[] PodData = values.Item1;
-            */
-
-            // Don't read EMG from CSV, retrieve variable directly
-            //int[] PodData = ThalmicMyo.storeEMG06.ToArray();
             List<int> PodData = StoreEMG.storeEMG06;
 
             // Moving Avg Filter
             fr = 5;    // Define the framesize of your block average window
 
-            DataFltr csvFltr = new DataFltr();
-            avg_emg_Pod06.Add(csvFltr.MovingAvg(fr, PodData));     // Elapsed time for all MovingAvg (fr 10): 4 ms for 6,900 rows --> x2.45 = 9.8 ms
+            if (PodData.Count > fr)
+            {
+                DataFltr csvFltr = new DataFltr();
+                avg_emg_Pod06.Add(csvFltr.MovingAvg(fr, PodData));     // Elapsed time for all MovingAvg (fr 10): 4 ms for 6,900 rows --> x2.45 = 9.8 ms
 
-            // Plot data
-            AddChartData(avg_emg_Pod06);
+                // Plot data
+                AddChartData(avg_emg_Pod06);
+            }
         }
 
         private void ConfigChart()

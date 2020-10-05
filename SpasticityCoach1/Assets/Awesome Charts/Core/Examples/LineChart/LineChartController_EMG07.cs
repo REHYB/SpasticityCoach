@@ -34,11 +34,14 @@ namespace AwesomeCharts
             // Moving Avg Filter
             fr = 5;    // Define the framesize of your block average window
 
-            DataFltr csvFltr = new DataFltr();
-            avg_emg_Pod07.Add(csvFltr.MovingAvg(fr, PodData));     // Elapsed time for all MovingAvg (fr 10): 4 ms for 6,900 rows --> x2.45 = 9.8 ms
+            if (PodData.Count > fr)
+            {
+                DataFltr csvFltr = new DataFltr();
+                avg_emg_Pod07.Add(csvFltr.MovingAvg(fr, PodData));     // Elapsed time for all MovingAvg (fr 10): 4 ms for 6,900 rows --> x2.45 = 9.8 ms
 
-            // Plot data
-            AddChartData(avg_emg_Pod07);
+                // Plot data
+                AddChartData(avg_emg_Pod07);
+            }
         }
 
         private void ConfigChart()
