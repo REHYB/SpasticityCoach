@@ -1213,6 +1213,7 @@
     <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\SetPropertyUtility.cs" />
     <Compile Include="Assets\ClientMotion.cs" />
     <Compile Include="Assets\ClientRoutine1.cs" />
+    <Compile Include="Assets\ClientRoutine_Sitting.cs" />
     <Compile Include="Assets\Instructions.cs" />
     <Compile Include="Assets\JointOrientationClient.cs" />
     <Compile Include="Assets\Myo Samples\Scripts\ColorBoxByPose.cs" />
@@ -1231,6 +1232,7 @@
     <Compile Include="Assets\Myo\Scripts\ThalmicMyo.cs" />
     <Compile Include="Assets\MyoEMG\CsvReadWrite.cs" />
     <Compile Include="Assets\MyoEMG\DataFltr.cs" />
+    <Compile Include="Assets\SaveRoutine.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />

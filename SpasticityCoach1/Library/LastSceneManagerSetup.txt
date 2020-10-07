@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/UMA-test_EMG.unity
+- path: Assets/UMA-Sitting-EMG.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

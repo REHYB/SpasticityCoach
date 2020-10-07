@@ -14,7 +14,7 @@ public class Instructions : MonoBehaviour {
     void Update() {
         //secondsNow = DateTime.Now.Hour * 3600 + DateTime.Now.Minute * 60 + DateTime.Now.Second - secondsStart;
         TextMeshProUGUI textmeshPro = GetComponent<TextMeshProUGUI>();
-        textmeshPro.SetText(ClientRoutine1.instruction1);
+        textmeshPro.SetText(ClientRoutine_Sitting.instruction1);
 
 
 
