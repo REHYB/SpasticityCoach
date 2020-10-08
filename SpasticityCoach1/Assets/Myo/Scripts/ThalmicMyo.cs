@@ -105,7 +105,7 @@ public class ThalmicMyo : MonoBehaviour {
             }
             if (isPaired && streamEmg == Thalmic.Myo.Result.Success) {
                 emg = _myo.emgData;
-                UnityEngine.Debug.Log("Size of raw emg array (ThalmicMyo): " + emg.Length);
+                //UnityEngine.Debug.Log("Size of raw emg array (ThalmicMyo): " + emg.Length);
             }
 
             pose = _myoPose;
