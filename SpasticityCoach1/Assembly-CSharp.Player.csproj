@@ -1216,6 +1216,7 @@
     <Compile Include="Assets\ClientRoutine_Sitting.cs" />
     <Compile Include="Assets\Instructions.cs" />
     <Compile Include="Assets\JointOrientationClient.cs" />
+    <Compile Include="Assets\ModelColour.cs" />
     <Compile Include="Assets\Myo Samples\Scripts\ColorBoxByPose.cs" />
     <Compile Include="Assets\Myo Samples\Scripts\JointOrientation.cs" />
     <Compile Include="Assets\Myo Samples\Scripts\SampleSceneGUI.cs" />
