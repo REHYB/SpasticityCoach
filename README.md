@@ -5,9 +5,9 @@ This is the README for the *REHYB - Spasticity Assessment Device* project, devel
 
 ## 01 - SpasticityCoach1 folder
 The *SpasticityCoach1* folder contains the Unity project with the demo scenes, assets and C# scripts:
+![Unity EMG Demo](UnityDemo.png)
 
 **Main scenes:** UMA-Sitting-EMG.unity
-![Unity EMG Demo](/UnityDemo.png)
 
 **Main scripts:**
 - **ClientMotion.cs**: controls the patient avatar.
