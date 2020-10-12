@@ -165,7 +165,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100158, guid: e8df3d267d7d965469313c7824cb5f69, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400158, guid: e8df3d267d7d965469313c7824cb5f69, type: 3}
       propertyPath: m_LocalPosition.x
@@ -259,6 +259,70 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1d9f55bf2ca4ac1b43b5d62c98c22a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  prc_emg_Pod01: []
+  prc_emg_Pod02: []
+  prc_emg_Pod03: []
+  prc_emg_Pod04: []
+  prc_emg_Pod05: []
+  prc_emg_Pod06: []
+  prc_emg_Pod07: []
+  prc_emg_Pod08: []
+  prc_emg_time: []
+  raw_emg_Pod01: 
+  raw_emg_Pod02: 
+  raw_emg_Pod03: 
+  raw_emg_Pod04: 
+  raw_emg_Pod05: 
+  raw_emg_Pod06: 
+  raw_emg_Pod07: 
+  raw_emg_Pod08: 
+--- !u!1 &254236474
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 254236475}
+  - component: {fileID: 254236476}
+  m_Layer: 0
+  m_Name: LineChartController_EMG04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &254236475
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254236474}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18, y: -1.2747175, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 708337067}
+  m_Father: {fileID: 752712758}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &254236476
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 254236474}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c63336ece872b74ba654da0835cb2d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineChart: {fileID: 708337068}
+  graph_grad: {fileID: 0}
+  fr: 0
 --- !u!1001 &272087768
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -465,10 +529,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -487,10 +551,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -650,7 +714,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineChart: {fileID: 297380232}
-  graph_grad: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+  graph_grad: {fileID: 0}
+  fr: 0
 --- !u!1 &677556421
 GameObject:
   m_ObjectHideFlags: 0
@@ -696,7 +761,150 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineChart: {fileID: 2065230012}
-  graph_grad: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+  graph_grad: {fileID: 0}
+  fr: 0
+--- !u!1 &708337066
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 708337067}
+  - component: {fileID: 708337069}
+  - component: {fileID: 708337068}
+  m_Layer: 5
+  m_Name: LineChart_EMG04
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &708337067
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708337066}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
+  m_Children: []
+  m_Father: {fileID: 254236475}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -10.39075, y: 4.9847174}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &708337068
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708337066}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf5bb822e0ee4e90b39dccd6577b2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legendView: {fileID: 0}
+  gridConfig:
+    verticalLinesCount: 0
+    horizontalLinesCount: 5
+    verticalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+    horizontalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 0.11764706}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  frameConfig:
+    drawLeftLine: 1
+    drawRightLine: 0
+    drawTopLine: 0
+    drawBottomLine: 0
+    linesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  axisConfig:
+    verticalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+    horizontalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+  config:
+    valueIndicatorSize: 10
+    showValueIndicators: 1
+    popupPrefab: {fileID: 0}
+  data:
+    dataSets:
+    - title: 
+      entries: []
+      lineThickness: 5
+      lineColor: {r: 1, g: 1, b: 1, a: 1}
+      fillColor: {r: 0, g: 0, b: 0, a: 0}
+      fillTexture: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+      useBezier: 0
+--- !u!222 &708337069
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 708337066}
+  m_CullTransparentMesh: 0
 --- !u!1 &712938876 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100158, guid: e8df3d267d7d965469313c7824cb5f69,
@@ -810,6 +1018,11 @@ RectTransform:
   - {fileID: 1510370088}
   - {fileID: 652521781}
   - {fileID: 677556422}
+  - {fileID: 254236475}
+  - {fileID: 937984134}
+  - {fileID: 1991737881}
+  - {fileID: 900180086}
+  - {fileID: 1448368070}
   m_Father: {fileID: 10814855}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -903,6 +1116,53 @@ PrefabInstance:
       objectReference: {fileID: 2100088, guid: e8df3d267d7d965469313c7824cb5f69, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8df3d267d7d965469313c7824cb5f69, type: 3}
+--- !u!1 &900180085
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 900180086}
+  - component: {fileID: 900180087}
+  m_Layer: 0
+  m_Name: LineChartController_EMG07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &900180086
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900180085}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18, y: -1.2747175, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1085959618}
+  m_Father: {fileID: 752712758}
+  m_RootOrder: 8
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &900180087
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 900180085}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 988db1263c7462148afe99e866a394c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineChart: {fileID: 1085959619}
+  graph_grad: {fileID: 0}
+  fr: 0
 --- !u!1001 &934557731
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -982,6 +1242,53 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: b3bc03d6f59845a4aafe092d3415d9cd, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ca2a18daa91a3b04ca17d8b3c0c192d8, type: 3}
+--- !u!1 &937984133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 937984134}
+  - component: {fileID: 937984135}
+  m_Layer: 0
+  m_Name: LineChartController_EMG05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &937984134
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937984133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18, y: -1.2747175, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1479949975}
+  m_Father: {fileID: 752712758}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &937984135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 937984133}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5d57f26ca345cf041883d52497acae83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineChart: {fileID: 1479949976}
+  graph_grad: {fileID: 0}
+  fr: 0
 --- !u!1 &1060693806
 GameObject:
   m_ObjectHideFlags: 0
@@ -1128,6 +1435,148 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c6ae233dea2246ea87607cb732ed939, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1085959617
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1085959618}
+  - component: {fileID: 1085959620}
+  - component: {fileID: 1085959619}
+  m_Layer: 5
+  m_Name: LineChart_EMG07
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1085959618
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085959617}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
+  m_Children: []
+  m_Father: {fileID: 900180086}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -10.39075, y: 4.9847174}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1085959619
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085959617}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf5bb822e0ee4e90b39dccd6577b2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legendView: {fileID: 0}
+  gridConfig:
+    verticalLinesCount: 0
+    horizontalLinesCount: 5
+    verticalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+    horizontalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 0.11764706}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  frameConfig:
+    drawLeftLine: 1
+    drawRightLine: 0
+    drawTopLine: 0
+    drawBottomLine: 0
+    linesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  axisConfig:
+    verticalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+    horizontalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+  config:
+    valueIndicatorSize: 10
+    showValueIndicators: 1
+    popupPrefab: {fileID: 0}
+  data:
+    dataSets:
+    - title: 
+      entries: []
+      lineThickness: 5
+      lineColor: {r: 1, g: 1, b: 1, a: 1}
+      fillColor: {r: 0, g: 0, b: 0, a: 0}
+      fillTexture: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+      useBezier: 0
+--- !u!222 &1085959620
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1085959617}
+  m_CullTransparentMesh: 0
 --- !u!1 &1092467155
 GameObject:
   m_ObjectHideFlags: 0
@@ -1174,6 +1623,53 @@ Transform:
   m_Father: {fileID: 752712758}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1448368069
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1448368070}
+  - component: {fileID: 1448368071}
+  m_Layer: 0
+  m_Name: LineChartController_EMG08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1448368070
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448368069}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18, y: -1.2747175, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2002494877}
+  m_Father: {fileID: 752712758}
+  m_RootOrder: 9
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1448368071
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1448368069}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65d127c3bd542844c99883b5aaf9006f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineChart: {fileID: 2002494878}
+  graph_grad: {fileID: 0}
+  fr: 0
 --- !u!1 &1450426465 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100000, guid: 863250160b56e46dbb2d227833b7338a,
@@ -1200,11 +1696,196 @@ MonoBehaviour:
   accelerometer: {x: 0, y: 0, z: 0}
   gyroscope: {x: 0, y: 0, z: 0}
   streamEmg: 0
-  emg: 
   _myoXDirection: 2
   _myoEmg: 00000000000000000000000000000000000000000000000000000000
   _myoPose: 65535
   _myoStreamEmg: 1
+--- !u!1 &1479949974
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1479949975}
+  - component: {fileID: 1479949977}
+  - component: {fileID: 1479949976}
+  m_Layer: 5
+  m_Name: LineChart_EMG05
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1479949975
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479949974}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
+  m_Children: []
+  m_Father: {fileID: 937984134}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -10.39075, y: 4.9847174}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1479949976
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479949974}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf5bb822e0ee4e90b39dccd6577b2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legendView: {fileID: 0}
+  gridConfig:
+    verticalLinesCount: 0
+    horizontalLinesCount: 5
+    verticalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+    horizontalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 0.11764706}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  frameConfig:
+    drawLeftLine: 1
+    drawRightLine: 0
+    drawTopLine: 0
+    drawBottomLine: 0
+    linesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  axisConfig:
+    verticalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+    horizontalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+  config:
+    valueIndicatorSize: 10
+    showValueIndicators: 1
+    popupPrefab: {fileID: 0}
+  data:
+    dataSets:
+    - title: 
+      entries: []
+      lineThickness: 5
+      lineColor: {r: 1, g: 1, b: 1, a: 1}
+      fillColor: {r: 0, g: 0, b: 0, a: 0}
+      fillTexture: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+      useBezier: 0
+--- !u!222 &1479949977
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479949974}
+  m_CullTransparentMesh: 0
+--- !u!1 &1502375736
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1502375738}
+  - component: {fileID: 1502375737}
+  m_Layer: 0
+  m_Name: StoreEMG_List
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1502375737
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502375736}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c4a917f63448a0b479c55dddcdcc1f25, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  counter: 0
+--- !u!4 &1502375738
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1502375736}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.84050715, y: 2.7714288, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1510370087
 GameObject:
   m_ObjectHideFlags: 0
@@ -1250,7 +1931,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineChart: {fileID: 1830702383}
-  graph_grad: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+  graph_grad: {fileID: 0}
+  fr: 0
 --- !u!1 &1627719067
 GameObject:
   m_ObjectHideFlags: 0
@@ -1289,8 +1971,15 @@ MonoBehaviour:
   i_emg_Pod07: 
   i_emg_Pod08: 
   emg_time: []
+  avg_emg_Pod01: []
+  avg_emg_Pod02: []
+  avg_emg_Pod03: []
+  avg_emg_Pod04: []
+  avg_emg_Pod05: []
+  avg_emg_Pod06: []
+  avg_emg_Pod07: []
+  avg_emg_Pod08: []
   avg_emg_time: []
-  avgPoints: []
   fr: 0
   avg_timestamp: []
 --- !u!4 &1627719069
@@ -1534,10 +2223,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -1556,10 +2245,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -1657,6 +2346,337 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1984271603
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1984271604}
+  - component: {fileID: 1984271606}
+  - component: {fileID: 1984271605}
+  m_Layer: 5
+  m_Name: LineChart_EMG06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1984271604
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984271603}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1991737881}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -10.39075, y: 4.9847174}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1984271605
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984271603}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf5bb822e0ee4e90b39dccd6577b2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legendView: {fileID: 0}
+  gridConfig:
+    verticalLinesCount: 0
+    horizontalLinesCount: 5
+    verticalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+    horizontalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 0.11764706}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  frameConfig:
+    drawLeftLine: 1
+    drawRightLine: 0
+    drawTopLine: 0
+    drawBottomLine: 0
+    linesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  axisConfig:
+    verticalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+    horizontalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+  config:
+    valueIndicatorSize: 10
+    showValueIndicators: 1
+    popupPrefab: {fileID: 0}
+  data:
+    dataSets:
+    - title: 
+      entries: []
+      lineThickness: 5
+      lineColor: {r: 1, g: 1, b: 1, a: 1}
+      fillColor: {r: 0, g: 0, b: 0, a: 0}
+      fillTexture: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+      useBezier: 0
+--- !u!222 &1984271606
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1984271603}
+  m_CullTransparentMesh: 0
+--- !u!1 &1991737880
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1991737881}
+  - component: {fileID: 1991737882}
+  m_Layer: 0
+  m_Name: LineChartController_EMG06
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1991737881
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991737880}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 18, y: -1.2747175, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1984271604}
+  m_Father: {fileID: 752712758}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1991737882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1991737880}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9e372376950aea14ea6df7f40111cb42, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lineChart: {fileID: 1984271605}
+  graph_grad: {fileID: 0}
+  fr: 0
+--- !u!1 &2002494876
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2002494877}
+  - component: {fileID: 2002494879}
+  - component: {fileID: 2002494878}
+  m_Layer: 5
+  m_Name: LineChart_EMG08
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2002494877
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002494876}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 0.025, y: 0.025, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1448368070}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -10.39075, y: 4.9847174}
+  m_SizeDelta: {x: 200, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2002494878
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002494876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf5bb822e0ee4e90b39dccd6577b2a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  legendView: {fileID: 0}
+  gridConfig:
+    verticalLinesCount: 0
+    horizontalLinesCount: 5
+    verticalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+    horizontalLinesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 0.11764706}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  frameConfig:
+    drawLeftLine: 1
+    drawRightLine: 0
+    drawTopLine: 0
+    drawBottomLine: 0
+    linesConfig:
+      thickness: 1
+      color: {r: 1, g: 1, b: 1, a: 1}
+      dashed: 0
+      dashLength: 0
+      dashSpacing: 0
+  axisConfig:
+    verticalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+    horizontalAxisConfig:
+      labelsConfig:
+        labelSize: 10
+        labelColor: {r: 1, g: 1, b: 1, a: 1}
+        labelMargin: 10
+        labelFont: {fileID: 0}
+        labelFontStyle: 0
+      bounds:
+        min: 0
+        max: 200
+        x_min: 0
+        x_max: 50
+        minAutoValue: 0
+        maxAutoValue: 0
+      axisLabelPrefab: {fileID: 0}
+      labelsCount: 5
+      labelsAlignment: 0
+      drawStartValue: 1
+      drawEndValue: 1
+      valueFormatterConfig:
+        valueDecimalPlaces: 0
+        customValues: []
+  config:
+    valueIndicatorSize: 10
+    showValueIndicators: 1
+    popupPrefab: {fileID: 0}
+  data:
+    dataSets:
+    - title: 
+      entries: []
+      lineThickness: 5
+      lineColor: {r: 1, g: 1, b: 1, a: 1}
+      fillColor: {r: 0, g: 0, b: 0, a: 0}
+      fillTexture: {fileID: 2800000, guid: e79b36622be6d45698d64f76f3af9b18, type: 3}
+      useBezier: 0
+--- !u!222 &2002494879
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2002494876}
+  m_CullTransparentMesh: 0
 --- !u!1 &2065230010
 GameObject:
   m_ObjectHideFlags: 0
@@ -1742,10 +2762,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}
@@ -1764,10 +2784,10 @@ MonoBehaviour:
         labelFont: {fileID: 0}
         labelFontStyle: 0
       bounds:
-        min: -200
+        min: 0
         max: 200
         x_min: 0
-        x_max: 30
+        x_max: 50
         minAutoValue: 0
         maxAutoValue: 0
       axisLabelPrefab: {fileID: 0}

@@ -1,11 +1,12 @@
 
 using UnityEngine;
+using UnityEditor;
+using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Text;
 using System.IO;
-using System;
-
+using System.Globalization;
+using System.Text;
 using System.Linq;  // To convert EMG from system.array to system.list
 
 
@@ -47,8 +48,10 @@ public class ThalmicMyo : MonoBehaviour {
     public UnityEngine.Vector3 gyroscope;
 
     // Additional lines of code for Emg streaming
+    [SerializeField]
     public Thalmic.Myo.Result streamEmg;
-    public int[] emg;
+    [SerializeField]
+    public static int[] emg;
 
     // True if and only if this Myo armband has paired successfully, at which point it will provide data and a
     // connection with it will be maintained when possible.
@@ -83,11 +86,11 @@ public class ThalmicMyo : MonoBehaviour {
         }
     }
 
-    void Update() {
+    public int[] Update() {
         // Code for mapping motion to avatar elbow
         ClientRoutine1.elbowMyo = GetComponent<Transform>().rotation; //Supinate z, Internal rotation y, Bicep x,
 
-        lock (_lock) {
+        lock (_lock) {      // The lock keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section.
             armSynced = _myoArmSynced;
             arm = _myoArm;
             xDirection = _myoXDirection;
@@ -102,17 +105,14 @@ public class ThalmicMyo : MonoBehaviour {
             }
             if (isPaired && streamEmg == Thalmic.Myo.Result.Success) {
                 emg = _myo.emgData;
-
-                // Added code lines to save emg data to CSV
-                var timestamp = DateTime.Now;   // Get current local time and date
-                string filename = "EMG_data.csv";
-                CsvReadWrite csv = new CsvReadWrite();
-                csv.saveEMGCSV(filename, emg, timestamp);
+                //UnityEngine.Debug.Log("Size of raw emg array (ThalmicMyo): " + emg.Length);
             }
 
             pose = _myoPose;
             unlocked = _myoUnlocked;
         }
+        return emg;
+
     }
 
     void myo_OnArmSync(object sender, Thalmic.Myo.ArmSyncedEventArgs e) {
@@ -150,7 +150,6 @@ public class ThalmicMyo : MonoBehaviour {
     }
 
     // Emg - New code
-    //void myo_OnEmgData(object sender, Thalmic.Myo.EmgDataEventArgs e) {
     public void myo_OnEmgData(object sender, Thalmic.Myo.EmgDataEventArgs e)
     {
         lock (_lock) {

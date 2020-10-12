@@ -13,9 +13,9 @@ namespace AwesomeCharts {
 
             // Two next lines added - different values for x-axis
         public const float XAXIS_MIN_VALUE = 0;         // X-axis values
-        public const float XAXIS_MAX_VALUE = 55;
+        public const float XAXIS_MAX_VALUE = 50;
 
-        public const float AXIS_MIN_VALUE = -200;       // Y-axis values
+        public const float AXIS_MIN_VALUE = 0;       // Y-axis values
         public const float AXIS_MAX_VALUE = 200;     
         public static Color AXIS_LINE_COLOR = Color.white;
         public static Color AXIS_LABEL_COLOR = Color.white;

@@ -98,6 +98,7 @@ namespace AwesomeCharts {
                 OnDrawChartContent ();
                 UpdateLegend ();
                 isDirty = false;
+                //isDirty = true;
             }
         }
 

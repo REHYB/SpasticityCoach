@@ -78,7 +78,7 @@ namespace AwesomeCharts {
             }
         }
 
-        void Reset () {
+        public void Reset () {
             data = new LineData (new LineDataSet ());
             config = new LineChartConfig ();
         }
