@@ -59,10 +59,13 @@ public class ModelColour : MonoBehaviour {
 
         var allRenderers = new Renderer[] {eyebrowRenderer, eyelashRenderer, eyesInnerRenderer, eyesOuterRenderer, feetRenderer, handsRenderer,
             headRenderer, legsRenderer, torsoRenderer, underwearRenderer, hairRenderer, hairbandRenderer, teethRenderer, tongueRenderer};
-
-        // Set default model colour as white
+        
+        // Set model colour
+        torsoRenderer.material.SetColor("_Color", colour);
+        /*
         for (int i = 0; i < allRenderers.Length; i++) {
             allRenderers[i].material.SetColor("_Color", colour);
         }
+        */
     }
 }
