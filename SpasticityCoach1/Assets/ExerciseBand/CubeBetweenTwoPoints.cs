@@ -67,7 +67,7 @@ public class CubeBetweenTwoPoints : MonoBehaviour
         cube.transform.LookAt(beginPoint);
         
         // Vector3 localScale = cube.transform.localScale;
-        Vector3 bandScale = new Vector3(0.1f, 0.3f, 0.1f);
+        Vector3 bandScale = new Vector3(0.05f, 0.3f, 1f);
         Vector3 localScale = bandScale;
         localScale.z = (endPoint - beginPoint).magnitude;
         cube.transform.localScale = localScale;

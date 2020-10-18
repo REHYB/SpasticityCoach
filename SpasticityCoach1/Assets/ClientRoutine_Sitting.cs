@@ -14,6 +14,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
     public static string instruction1 = "Welcome to PIEGO"; //Personalized Independent Exercise Goals and Occupations
     public static Quaternion elbowMyo = new Quaternion(0, 0, 0, 0);
     public static int routineStage = 0;
+    int elbowSpeedCounter = 0;
 
     Animator anim;
 
@@ -46,7 +47,6 @@ public class ClientRoutine_Sitting : MonoBehaviour
     int makeTransition = Animator.StringToHash("MakeTransition");
     bool reverseMotion = false;
     float elbowSpeed = 1.5f;   // Changed initial elbowSpeed from 0.25f to 1.5f so that it is faster
-    int elbowSpeedCounter = 0;
     float elbowMotion = 120f;
 
     Color trans_snow = new Color(252 / 255f, 239 / 255f, 239 / 255f, 0.2f);     // Colour for the mesh renderer
@@ -191,9 +191,9 @@ public class ClientRoutine_Sitting : MonoBehaviour
             case (5):
                 {
                     instruction1 = "Supinate your wrist";
-                    UnityEngine.Debug.Log("Shoulder X: " + rightShoulder_rot.x);
-                    UnityEngine.Debug.Log("Shoulder Y: " + rightShoulder_rot.y);
-                    UnityEngine.Debug.Log("Shoulder Z: " + rightShoulder_rot.z);
+                    //UnityEngine.Debug.Log("Shoulder X: " + rightShoulder_rot.x);
+                    //UnityEngine.Debug.Log("Shoulder Y: " + rightShoulder_rot.y);
+                    //UnityEngine.Debug.Log("Shoulder Z: " + rightShoulder_rot.z);
 
                     setColour.setModelColour(trans_maxblue);
 

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.IO;
 using System;
+using System.Linq;
 
 public class CsvReadWrite : MonoBehaviour {
 
@@ -88,6 +89,36 @@ public class CsvReadWrite : MonoBehaviour {
     // ==================================== Save raw EMG to CSV file (list) ====================================
     public void saveRawCSV(string filename, List<int> dat_01, List<int> dat_02, List<int> dat_03, List<int> dat_04, List<int> dat_05, List<int> dat_06, List<int> dat_07, List<int> dat_08, List<DateTime> dat_time)
     {
+        // Identify the array with the least elements
+        int[] compareLen = { dat_01.Count, dat_02.Count, dat_03.Count, dat_04.Count, dat_05.Count, dat_06.Count, dat_07.Count, dat_08.Count };
+        int len = compareLen.Min();
+        UnityEngine.Debug.Log("Minimum array length: " + len);
+
+        // Trim to size
+        while (dat_01.Count > len) {
+            dat_01.RemoveAt(dat_01.Count - 1); }
+
+        while (dat_02.Count > len) {
+            dat_02.RemoveAt(dat_02.Count - 1); }
+
+        while (dat_03.Count > len) {
+            dat_03.RemoveAt(dat_03.Count - 1); }
+
+        while (dat_04.Count > len) {
+            dat_04.RemoveAt(dat_04.Count - 1); }
+
+        while (dat_05.Count > len) {
+            dat_05.RemoveAt(dat_05.Count - 1); }
+
+        while (dat_06.Count > len) {
+            dat_06.RemoveAt(dat_06.Count - 1); }
+
+        while (dat_07.Count > len) {
+            dat_07.RemoveAt(dat_07.Count - 1); }
+
+        while (dat_08.Count > len) {
+            dat_08.RemoveAt(dat_08.Count - 1); }
+        
         // Define Jagged array
         int[][] jagged_dat = new int[8][]
         {
@@ -101,6 +132,7 @@ public class CsvReadWrite : MonoBehaviour {
             dat_08.ToArray()
         };
 
+        /*
         int len = jagged_dat[0].Length;
 
         // Make sure that the size of the EMG data arrays are the same
@@ -118,6 +150,7 @@ public class CsvReadWrite : MonoBehaviour {
             }
             else { }
         }
+        */
 
         // Do the same for the timestamp array
         DateTime[] newTime_dat = new DateTime[len];
@@ -192,16 +225,46 @@ public class CsvReadWrite : MonoBehaviour {
 
     // ==================================== Save processed EMG to CSV file ====================================
     public void savePrcCSV(string filename, List<float> dat_01, List<float> dat_02, List<float> dat_03, List<float> dat_04, List<float> dat_05, List<float> dat_06, List<float> dat_07, List<float> dat_08, DateTime[] dat_time)
-    {    
+    {
+        // Identify the array with the least elements
+        int[] compareLen = {dat_01.Count, dat_02.Count, dat_03.Count, dat_04.Count, dat_05.Count, dat_06.Count, dat_07.Count, dat_08.Count };
+        int len = compareLen.Min();
+        UnityEngine.Debug.Log("Minimum array length: " + len);
+
         // It seems like EMG data array 01 and 06 are always +1 element bigger than the other.
         // If so, trim
+        /*
         while (dat_01.Count > dat_02.Count && dat_06.Count > dat_02.Count) {
             dat_01.RemoveAt(dat_01.Count - 1);
             dat_06.RemoveAt(dat_06.Count - 1);
         }
+        int len = dat_01.Count;
+        */
+        while (dat_01.Count > len) {
+            dat_01.RemoveAt(dat_01.Count - 1); }
+
+        while (dat_02.Count > len) {
+            dat_02.RemoveAt(dat_02.Count - 1); }
+
+        while (dat_03.Count > len) {
+            dat_03.RemoveAt(dat_03.Count - 1); }
+
+        while (dat_04.Count > len) {
+            dat_04.RemoveAt(dat_04.Count - 1); }
+
+        while (dat_05.Count > len) {
+            dat_05.RemoveAt(dat_05.Count - 1); }
+
+        while (dat_06.Count > len) {
+            dat_06.RemoveAt(dat_06.Count - 1); }
+
+        while (dat_07.Count > len) {
+            dat_07.RemoveAt(dat_07.Count - 1); }
+
+        while (dat_08.Count > len) {
+            dat_08.RemoveAt(dat_08.Count - 1); }
 
         // Check in terminal that the size of the timestamp array is the same
-        int len = dat_01.Count;
         if (dat_time.Length == len) {
             UnityEngine.Debug.Log("Length of the timestamp array and emg array are the same");
         }

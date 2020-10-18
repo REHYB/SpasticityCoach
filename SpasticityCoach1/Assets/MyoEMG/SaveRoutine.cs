@@ -53,7 +53,7 @@ public class SaveRoutine : MonoBehaviour
         prc_emg_Pod07 = LineChartController_EMG07.avg_emg_Pod07;
         prc_emg_Pod08 = LineChartController_EMG08.avg_emg_Pod08;
 
-        /*
+        
         UnityEngine.Debug.Log("----------------------------------------------");
         UnityEngine.Debug.Log("Size of Processed EMG 01: " + prc_emg_Pod01.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 02: " + prc_emg_Pod02.Count);
@@ -63,7 +63,7 @@ public class SaveRoutine : MonoBehaviour
         UnityEngine.Debug.Log("Size of Processed EMG 06: " + prc_emg_Pod06.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 07: " + prc_emg_Pod07.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 08: " + prc_emg_Pod08.Count);
-        */
+        
         // The sizes of EMG 01 and 06 are +1 element bigger than the others
         // This is fixed by trimming them in the savePrcCSV function
 
@@ -72,12 +72,14 @@ public class SaveRoutine : MonoBehaviour
         // Write raw EMG into a CSV file
         CsvReadWrite csv = new CsvReadWrite();
         csv.saveRawCSV("EMG_data.csv", raw_emg_Pod01, raw_emg_Pod02, raw_emg_Pod03, raw_emg_Pod04, raw_emg_Pod05, raw_emg_Pod06, raw_emg_Pod07, raw_emg_Pod08, raw_emg_time);
+        UnityEngine.Debug.Log("Raw EMG CSV created!");
 
         // ------------------------- Processed EMG -------------------------
         // Read timestamps for processed EMG
         DataFltr csvFltr = new DataFltr();
         var values = csvFltr.readEMGCSV("EMG_data.csv");
         int len = prc_emg_Pod01.Count;
+        UnityEngine.Debug.Log("Processed EMG CSV creating... (1/3)");
 
         // Convert string back to timestamp for CSV. 
         // Avoids the output in a CSV being System.string[] instead of the actual timestamp
@@ -90,10 +92,10 @@ public class SaveRoutine : MonoBehaviour
             prc_emg_time[counter] = DateTime.ParseExact(emg_time[i], "yyyy-MM-dd H:mm:ss.fff", null);
             counter = counter + 1;
         }
-        UnityEngine.Debug.Log("Size of Processed EMG Time: " + prc_emg_Pod08.Count);
+        UnityEngine.Debug.Log("Processed EMG CSV creating... (2/3)");
 
         // Write processed EMG into a CSV file
         csv.savePrcCSV("EMG_processed.csv", prc_emg_Pod01, prc_emg_Pod02, prc_emg_Pod03, prc_emg_Pod04, prc_emg_Pod05, prc_emg_Pod06, prc_emg_Pod07, prc_emg_Pod08, prc_emg_time);
-
+        UnityEngine.Debug.Log("Processed EMG CSV creating... (3/3)");
     }
 }

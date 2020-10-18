@@ -88,7 +88,7 @@ public class ThalmicMyo : MonoBehaviour {
 
     public int[] Update() {
         // Code for mapping motion to avatar elbow
-        ClientRoutine1.elbowMyo = GetComponent<Transform>().rotation; //Supinate z, Internal rotation y, Bicep x,
+        ClientRoutine_Sitting.elbowMyo = GetComponent<Transform>().rotation; //Supinate z, Internal rotation y, Bicep x,
 
         lock (_lock) {      // The lock keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section.
             armSynced = _myoArmSynced;
@@ -105,7 +105,11 @@ public class ThalmicMyo : MonoBehaviour {
             }
             if (isPaired && streamEmg == Thalmic.Myo.Result.Success) {
                 emg = _myo.emgData;
-                //UnityEngine.Debug.Log("Size of raw emg array (ThalmicMyo): " + emg.Length);
+                /*
+                UnityEngine.Debug.Log("Size of raw emg array (ThalmicMyo): " + emg.Length);
+                UnityEngine.Debug.Log("Timestamp: " + DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss.fff"));
+                UnityEngine.Debug.Log("---------------------------------------------");
+                */
             }
 
             pose = _myoPose;

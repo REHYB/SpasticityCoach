@@ -254,6 +254,9 @@
     <Reference Include="UnityEditor.UI">
       <HintPath>Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
+    <Reference Include="ArduinoBluetoothAPI">
+      <HintPath>Assets/BluetoothAPI/Plugins/WSA/ArduinoBluetoothAPI.dll</HintPath>
+    </Reference>
     <Reference Include="Unity.Compat">
       <HintPath>Assets/Parse/Plugins/Unity.Compat.dll</HintPath>
     </Reference>
@@ -1130,6 +1133,14 @@
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG07.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG08.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_Template.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG01_Plotless.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG02_Plotless.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG03_Plotless.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG04_Plotless.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG05_Plotless.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG06_Plotless.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG07_Plotless.cs" />
+    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG08_Plotless.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Examples\PieChart\PieChartController.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Scripts\Base\ACMonoBehaviour.cs" />
     <Compile Include="Assets\Awesome Charts\Core\Scripts\Common\ObjectPool\ReusableObjectsPool.cs" />
@@ -1211,9 +1222,19 @@
     <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\BezierPath.cs" />
     <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\CableCurve.cs" />
     <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\SetPropertyUtility.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\BLEServicesManager.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\BTManager.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\Demo.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\FlexSleeve_manager.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\LedOnOff.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\MyStreamManager.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\ScanScene2.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\ScanSceneManager.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\SphereContRot.cs" />
+    <Compile Include="Assets\BluetoothAPI\Scripts\manager.cs" />
     <Compile Include="Assets\ClientMotion.cs" />
-    <Compile Include="Assets\ClientRoutine1.cs" />
     <Compile Include="Assets\ClientRoutine_Sitting.cs" />
+    <Compile Include="Assets\ClientRoutine_Sitting_Plotless.cs" />
     <Compile Include="Assets\ExerciseBand\CubeBetweenTwoPoints.cs" />
     <Compile Include="Assets\ExerciseBand\CylinderBetweenTwoPoints.cs" />
     <Compile Include="Assets\ExerciseBand\RightHandPosition.cs" />
@@ -1238,6 +1259,7 @@
     <Compile Include="Assets\MyoEMG\CsvReadWrite.cs" />
     <Compile Include="Assets\MyoEMG\DataFltr.cs" />
     <Compile Include="Assets\MyoEMG\SaveRoutine.cs" />
+    <Compile Include="Assets\MyoEMG\SaveRoutine_Plotless.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
