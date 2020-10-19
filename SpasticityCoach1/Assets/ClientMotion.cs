@@ -23,33 +23,33 @@ public class ClientMotion : MonoBehaviour
     {
         anim = GetComponent<Animator>();
         //lying in Default Humanoid pose on Ground
-        ClientRoutine1.body_rot = new Vector3(-87f, 90f, 0f);
+        ClientRoutine_Sitting.body_rot = new Vector3(-87f, 90f, 0f);
         
         // Local position and rotation of the complete body
         GetComponent<Transform>().localPosition = new Vector3(GetComponent<Transform>().localPosition.x, GetComponent<Transform>().localPosition.y - 0.2f, GetComponent<Transform>().localPosition.z);
-        GetComponent<Transform>().localRotation = Quaternion.Euler(ClientRoutine1.body_rot);
+        GetComponent<Transform>().localRotation = Quaternion.Euler(ClientRoutine_Sitting.body_rot);
 
-        ClientRoutine1.rightShoulder_rot = new Vector3(0, 0, -58);
-        ClientRoutine1.leftShoulder_rot = new Vector3(0, -5, 50);
+        ClientRoutine_Sitting.rightShoulder_rot = new Vector3(0, 0, -58);
+        ClientRoutine_Sitting.leftShoulder_rot = new Vector3(0, -5, 50);
     }
 
     // Update is called once per frame
     void Update()
     {
         // Fixed rotation of elbow by setting elbowMyo to the -y axis
-        rightElbow_rot = new Vector3(90, -ClientRoutine1.elbowMyo.y * 180, 0);
-        //        Debug.Log(ClientRoutine1.elbowMyo.x + " : " + ClientRoutine1.elbowMyo.y + " : " + ClientRoutine1.elbowMyo.z);
+        rightElbow_rot = new Vector3(90, -ClientRoutine_Sitting.elbowMyo.y * 180, 0);
+        //        Debug.Log(ClientRoutine_Sitting.elbowMyo.x + " : " + ClientRoutine_Sitting.elbowMyo.y + " : " + ClientRoutine_Sitting.elbowMyo.z);
         
     }
 
     void OnAnimatorIK(int layerIndex)
     {
         //print("OnAnimatorIK - running");
-        anim.SetBoneLocalRotation(HumanBodyBones.Head, Quaternion.Euler(ClientRoutine1.head_rot));
-        anim.SetBoneLocalRotation(HumanBodyBones.RightUpperArm, Quaternion.Euler(ClientRoutine1.rightShoulder_rot));
-        anim.SetBoneLocalRotation(HumanBodyBones.LeftUpperArm, Quaternion.Euler(ClientRoutine1.leftShoulder_rot));
-        if (ClientRoutine1.routineStage < 4) {
-            anim.SetBoneLocalRotation(HumanBodyBones.RightLowerArm, Quaternion.Euler(ClientRoutine1.rightElbow_rot_routine));
+        anim.SetBoneLocalRotation(HumanBodyBones.Head, Quaternion.Euler(ClientRoutine_Sitting.head_rot));
+        anim.SetBoneLocalRotation(HumanBodyBones.RightUpperArm, Quaternion.Euler(ClientRoutine_Sitting.rightShoulder_rot));
+        anim.SetBoneLocalRotation(HumanBodyBones.LeftUpperArm, Quaternion.Euler(ClientRoutine_Sitting.leftShoulder_rot));
+        if (ClientRoutine_Sitting.routineStage < 4) {
+            anim.SetBoneLocalRotation(HumanBodyBones.RightLowerArm, Quaternion.Euler(ClientRoutine_Sitting.rightElbow_rot_routine));
         }
         else {
             anim.SetBoneLocalRotation(HumanBodyBones.RightLowerArm, Quaternion.Euler(rightElbow_rot));
