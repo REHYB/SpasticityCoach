@@ -249,11 +249,18 @@ public class ClientRoutine_Sitting : MonoBehaviour
             // Case 6 - Elbow Bend
             case (9):
                 {
+                    // Move instructor avatar
                     if (rightElbow_rot_routine.y < elbowMotion) {
                         rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, 
                             rightElbow_rot_routine.y + elbowSpeed, 
                             0);}
 
+                    // Move radial diagram
+                    ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
+                    ProgressBar.minimum = 0;
+                    ProgressBar.current = 180 - rightElbow_rot_routine.y;
+
+                    // End case when elbow joint reaches target
                     if (rightElbow_rot_routine.y >= elbowMotion) {
                         if ((secondsNow - secondsChange) < 3) {
                             // Wait

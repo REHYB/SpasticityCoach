@@ -24,7 +24,7 @@
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
     <OutputPath>Temp\bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_1;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;ENABLE_ONSCREEN_KEYBOARD;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_WINRT;PLATFORM_METRO;UNITY_METRO;UNITY_METRO_API;UNITY_WSA;UNITY_WSA_10_0;UNITY_WINRT_10_0;UNITY_WINRT;ENABLE_MOVIES;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_NETWORK;UNITY_PLATFORM_THREAD_TO_CORE_MAPPING;PLATFORM_SUPPORTS_ADS_ID;CURL_STATICLIB;PLATFORM_OVERRIDES_APPLICATION_PACKAGE_NAME;PLATFORM_IMPLEMENTS_ATTACH_DIALOG;DISABLE_PLUGIN_LOAD_WRAPPER;ENABLE_MONO;NET_4_6;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;UNITY_POST_PROCESSING_STACK_V2;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
+    <DefineConstants>DEBUG;TRACE;UNITY_2019_4_1;UNITY_2019_4;UNITY_2019;UNITY_5_3_OR_NEWER;UNITY_5_4_OR_NEWER;UNITY_5_5_OR_NEWER;UNITY_5_6_OR_NEWER;UNITY_2017_1_OR_NEWER;UNITY_2017_2_OR_NEWER;UNITY_2017_3_OR_NEWER;UNITY_2017_4_OR_NEWER;UNITY_2018_1_OR_NEWER;UNITY_2018_2_OR_NEWER;UNITY_2018_3_OR_NEWER;UNITY_2018_4_OR_NEWER;UNITY_2019_1_OR_NEWER;UNITY_2019_2_OR_NEWER;UNITY_2019_3_OR_NEWER;UNITY_2019_4_OR_NEWER;UNITY_INCLUDE_TESTS;ENABLE_AR;ENABLE_AUDIO;ENABLE_CACHING;ENABLE_CLOTH;ENABLE_EVENT_QUEUE;ENABLE_MICROPHONE;ENABLE_MULTIPLE_DISPLAYS;ENABLE_PHYSICS;ENABLE_TEXTURE_STREAMING;ENABLE_UNET;ENABLE_LZMA;ENABLE_UNITYEVENTS;ENABLE_VR;ENABLE_WEBCAM;ENABLE_UNITYWEBREQUEST;ENABLE_WWW;ENABLE_CLOUD_SERVICES;ENABLE_CLOUD_SERVICES_COLLAB;ENABLE_CLOUD_SERVICES_COLLAB_SOFTLOCKS;ENABLE_CLOUD_SERVICES_ADS;ENABLE_CLOUD_SERVICES_USE_WEBREQUEST;ENABLE_CLOUD_SERVICES_CRASH_REPORTING;ENABLE_CLOUD_SERVICES_PURCHASING;ENABLE_CLOUD_SERVICES_ANALYTICS;ENABLE_CLOUD_SERVICES_UNET;ENABLE_CLOUD_SERVICES_BUILD;ENABLE_CLOUD_LICENSE;ENABLE_EDITOR_HUB_LICENSE;ENABLE_WEBSOCKET_CLIENT;ENABLE_DIRECTOR_AUDIO;ENABLE_DIRECTOR_TEXTURE;ENABLE_MANAGED_JOBS;ENABLE_MANAGED_TRANSFORM_JOBS;ENABLE_MANAGED_ANIMATION_JOBS;ENABLE_MANAGED_AUDIO_JOBS;INCLUDE_DYNAMIC_GI;ENABLE_MONO_BDWGC;ENABLE_SCRIPTING_GC_WBARRIERS;PLATFORM_SUPPORTS_MONO;RENDER_SOFTWARE_CURSOR;ENABLE_VIDEO;PLATFORM_STANDALONE;PLATFORM_STANDALONE_WIN;UNITY_STANDALONE_WIN;UNITY_STANDALONE;ENABLE_RUNTIME_GI;ENABLE_MOVIES;ENABLE_NETWORK;ENABLE_CRUNCH_TEXTURE_COMPRESSION;ENABLE_OUT_OF_PROCESS_CRASH_HANDLER;ENABLE_CLUSTER_SYNC;ENABLE_CLUSTERINPUT;ENABLE_WEBSOCKET_HOST;ENABLE_MONO;NET_STANDARD_2_0;ENABLE_PROFILER;UNITY_ASSERTIONS;UNITY_EDITOR;UNITY_EDITOR_64;UNITY_EDITOR_WIN;ENABLE_UNITY_COLLECTIONS_CHECKS;ENABLE_BURST_AOT;UNITY_TEAM_LICENSE;ENABLE_VSTU;ENABLE_CUSTOM_RENDER_TEXTURE;ENABLE_DIRECTOR;ENABLE_LOCALIZATION;ENABLE_SPRITES;ENABLE_TERRAIN;ENABLE_TILEMAP;ENABLE_TIMELINE;ENABLE_LEGACY_INPUT_MANAGER;UNITY_POST_PROCESSING_STACK_V2;GSTU_Legacy;CSHARP_7_OR_LATER;CSHARP_7_3_OR_NEWER</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
     <NoWarn>0169</NoWarn>
@@ -50,7 +50,7 @@
     <ProjectTypeGuids>{E097FAD1-6243-4DAD-9C02-E9B9EFC3FFC1};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <UnityProjectGenerator>Unity/VSTU</UnityProjectGenerator>
     <UnityProjectType>Game:1</UnityProjectType>
-    <UnityBuildTarget>WSAPlayer:21</UnityBuildTarget>
+    <UnityBuildTarget>StandaloneWindows:5</UnityBuildTarget>
     <UnityVersion>2019.4.1f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
@@ -62,209 +62,195 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Awesome Charts\Core\Examples\BarChart\CustomAxisValueFormatterExample.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG01.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG02.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG03.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG04.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG05.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG06.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG07.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG08.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\LineChartController_Template.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG01_Plotless.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG02_Plotless.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG03_Plotless.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG04_Plotless.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG05_Plotless.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG06_Plotless.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG07_Plotless.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG08_Plotless.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Examples\PieChart\PieChartController.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Base\ACMonoBehaviour.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Common\ObjectPool\ReusableObjectsPool.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisBounds.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabel.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabelConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabelGravity.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabelRenderer.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabelRendererExtry.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisOrientation.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\AxixRenderer\TextAxisLabel.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisBaseChart.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisConfig\AxisConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisConfig\AxisValue.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisConfig\LinearSingleAxisConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisConfig\SingleAxisConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\EntryProvider\AxisLabelEntryProvider.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\EntryProvider\HorizontalAxisLabelEntryProvider.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\EntryProvider\LinearAxisLabelEntryProvider.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\EntryProvider\VerticalAxisLabelEntryProvider.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\ValueFormatter\AxisValueFormatter.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\ValueFormatter\BasicAxisValueFormatter.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\ValueFormatter\BasicValueFormatterConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\AxisConfig\BarChartAxisConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\AxisConfig\BarSingleAxisConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\AxisEntryProvider\BarAxisLabelEntryProvider.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\Bar.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\BarCharPositioner.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\BarChart.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\BarChartConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\BarSizingMethod.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\ValueFormatter\BarAxisValueFormatter.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BarChart\ValueFormatter\BarAxisValueFormatterConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\BaseChart.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\LineChart\AxisConfig\LineChartAxisConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineChart.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineChartBackground.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineChartClickSelectionBehaviour.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineChartConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineEntryIndicator.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChart.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChartClickSelectionBehaviour.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChartConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChartEntryView.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChartValueIndicator.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\CustomGraphics\Base\BaseMaskableGraphic.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\FrameRenderer.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\GridConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\GridFrameConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\GridLineConfig.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\GridRenderer.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\LineSegment.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\LineSegmentsRenderer.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Legend\LegendEntry.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Legend\LegendEntryView.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Legend\LegendView.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Component\Popup\ChartValuePopup.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\AxisChartData.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\BarData.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\BarDataSet.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\BarEntry.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\ChartData.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\DataSet.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\Entry.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\LineData.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\LineDataSet.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\LineEntry.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\PieData.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\PieDataSet.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Data\PieEntry.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\UI\PivotValue.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\UI\ViewCreator.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Utils\BezierUtils.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Utils\Defaults.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Utils\MathUtils.cs" />
-    <Compile Include="Assets\Awesome Charts\Core\Scripts\Utils\StringUtils.cs" />
-    <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Primitives\UILineRenderer.cs" />
-    <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Primitives\UIPrimitiveBase.cs" />
-    <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\BezierPath.cs" />
-    <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\CableCurve.cs" />
-    <Compile Include="Assets\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\SetPropertyUtility.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\BLEServicesManager.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\BTManager.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\Demo.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\FlexSleeve_manager.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\LedOnOff.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\MyStreamManager.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\ScanScene2.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\ScanSceneManager.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\SphereContRot.cs" />
-    <Compile Include="Assets\BluetoothAPI\Scripts\manager.cs" />
+    <Compile Include="Assets\3D Models\ExerciseBand\CubeBetweenTwoPoints.cs" />
+    <Compile Include="Assets\3D Models\ExerciseBand\CylinderBetweenTwoPoints.cs" />
+    <Compile Include="Assets\3D Models\ExerciseBand\RightHandPosition.cs" />
+    <Compile Include="Assets\3D Models\ExerciseBand\RightKneePosition.cs" />
     <Compile Include="Assets\ClientMotion.cs" />
     <Compile Include="Assets\ClientMotion_Sitting.cs" />
     <Compile Include="Assets\ClientRoutine_Sitting.cs" />
     <Compile Include="Assets\ClientRoutine_Sitting_Plotless.cs" />
-    <Compile Include="Assets\ExerciseBand\CubeBetweenTwoPoints.cs" />
-    <Compile Include="Assets\ExerciseBand\CylinderBetweenTwoPoints.cs" />
-    <Compile Include="Assets\ExerciseBand\RightHandPosition.cs" />
-    <Compile Include="Assets\ExerciseBand\RightKneePosition.cs" />
     <Compile Include="Assets\Instructions.cs" />
     <Compile Include="Assets\JointOrientationClient.cs" />
     <Compile Include="Assets\ModelColour.cs" />
-    <Compile Include="Assets\Myo Samples\Scripts\ColorBoxByPose.cs" />
-    <Compile Include="Assets\Myo Samples\Scripts\JointOrientation.cs" />
-    <Compile Include="Assets\Myo Samples\Scripts\SampleSceneGUI.cs" />
-    <Compile Include="Assets\Myo\Scripts\Myo.NET\EventTypes.cs" />
-    <Compile Include="Assets\Myo\Scripts\Myo.NET\Hub.cs" />
-    <Compile Include="Assets\Myo\Scripts\Myo.NET\Myo.cs" />
-    <Compile Include="Assets\Myo\Scripts\Myo.NET\Pose.cs" />
-    <Compile Include="Assets\Myo\Scripts\Myo.NET\Properties\AssemblyInfo.cs" />
-    <Compile Include="Assets\Myo\Scripts\Myo.NET\Quaternion.cs" />
-    <Compile Include="Assets\Myo\Scripts\Myo.NET\Vector3.cs" />
-    <Compile Include="Assets\Myo\Scripts\Myo.NET\libmyo.cs" />
-    <Compile Include="Assets\Myo\Scripts\StoreEMG.cs" />
-    <Compile Include="Assets\Myo\Scripts\ThalmicHub.cs" />
-    <Compile Include="Assets\Myo\Scripts\ThalmicMyo.cs" />
-    <Compile Include="Assets\MyoEMG\CsvReadWrite.cs" />
-    <Compile Include="Assets\MyoEMG\DataFltr.cs" />
-    <Compile Include="Assets\MyoEMG\SaveRoutine.cs" />
-    <Compile Include="Assets\MyoEMG\SaveRoutine_Plotless.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
-    <Compile Include="Assets\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
-    <Compile Include="Assets\Tutorial_Info\Scripts\Readme.cs" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
-    <None Include="Assets\Myo\README-MyoUnity.txt" />
+    <Compile Include="Assets\Thalmic Myo\Myo Samples\Scripts\ColorBoxByPose.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo Samples\Scripts\JointOrientation.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo Samples\Scripts\SampleSceneGUI.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\Myo.NET\EventTypes.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\Myo.NET\Hub.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\Myo.NET\Myo.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\Myo.NET\Pose.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\Myo.NET\Properties\AssemblyInfo.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\Myo.NET\Quaternion.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\Myo.NET\Vector3.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\Myo.NET\libmyo.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\StoreEMG.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\ThalmicHub.cs" />
+    <Compile Include="Assets\Thalmic Myo\Myo\Scripts\ThalmicMyo.cs" />
+    <Compile Include="Assets\Thalmic Myo\MyoEMG\CsvReadWrite.cs" />
+    <Compile Include="Assets\Thalmic Myo\MyoEMG\DataFltr.cs" />
+    <Compile Include="Assets\Thalmic Myo\MyoEMG\SaveRoutine.cs" />
+    <Compile Include="Assets\Thalmic Myo\MyoEMG\SaveRoutine_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\BarChart\CustomAxisValueFormatterExample.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG01.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG02.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG03.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG04.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG05.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG06.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG07.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_EMG08.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\LineChartController_Template.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG01_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG02_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG03_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG04_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG05_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG06_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG07_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\LineChart\Plotless\LineChartController_EMG08_Plotless.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Examples\PieChart\PieChartController.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Base\ACMonoBehaviour.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Common\ObjectPool\ReusableObjectsPool.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisBounds.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabel.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabelConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabelGravity.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabelRenderer.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisLabelRendererExtry.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\AxixRenderer\AxisOrientation.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\AxixRenderer\TextAxisLabel.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisBaseChart.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisConfig\AxisConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisConfig\AxisValue.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisConfig\LinearSingleAxisConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\AxisConfig\SingleAxisConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\EntryProvider\AxisLabelEntryProvider.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\EntryProvider\HorizontalAxisLabelEntryProvider.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\EntryProvider\LinearAxisLabelEntryProvider.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\EntryProvider\VerticalAxisLabelEntryProvider.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\ValueFormatter\AxisValueFormatter.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\ValueFormatter\BasicAxisValueFormatter.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\AxisBase\ValueFormatter\BasicValueFormatterConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\AxisConfig\BarChartAxisConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\AxisConfig\BarSingleAxisConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\AxisEntryProvider\BarAxisLabelEntryProvider.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\Bar.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\BarCharPositioner.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\BarChart.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\BarChartConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\BarSizingMethod.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\ValueFormatter\BarAxisValueFormatter.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BarChart\ValueFormatter\BarAxisValueFormatterConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\BaseChart.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\LineChart\AxisConfig\LineChartAxisConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineChart.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineChartBackground.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineChartClickSelectionBehaviour.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineChartConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\LineChart\LineEntryIndicator.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChart.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChartClickSelectionBehaviour.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChartConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChartEntryView.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Chart\PieChart\PieChartValueIndicator.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\CustomGraphics\Base\BaseMaskableGraphic.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\FrameRenderer.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\GridConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\GridFrameConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\GridLineConfig.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\GridRenderer.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\LineSegment.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\CustomGraphics\Grid\LineSegmentsRenderer.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Legend\LegendEntry.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Legend\LegendEntryView.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Legend\LegendView.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Component\Popup\ChartValuePopup.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\AxisChartData.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\BarData.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\BarDataSet.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\BarEntry.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\ChartData.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\DataSet.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\Entry.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\LineData.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\LineDataSet.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\LineEntry.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\PieData.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\PieDataSet.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Data\PieEntry.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\UI\PivotValue.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\UI\ViewCreator.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Utils\BezierUtils.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Utils\Defaults.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Utils\MathUtils.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Core\Scripts\Utils\StringUtils.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Primitives\UILineRenderer.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Primitives\UIPrimitiveBase.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\BezierPath.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\CableCurve.cs" />
+    <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\SetPropertyUtility.cs" />
+    <Compile Include="Assets\UI\ProgressBars\ProgressBar.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark03.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark04.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\CameraController.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\ChatController.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\EnvMapAnimator.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\ObjectSpin.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\ShaderPropAnimator.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\SimpleScript.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\SkewTextExample.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_DigitValidator.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_ExampleScript_01.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_FrameRateCounter.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_PhoneNumberValidator.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventCheck.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextEventHandler.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextInfoDebugTool.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_A.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_TextSelector_B.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMP_UiFrameRateCounter.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TMPro_InstructionOverlay.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TeleType.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TextConsoleSimulator.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshProFloatingText.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\TextMeshSpawner.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexColorCycler.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexJitter.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeA.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
+    <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Fonts\Oswald-Bold - OFL.txt" />
+    <None Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Fonts\Anton OFL.txt" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\Thalmic Myo\Myo\README-MyoUnity.txt" />
     <None Include="Assets\3D Models\HumanMale2\Shader\SSS_Utils.cginc" />
     <None Include="Assets\3D Models\HumanMale2\Shader\SSS.shader" />
-    <None Include="Assets\BluetoothAPI\readme.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
-    <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
-    <None Include="Assets\BluetoothAPI\changelogs.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
-    <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
-    <None Include="Assets\BluetoothAPI\help.txt" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
-    <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
-    <None Include="Assets\Awesome Charts\Notices.txt" />
-    <None Include="Assets\BluetoothAPI\Plugins\Android\AndroidManifest.xml" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Surface.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Custom-Atlas.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
+    <None Include="Assets\UI\Awesome Charts\Notices.txt" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
     <None Include="Assets\3D Models\HumanMale2\Athletic SSS\Mecanim\Hair Shader\Mecanim HairFadeCutout 1.shader" />
-    <None Include="Assets\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
-    <None Include="Assets\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
+    <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Fonts\Bangers - OFL.txt" />
     <Reference Include="UnityEngine">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
     </Reference>
@@ -291,6 +277,12 @@
     </Reference>
     <Reference Include="UnityEngine.ClothModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClothModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterInputModule">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterInputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ClusterRendererModule">
+      <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.ClusterRendererModule.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.CoreModule">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEngine/UnityEngine.CoreModule.dll</HintPath>
@@ -443,13 +435,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="ArduinoBluetoothAPI">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/BluetoothAPI/Plugins/ArduinoBluetoothAPI.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/BluetoothAPI/Plugins/ArduinoBluetoothAPI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Compat">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Parse/Plugins/Unity.Compat.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Compat.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Tasks">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Parse/Plugins/Unity.Tasks.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -845,7 +837,12 @@
       <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
-  <ItemGroup></ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
+      <Project>{40BAF3E3-852C-C708-CE4D-29043CD9770B}</Project>
+      <Name>Assembly-CSharp-firstpass</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
