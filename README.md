@@ -18,12 +18,12 @@ The *SpasticityCoach1* folder contains the Unity project with the demo scenes, a
   
 ### 01.A - Folder Assets/UI:
 Modified library to plot data in real-time. This project uses mainly the LineChart. You can read some more comments on the LineChart controllers [here](https://docs.google.com/document/d/1VrCxR2o3_ZQFfntAAjsJKQfnsYi8PoBsLPYp7bbAatE/edit?usp=sharing):
-#### 01.A.1 Awesome Charts
-- **/Core/Scripts folder**:
-  - **Default.cs**: Change the default size, thickness of lines, x-axis range, etc for the charts
-  - **DataSet.cs**: Defines the List<T> entries for the charts
-- **/Core/Examples/LineChart folder**:
-  Contains the main scripts controlling each individual chart. Currently, all the EMG chart controllers are available in this folder.
+- #### 01.A.1 Awesome Charts
+  - **/Core/Scripts folder**:
+    - **Default.cs**: Change the default size, thickness of lines, x-axis range, etc for the charts
+    - **DataSet.cs**: Defines the List<T> entries for the charts
+  - **/Core/Examples/LineChart folder**:
+    Contains the main scripts controlling each individual chart. Currently, all the EMG chart controllers are available in this folder.
 
 #### 01.A.2 ProgressBars
 - **ProgressBar.cs**: Allow for the creation of both linear and radial progress bars. Prefabs were created as resources inside the Unity Editor. You can access them by opening the GameObject windows using right-click and choosing "UI>Linear Progress Bar" or "UI>Radial Progress Bar"
