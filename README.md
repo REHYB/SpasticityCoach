@@ -56,7 +56,7 @@ Other folders of interest in /Assets are:
 - **/3D Models**:
   - 3D models for static GameObjects in the scene, such as *ChairPack*, *WorkshopModels*.
   - 3D models for dynamic GameObject in the scene, such as *HumanMale2*.
-  - ***Dynamically-generated GameObjects**, such as the elastic exercise band in ***ExerciseBand***.
+  - **Dynamically-generated GameObjects**, such as the elastic exercise band in ***ExerciseBand***.
 
 - **/Scenes**: Scenes that are not currently used but might be useful at some point.
 
