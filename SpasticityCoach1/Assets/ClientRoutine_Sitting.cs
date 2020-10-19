@@ -38,9 +38,9 @@ public class ClientRoutine_Sitting : MonoBehaviour
 
     // Arrays for the joinst in the right hand fingers
     // [0] thumb; [1] Index; [2] Middle; [3] Ring; [4] Little
-    public Vector3[] RProxFingers = new Vector3[5];
-    public Vector3[] RIntFingers = new Vector3[5];
-    public Vector3[] RDistFingers = new Vector3[5];
+    public static Vector3[] RProxFingers = new Vector3[5];
+    public static Vector3[] RIntFingers = new Vector3[5];
+    public static Vector3[] RDistFingers = new Vector3[5];
     
     float secondsNow = 0;
     float secondsChange = 0;
@@ -58,13 +58,12 @@ public class ClientRoutine_Sitting : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        //lying in Default Humanoid pose on Ground
+        // Initial location and rotation of entire body
         body_rot = new Vector3(0f, 85f, 0f);
         body_posX = -19f;
         body_posY = -2f;
         body_posZ = -0.4f; //-1.5f;
 
-        // Initial location and rotation of entire body
         GetComponent<Transform>().localPosition = new Vector3(GetComponent<Transform>().localPosition.x + body_posX, 
             GetComponent<Transform>().localPosition.y + body_posY, 
             GetComponent<Transform>().localPosition.z + body_posZ);
@@ -97,8 +96,8 @@ public class ClientRoutine_Sitting : MonoBehaviour
         anim.SetFloat(makeTransition, move); 
 
         // Set model colour
-        ModelColour setColour = new ModelColour();
-        setColour.setModelColour(trans_snow);
+        //ModelColour setColour = new ModelColour();
+        //setColour.setModelColour(trans_snow);
 
         // Start of timer
         secondsNow = secondsNow + Time.deltaTime;
@@ -146,7 +145,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                         head_rot = new Vector3(head_rot.x, head_rot.y+2, 0);     // Look down slightly to hand
                     }
 
-                    setColour.setModelColour(trans_fuchsia);
+                    //setColour.setModelColour(trans_fuchsia);
 
                     if (rightShoulder_rot.y < 90) {
                         rightShoulder_rot = new Vector3(0, rightShoulder_rot.y + 5, 0);   
@@ -195,7 +194,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     //UnityEngine.Debug.Log("Shoulder Y: " + rightShoulder_rot.y);
                     //UnityEngine.Debug.Log("Shoulder Z: " + rightShoulder_rot.z);
 
-                    setColour.setModelColour(trans_maxblue);
+                    //setColour.setModelColour(trans_maxblue);
 
 
                     if (rightShoulder_rot.x < 65) {

@@ -172,6 +172,7 @@
     <Compile Include="Assets\BluetoothAPI\Scripts\SphereContRot.cs" />
     <Compile Include="Assets\BluetoothAPI\Scripts\manager.cs" />
     <Compile Include="Assets\ClientMotion.cs" />
+    <Compile Include="Assets\ClientMotion_Sitting.cs" />
     <Compile Include="Assets\ClientRoutine_Sitting.cs" />
     <Compile Include="Assets\ClientRoutine_Sitting_Plotless.cs" />
     <Compile Include="Assets\ExerciseBand\CubeBetweenTwoPoints.cs" />
