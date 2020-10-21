@@ -87,7 +87,7 @@ public class ThalmicMyo : MonoBehaviour {
     }
 
     public int[] Update() {
-        // Code for mapping motion to avatar elbow
+        // Line for mapping motion to avatar elbow
         ClientRoutine_Sitting.elbowMyo = GetComponent<Transform>().rotation; //Supinate z, Internal rotation y, Bicep x,
 
         lock (_lock) {      // The lock keyword ensures that one thread does not enter a critical section of code while another thread is in the critical section.

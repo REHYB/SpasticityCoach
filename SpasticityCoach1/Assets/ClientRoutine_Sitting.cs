@@ -36,6 +36,11 @@ public class ClientRoutine_Sitting : MonoBehaviour
     public static Vector3 rightKnee_rot;
     public static Vector3 hips_rot;
 
+    // Define phantom patient joint
+    public static float rightElbow_phantom;
+    public static float clientElbow_error;
+
+
     // Arrays for the joinst in the right hand fingers
     // [0] thumb; [1] Index; [2] Middle; [3] Ring; [4] Little
     public static Vector3[] RProxFingers = new Vector3[5];
@@ -87,6 +92,9 @@ public class ClientRoutine_Sitting : MonoBehaviour
             RProxFingers[i] = new Vector3(0, -15, 0);
             RIntFingers[i] = new Vector3(0, -15, 0);
         }
+
+        // Initialise the phantom patient joint, controlling the radial progress bar
+        rightElbow_phantom = 0f;
     }
 
     // ===================== Update is called once per frame =====================
@@ -186,7 +194,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     break;
                 }
 
-            // Case 4 - Supinate Wrist
+            // Case 5 - Supinate Wrist
             case (5):
                 {
                     instruction1 = "Supinate your wrist";
@@ -212,7 +220,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     break;
                 }
 
-            // Case 5
+            // Case 6
             case (6):
                 {
                     instruction1 = "Now, watch carefully how I perform the task";
@@ -224,7 +232,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     break;
                 }
 
-            // Case 2
+            // Case 7
             case (7):
                 {
                     instruction1 = "When asked, bend your elbow at that same speed";
@@ -236,9 +244,12 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     break;
                 }
 
-            // Case 5 - Wait
+            // Case 8 - Wait
             case (8):
                 {
+                    ProgressBar.showBar = true;
+                    RadialProgressMarker.showMarker = true;
+
                     if ((secondsNow - secondsChange) >= 3) {
                         secondsChange = secondsNow;
                         routineStage = 9;
@@ -246,7 +257,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     break;
                 }
 
-            // Case 6 - Elbow Bend
+            // Case 9 - Elbow Bend
             case (9):
                 {
                     // Move instructor avatar
@@ -256,9 +267,13 @@ public class ClientRoutine_Sitting : MonoBehaviour
                             0);}
 
                     // Move radial diagram
+                    clientElbow_error = rightElbow_rot_routine.y - (RadialProgressMarker.clientElbow_rot - 270);
                     ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
                     ProgressBar.minimum = 0;
                     ProgressBar.current = 180 - rightElbow_rot_routine.y;
+
+                    RadialRoutineMarker.clientElbow_rot_routine = rightElbow_rot_routine.y - 90;  // Set rotation of pair equal to fill amount
+
 
                     // End case when elbow joint reaches target
                     if (rightElbow_rot_routine.y >= elbowMotion) {
@@ -274,7 +289,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     break;
                 }
 
-            // Case 7 - Wait
+            // Case 10 - Wait
             case (10):
                 {
                     instruction1 = "Now's your turn, bend your elbow with me";
@@ -286,16 +301,37 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     break;
                 }
 
-            // Case 8 - Your turn
+            // Case 11 - Your turn
             case (11):
                 {
                     //instruction1 = "Your turn, bend your elbow with me";
+                    /*
                     if (rightElbow_rot_routine.y < elbowMotion) {
                             rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, rightElbow_rot_routine.y + elbowSpeed, 0);
                     }
+                    */
 
-                    if (rightElbow_rot_routine.y >= elbowMotion) {
-                        rightElbow_rot_routine.y = 0;
+                    // Move radial diagram
+                    clientElbow_error = rightElbow_phantom - (RadialProgressMarker.clientElbow_rot - 270);
+
+                    ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
+                    ProgressBar.minimum = 0;
+                    ProgressBar.current = 180 - rightElbow_phantom;
+
+                    RadialRoutineMarker.clientElbow_rot_routine = rightElbow_phantom - 90;  // Set rotation of pair equal to fill amount
+
+
+                    // clientElbow_error = 180 - ClientRoutine_Sitting.rightElbow_phantom - (clientElbow_rot - 270);
+                    UnityEngine.Debug.Log("Elbow Error: " + clientElbow_error);
+
+
+                    if (rightElbow_phantom < elbowMotion)
+                    {
+                        rightElbow_phantom = rightElbow_phantom + elbowSpeed;
+                    }
+
+                    if (rightElbow_phantom >= elbowMotion) {
+                        rightElbow_phantom = 0f;
                         secondsChange = secondsNow;
 
                         if (elbowSpeedCounter == 0) {
@@ -324,7 +360,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                         instruction1 = "Saving patient data, please wait...";
                         if ((secondsNow - secondsChange) > 4)
                         {
-                                routineStage = 13;
+                                routineStage = 12;
                         }
                         break;
                     }

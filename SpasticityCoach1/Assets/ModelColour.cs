@@ -27,7 +27,7 @@ public class ModelColour : MonoBehaviour {
         // This returns the GameObjects defined by the paths
 
         // Uncomment for instructor -------------------------------------
-        /*
+        
         modelEyebrow = GameObject.Find("/Male_Instructor/Eyebrow");
         modelEyelash = GameObject.Find("/Male_Instructor/Eyelash");
         modelEyesInner = GameObject.Find("/Male_Instructor/Eyes_Inner");
@@ -43,24 +43,9 @@ public class ModelColour : MonoBehaviour {
         modelMouth = GameObject.Find("/Male_Instructor/Mouth");
         modelTeeth = GameObject.Find("/Male_Instructor/Teeth");
         modelTongue = GameObject.Find("/Male_Instructor/Tongue");
+        
 
-        // Get the Renderer component from the new cube
-        var eyebrowRenderer = modelEyebrow.GetComponent<Renderer>();
-        var eyelashRenderer = modelEyelash.GetComponent<Renderer>();
-        var eyesInnerRenderer = modelEyesInner.GetComponent<Renderer>();
-        var eyesOuterRenderer = modelEyesOuter.GetComponent<Renderer>();
-        var feetRenderer = modelFeet.GetComponent<Renderer>();
-        var handsRenderer = modelHands.GetComponent<Renderer>();
-        var headRenderer = modelHead.GetComponent<Renderer>();
-        var legsRenderer = modelLegs.GetComponent<Renderer>();
-        var torsoRenderer = modelTorso.GetComponent<Renderer>();
-        var underwearRenderer = modelUnderwear.GetComponent<Renderer>();
-        var hairRenderer = modelHair.GetComponent<Renderer>();
-        var hairbandRenderer = modelHairband.GetComponent<Renderer>();
-        var teethRenderer = modelTeeth.GetComponent<Renderer>();
-        var tongueRenderer = modelTongue.GetComponent<Renderer>();
-        */
-
+        /*
         // Uncomment for patient -------------------------------------
         modelEyebrow = GameObject.Find("/Male_Patient/Eyebrow");
         modelEyelash = GameObject.Find("/Male_Patient/Eyelash");
@@ -77,6 +62,7 @@ public class ModelColour : MonoBehaviour {
         modelMouth = GameObject.Find("/Male_Patient/Mouth");
         modelTeeth = GameObject.Find("/Male_Patient/Teeth");
         modelTongue = GameObject.Find("/Male_Patient/Tongue");
+        */
 
         // Get the Renderer component from the new cube
         var eyebrowRenderer = modelEyebrow.GetComponent<Renderer>();

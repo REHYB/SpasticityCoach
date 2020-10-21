@@ -66,13 +66,12 @@
     <Compile Include="Assets\3D Models\ExerciseBand\CylinderBetweenTwoPoints.cs" />
     <Compile Include="Assets\3D Models\ExerciseBand\RightHandPosition.cs" />
     <Compile Include="Assets\3D Models\ExerciseBand\RightKneePosition.cs" />
-    <Compile Include="Assets\ClientMotion.cs" />
     <Compile Include="Assets\ClientMotion_Sitting.cs" />
     <Compile Include="Assets\ClientRoutine_Sitting.cs" />
-    <Compile Include="Assets\ClientRoutine_Sitting_Plotless.cs" />
     <Compile Include="Assets\Instructions.cs" />
     <Compile Include="Assets\JointOrientationClient.cs" />
     <Compile Include="Assets\ModelColour.cs" />
+    <Compile Include="Assets\Scenes\ClientRoutine_Sitting_Plotless.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Thalmic Myo\Myo Samples\Scripts\ColorBoxByPose.cs" />
     <Compile Include="Assets\Thalmic Myo\Myo Samples\Scripts\JointOrientation.cs" />
@@ -192,6 +191,8 @@
     <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\CableCurve.cs" />
     <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\SetPropertyUtility.cs" />
     <Compile Include="Assets\UI\ProgressBars\ProgressBar.cs" />
+    <Compile Include="Assets\UI\ProgressBars\RadialProgressMarker.cs" />
+    <Compile Include="Assets\UI\ProgressBars\RadialRoutineMarker.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
