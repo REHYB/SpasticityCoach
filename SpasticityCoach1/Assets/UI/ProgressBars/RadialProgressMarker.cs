@@ -25,7 +25,7 @@ public class RadialProgressMarker : MonoBehaviour
         marker.color = new Color(marker.color.r, marker.color.g, marker.color.b, 0f);
 
         // Set show marker as false
-        showMarker = true;
+        showMarker = false;
         clientElbow_rot = 0;
     }
 

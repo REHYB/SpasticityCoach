@@ -41,7 +41,7 @@ public class ProgressBar : MonoBehaviour
         bar = GetComponent<Image>();
 
         // Set show bar as false
-        showBar = true;
+        showBar = false;
         fillColor = solid_Snow;
     }
 

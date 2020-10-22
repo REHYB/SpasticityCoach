@@ -226,6 +226,8 @@
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\UI\Turn Icons\ObserveTurnIcon.cs" />
+    <Compile Include="Assets\UI\Turn Icons\YourTurnIcon.cs" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
