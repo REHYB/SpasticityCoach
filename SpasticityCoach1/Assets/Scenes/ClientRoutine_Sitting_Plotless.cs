@@ -14,6 +14,8 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
     public static string instruction1 = "Welcome to PIEGO"; //Personalized Independent Exercise Goals and Occupations
     public static Quaternion elbowMyo = new Quaternion(0, 0, 0, 0);
     public static int routineStage = 0;
+    int elbowSpeedCounter = 0;
+    int practiceRoundsCounter = 0;
 
     Animator anim;
 
@@ -29,24 +31,28 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
     public static Vector3 leftShoulder_rot;
     public static Vector3 rightElbow_rot_routine;
 
-    public static Vector3 leftUpLeg_rot;    
+    public static Vector3 leftUpLeg_rot;
     public static Vector3 rightUpLeg_rot;
     public static Vector3 leftKnee_rot;
     public static Vector3 rightKnee_rot;
     public static Vector3 hips_rot;
 
+    // Define phantom patient joint
+    public static float rightElbow_phantom;
+    public static float clientElbow_error;
+
+
     // Arrays for the joinst in the right hand fingers
     // [0] thumb; [1] Index; [2] Middle; [3] Ring; [4] Little
-    public Vector3[] RProxFingers = new Vector3[5];
-    public Vector3[] RIntFingers = new Vector3[5];
-    public Vector3[] RDistFingers = new Vector3[5];
-    
+    public static Vector3[] RProxFingers = new Vector3[5];
+    public static Vector3[] RIntFingers = new Vector3[5];
+    public static Vector3[] RDistFingers = new Vector3[5];
+
     float secondsNow = 0;
     float secondsChange = 0;
     int makeTransition = Animator.StringToHash("MakeTransition");
     bool reverseMotion = false;
     float elbowSpeed = 1.5f;   // Changed initial elbowSpeed from 0.25f to 1.5f so that it is faster
-    int elbowSpeedCounter = 0;
     float elbowMotion = 120f;
 
     Color trans_snow = new Color(252 / 255f, 239 / 255f, 239 / 255f, 0.2f);     // Colour for the mesh renderer
@@ -58,15 +64,14 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
     {
         anim = GetComponent<Animator>();
 
-        //lying in Default Humanoid pose on Ground
+        // Initial location and rotation of entire body
         body_rot = new Vector3(0f, 85f, 0f);
         body_posX = -19f;
         body_posY = -2f;
         body_posZ = -0.4f; //-1.5f;
 
-        // Initial location and rotation of entire body
-        GetComponent<Transform>().localPosition = new Vector3(GetComponent<Transform>().localPosition.x + body_posX, 
-            GetComponent<Transform>().localPosition.y + body_posY, 
+        GetComponent<Transform>().localPosition = new Vector3(GetComponent<Transform>().localPosition.x + body_posX,
+            GetComponent<Transform>().localPosition.y + body_posY,
             GetComponent<Transform>().localPosition.z + body_posZ);
 
         GetComponent<Transform>().localRotation = Quaternion.Euler(body_rot);
@@ -83,33 +88,40 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
         rightKnee_rot = new Vector3(0, -90, 0);
 
         // Relax right hand
-        for (int i=0; i<5; i++)
+        for (int i = 0; i < 5; i++)
         {
             RProxFingers[i] = new Vector3(0, -15, 0);
             RIntFingers[i] = new Vector3(0, -15, 0);
         }
+
+        // Initialise the phantom patient joint, controlling the radial progress bar
+        rightElbow_phantom = 0f;
+
     }
 
     // ===================== Update is called once per frame =====================
-    void Update() {
-        
+    void Update()
+    {
+
         float move = Input.GetAxis("Vertical");
-        anim.SetFloat(makeTransition, move); 
+        anim.SetFloat(makeTransition, move);
 
         // Set model colour
-        ModelColour setColour = new ModelColour();
-        setColour.setModelColour(trans_snow);
+        //ModelColour setColour = new ModelColour();
+        //setColour.setModelColour(trans_snow);
 
         // Start of timer
         secondsNow = secondsNow + Time.deltaTime;
 
-        switch (routineStage) {
+        switch (routineStage)
+        {
             // Case 0
             case (0):
                 {
                     instruction1 = "Welcome to Piego";
-                    if (secondsNow >= 4) {
-                       routineStage = 1;
+                    if (secondsNow >= 5)
+                    {
+                        routineStage = routineStage + 1;
                     }
                     break;
                 }
@@ -119,11 +131,13 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
                 {
                     instruction1 = "I'm your Instructor, Milo";
                     // Tilt head towards the camera
-                    if (head_rot.x > -40) {
-                            head_rot = new Vector3(head_rot.x - 5f, 0, 0);
+                    if (head_rot.x > -40)
+                    {
+                        head_rot = new Vector3(head_rot.x - 5f, 0, 0);
                     }
-                    if (secondsNow >= 6) {
-                        routineStage = 2;
+                    if (secondsNow >= 8)
+                    {
+                        routineStage = routineStage + 1;
                     }
                     break;
                 }
@@ -132,8 +146,9 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
             case (2):
                 {
                     instruction1 = "Let's begin your neuro assessment!";
-                    if (secondsNow >= 9) {
-                        routineStage = 3;
+                    if (secondsNow >= 12)
+                    {
+                        routineStage = routineStage + 1;
                     }
                     break;
                 }
@@ -142,19 +157,23 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
             case (3):
                 {
                     instruction1 = "First, extend your right arm parallel to the floor";
-                    if (head_rot.y < 10) {
-                        head_rot = new Vector3(head_rot.x, head_rot.y+2, 0);     // Look down slightly to hand
+
+                    if (head_rot.y < 10)
+                    {
+                        head_rot = new Vector3(head_rot.x, head_rot.y + 2, 0);     // Look down slightly to hand
                     }
 
-                    setColour.setModelColour(trans_fuchsia);
+                    //setColour.setModelColour(trans_fuchsia);
 
-                    if (rightShoulder_rot.y < 90) {
-                        rightShoulder_rot = new Vector3(0, rightShoulder_rot.y + 5, 0);   
+                    if (rightShoulder_rot.y < 90)
+                    {
+                        rightShoulder_rot = new Vector3(0, rightShoulder_rot.y + 5, 0);
                     }
 
-                    if (secondsNow >= 12) {
+                    if (secondsNow >= 16)
+                    {
                         secondsChange = secondsNow;
-                        routineStage = 4;
+                        routineStage = routineStage + 1;
                     }
 
                     break;
@@ -163,15 +182,15 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
             case (4):
                 {
                     instruction1 = "Now, close your fist";
-                    // Close fist
 
+                    // Close fist
                     for (int i = 1; i < 5; i++)
                     {
                         if (RProxFingers[i].y > -90)
                         {
-                            RProxFingers[i] = new Vector3(0, RProxFingers[i].y-10, 0);
-                            RIntFingers[i] = new Vector3(0, RIntFingers[i].y-10, 0);
-                            RDistFingers[i] = new Vector3(0, RDistFingers[i].y-10, 0);
+                            RProxFingers[i] = new Vector3(0, RProxFingers[i].y - 10, 0);
+                            RIntFingers[i] = new Vector3(0, RIntFingers[i].y - 10, 0);
+                            RDistFingers[i] = new Vector3(0, RDistFingers[i].y - 10, 0);
                         }
                     }
 
@@ -182,164 +201,292 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
                     if ((secondsNow - secondsChange) >= 3)
                     {
                         secondsChange = secondsNow;
-                        routineStage = 5;
+                        routineStage = routineStage + 1;
                     }
                     break;
                 }
 
-            // Case 4 - Supinate Wrist
+            // Case 5 - Supinate Wrist
             case (5):
                 {
                     instruction1 = "Supinate your wrist";
 
-                    setColour.setModelColour(trans_maxblue);
-
-
-                    if (rightShoulder_rot.x < 65) {
-                        rightShoulder_rot = new Vector3(rightShoulder_rot.x+5, rightShoulder_rot.y, rightShoulder_rot.z);
+                    if (rightShoulder_rot.x < 65)
+                    {
+                        rightShoulder_rot = new Vector3(rightShoulder_rot.x + 5, rightShoulder_rot.y, rightShoulder_rot.z);
                     }
 
-                    if (rightElbow_rot_routine.x < 100) {
-                        rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x + 10, 0, 0);   
+                    if (rightElbow_rot_routine.x < 100)
+                    {
+                        rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x + 10, 0, 0);
                     }
 
-                    if ((secondsNow - secondsChange) >= 3) {
+                    if ((secondsNow - secondsChange) >= 3)
+                    {
                         secondsChange = secondsNow;
-                        routineStage = 6;
+                        routineStage = routineStage + 1;
                     }
                     break;
                 }
 
-            // Case 5
+            // Case 6
             case (6):
                 {
-                    instruction1 = "Now, watch carefully how I perform the task";
-                    if ((secondsNow - secondsChange) >= 3)
+                    instruction1 = "In the first 2 rounds, we will practice together";
+
+                    // Turn observe icon ON
+                    ObserveTurnIcon.showIconImage = true;
+
+                    if ((secondsNow - secondsChange) >= 4)
                     {
                         secondsChange = secondsNow;
-                        routineStage = 7;
+                        routineStage = routineStage + 1;
                     }
                     break;
                 }
 
-            // Case 2
+            // Case 7
             case (7):
                 {
-                    instruction1 = "When asked, bend your elbow at that same speed";
-                    if ((secondsNow - secondsChange) >= 3)
+                    instruction1 = "In the third round, you should perform the task as accurately as possible";
+
+                    // Turn your-turn icon ON and observe icon OFF
+                    YourTurnIcon.showIconImage = true;
+                    ObserveTurnIcon.showIconImage = false;
+
+                    if ((secondsNow - secondsChange) >= 7)
                     {
-                        instruction1 = "Watch closely";
-                        routineStage = 8;
+                        instruction1 = "The task is to bend your elbow to catch the pear";
+                        ProgressBar.showBar = true;
+                        RadialProgressMarker.showMarker = true;
+                        RadialRoutineMarker.showMarker = true;
+                        YourTurnIcon.showIconImage = false;
+
+
+                        if ((secondsNow - secondsChange) >= 10)
+                        {
+                            secondsChange = secondsNow;
+                            routineStage = routineStage + 1;
+                        }
                     }
                     break;
                 }
 
-            // Case 5 - Wait
+            // Case 8
             case (8):
                 {
-                    if ((secondsNow - secondsChange) >= 3) {
+                    instruction1 = "A countdown will tell you when to start";
+                    ObserveTurnIcon.showCountImage = true;
+
+
+                    if ((secondsNow - secondsChange) >= 3)
+                    {
+                        instruction1 = "Practice with me by following my motion";
+
                         secondsChange = secondsNow;
-                        routineStage = 9;
+                        routineStage = routineStage + 1;
                     }
                     break;
                 }
 
-            // Case 6 - Elbow Bend
+            // Case 9 - Countdown
             case (9):
                 {
-                    if (rightElbow_rot_routine.y < elbowMotion) {
-                        rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, 
-                            rightElbow_rot_routine.y + elbowSpeed, 
-                            0);}
-
-                    if (rightElbow_rot_routine.y >= elbowMotion) {
-                        if ((secondsNow - secondsChange) < 3) {
-                            // Wait
-                        }
-
-                        else {
-                            routineStage = 10;
-                            secondsChange = secondsNow;
-                        }
-                    }
-                    break;
-                }
-
-            // Case 7 - Wait
-            case (10):
-                {
-                    instruction1 = "Now's your turn, bend your elbow with me";
+                    // Move instructor avatar
                     rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, 0, 0);   // Return to original elbow position
 
-                    if ((secondsNow - secondsChange) > 3) {
-                        routineStage = 11;
+                    if ((secondsNow - secondsChange) >= 3)
+                    {
+                        ObserveTurnIcon.showCountImage = true;
+                        if ((secondsNow - secondsChange) >= 4)
+                        {
+                            ObserveTurnIcon.countNumber = 3;
+                            if ((secondsNow - secondsChange) >= 5)
+                            {
+                                ObserveTurnIcon.countNumber = 2;
+                                if ((secondsNow - secondsChange) >= 6)
+                                {
+                                    ObserveTurnIcon.countNumber = 1;
+                                    if ((secondsNow - secondsChange) >= 7)
+                                    {
+                                        ObserveTurnIcon.showCountImage = false;
+                                        ObserveTurnIcon.countNumber = 4;   // Hide all countdown images
+
+                                        secondsChange = secondsNow;
+                                        routineStage = routineStage + 1;
+                                    }
+                                }
+                            }
+                        }
                     }
                     break;
                 }
 
-            // Case 8 - Your turn
+            // Case 10 - Practice Elbow Bend
+            case (10):
+                {
+                    if (rightElbow_rot_routine.y < elbowMotion)
+                    {
+                        rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x,
+                            rightElbow_rot_routine.y + elbowSpeed,
+                            0);
+                    }
+
+                    // Move radial diagram
+                    clientElbow_error = rightElbow_rot_routine.y - (RadialProgressMarker.clientElbow_rot - 270);
+                    ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
+                    ProgressBar.minimum = 0;
+                    ProgressBar.current = 180 - rightElbow_rot_routine.y;
+
+                    RadialRoutineMarker.clientElbow_rot_routine = rightElbow_rot_routine.y - 90;  // Set rotation of pair equal to fill amount
+
+
+                    // End case when elbow joint reaches target
+                    if (rightElbow_rot_routine.y >= elbowMotion)
+                    {
+                        if (practiceRoundsCounter == 0)
+                        {
+                            practiceRoundsCounter = 1;
+                            instruction1 = "Let's practice this again";
+                            secondsChange = secondsNow;
+                            routineStage = 9;
+                        }
+
+                        else if (practiceRoundsCounter == 1)
+                        {
+                            practiceRoundsCounter = 0;
+                            secondsChange = secondsNow;
+                            routineStage = routineStage + 1;
+                        }
+                    }
+                    break;
+                }
+
+
+
+            // Case 11 - Test Run
             case (11):
                 {
-                    //instruction1 = "Your turn, bend your elbow with me";
-                    if (rightElbow_rot_routine.y < elbowMotion) {
-                            rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, rightElbow_rot_routine.y + elbowSpeed, 0);
-                    }
+                    instruction1 = "Now's let's do the test run. Get ready";
+                    rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, 0, 0);   // Return to original elbow position
 
-                    if (rightElbow_rot_routine.y >= elbowMotion) {
-                        rightElbow_rot_routine.y = 0;
-                        secondsChange = secondsNow;
+                    YourTurnIcon.showCountImage = true;
+                    ObserveTurnIcon.showIconImage = false;
 
-                        if (elbowSpeedCounter == 0) {
-                            elbowSpeed = 3.0f;
-                            elbowSpeedCounter = 1;
-                            instruction1 = "Watch how I bend my elbow faster";
-                            routineStage = 8;
-                        }
+                    if ((secondsNow - secondsChange) >= 3)
+                    {
+                        YourTurnIcon.countNumber = 3;
+                        if ((secondsNow - secondsChange) >= 5)
+                        {
+                            YourTurnIcon.countNumber = 2;
+                            if ((secondsNow - secondsChange) >= 6)
+                            {
+                                YourTurnIcon.countNumber = 1;
+                                if ((secondsNow - secondsChange) >= 7)
+                                {
+                                    YourTurnIcon.showCountImage = false;
+                                    YourTurnIcon.countNumber = 4;
 
-                        else if (elbowSpeedCounter == 1) {
-                            elbowSpeed = 5.0f;
-                            elbowSpeedCounter = 2;
-                            instruction1 = "Watch how I bend my elbow even faster";
-                            routineStage = 8;
-                        }
-
-                        else if (elbowSpeedCounter == 2) {
-                             routineStage = 12;
+                                    secondsChange = secondsNow;
+                                    routineStage = routineStage + 1;
+                                }
+                            }
                         }
                     }
                     break;
                 }
 
+            // Case 10 - Wait
             case (12):
-                    {
-                        instruction1 = "Saving patient data, please wait...";
-                        if ((secondsNow - secondsChange) > 4)
-                        {
-                                routineStage = 13;
-                        }
-                        break;
-                    }
+                {
+                    instruction1 = "Bend your elbow to catch the pear";
 
+                    if ((secondsNow - secondsChange) > 0)
+                    {
+                        secondsChange = secondsNow;
+                        routineStage = routineStage + 1;
+                    }
+                    break;
+                }
+
+            // Case 11 - Your turn
             case (13):
-                    {
-                        SaveRoutine_Plotless save = new SaveRoutine_Plotless();
-                        save.emgCSVsave();  // Call function to save the raw and processed EMG CSVs
+                {
+                    // Move radial diagram
+                    clientElbow_error = rightElbow_phantom - (RadialProgressMarker.clientElbow_rot - 270);
 
-                        routineStage = 14;
-                        break;
+                    ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
+                    ProgressBar.minimum = 0;
+                    ProgressBar.current = 180 - rightElbow_phantom;
+
+                    RadialRoutineMarker.clientElbow_rot_routine = rightElbow_phantom - 90;  // Set rotation of pair equal to fill amount
+                    // UnityEngine.Debug.Log("Elbow Error: " + clientElbow_error);
+
+
+                    if (rightElbow_phantom < elbowMotion)
+                    {
+                        rightElbow_phantom = rightElbow_phantom + elbowSpeed;
                     }
+
+                    if (rightElbow_phantom >= elbowMotion)
+                    {
+                        rightElbow_phantom = 0;
+                        secondsChange = secondsNow;
+
+                        if (elbowSpeedCounter == 0)
+                        {
+                            elbowSpeed = 3.0f;
+                            elbowSpeedCounter = 1;
+                            instruction1 = "Great job! Now let's practice moving your elbow faster";
+                            routineStage = 9;
+                        }
+
+                        else if (elbowSpeedCounter == 1)
+                        {
+                            elbowSpeed = 5.0f;
+                            elbowSpeedCounter = 2;
+                            instruction1 = "Fantastic! Let's practice moving your elbow even faster";
+                            routineStage = 9;
+                        }
+
+                        else if (elbowSpeedCounter == 2)
+                        {
+                            routineStage = routineStage + 1;
+                        }
+                    }
+                    break;
+                }
+
+            case (14):
+                {
+                    instruction1 = "Saving patient data, please wait...";
+                    if ((secondsNow - secondsChange) > 4)
+                    {
+                        routineStage = routineStage + 1;
+                    }
+                    break;
+                }
+
+            case (15):
+                {
+                    SaveRoutine_Plotless save = new SaveRoutine_Plotless();
+                    save.emgCSVsave();  // Call function to save the raw and processed EMG CSVs
+
+                    routineStage = routineStage + 1;
+                    break;
+                }
 
             // Save the processed EMG data in a CSV file at the end of the routine
-            case (14):
-                    {
-                        instruction1 = "Assessment complete. Well Done!";
-                        routineStage = 13;
-                        break;
-                    }
+            case (16):
+                {
+                    instruction1 = "Assessment complete. Well Done!";
+                    break;
+                }
         }
     }
 
-    void OnAnimatorIK(int layerIndex) {
+    void OnAnimatorIK(int layerIndex)
+    {
         //print("OnAnimatorIK - running");
         anim.SetBoneLocalRotation(HumanBodyBones.Head, Quaternion.Euler(head_rot));
         anim.SetBoneLocalRotation(HumanBodyBones.RightLowerArm, Quaternion.Euler(rightElbow_rot_routine));

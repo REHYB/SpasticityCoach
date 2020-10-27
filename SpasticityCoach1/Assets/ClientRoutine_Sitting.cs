@@ -248,6 +248,8 @@ public class ClientRoutine_Sitting : MonoBehaviour
                         ProgressBar.showBar = true;
                         RadialProgressMarker.showMarker = true;
                         RadialRoutineMarker.showMarker = true;
+                        YourTurnIcon.showIconImage = false;
+
 
                         if ((secondsNow - secondsChange) >= 10)
                         {

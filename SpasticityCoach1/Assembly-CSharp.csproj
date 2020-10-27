@@ -438,13 +438,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="ArduinoBluetoothAPI">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/BluetoothAPI/Plugins/ArduinoBluetoothAPI.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/BluetoothAPI/Plugins/ArduinoBluetoothAPI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Compat">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Compat.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Compat.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Tasks">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Tasks.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -807,37 +807,37 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
