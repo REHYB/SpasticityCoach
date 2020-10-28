@@ -62,6 +62,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
     // ===================== Start is called before the first frame update =====================
     void Start()
     {
+        Application.targetFrameRate = 300;
         anim = GetComponent<Animator>();
 
         // Initial location and rotation of entire body
@@ -442,7 +443,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                         instruction1 = "Saving patient data, please wait...";
                         if ((secondsNow - secondsChange) > 4)
                         {
-                            routineStage = routineStage;
+                            routineStage = routineStage + 1;
                         }
                         break;
                     }
@@ -452,7 +453,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                         SaveRoutine save = new SaveRoutine();
                         save.emgCSVsave();  // Call function to save the raw and processed EMG CSVs
 
-                        routineStage = routineStage + 1;
+                        routineStage = routineStage;
                         break;
                     }
 

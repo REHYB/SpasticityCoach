@@ -47,13 +47,13 @@ public class SaveRoutine : MonoBehaviour
         prc_emg_Pod01 = LineChartController_EMG01.avg_emg_Pod01;
         prc_emg_Pod02 = LineChartController_EMG02.avg_emg_Pod02;
         prc_emg_Pod03 = LineChartController_EMG03.avg_emg_Pod03;
-        prc_emg_Pod04 = LineChartController_EMG04.avg_emg_Pod04;
-        prc_emg_Pod05 = LineChartController_EMG05.avg_emg_Pod05;
-        prc_emg_Pod06 = LineChartController_EMG06.avg_emg_Pod06;
-        prc_emg_Pod07 = LineChartController_EMG07.avg_emg_Pod07;
-        prc_emg_Pod08 = LineChartController_EMG08.avg_emg_Pod08;
+        prc_emg_Pod04 = LineChartController_EMG04_Plotless.avg_emg_Pod04;
+        prc_emg_Pod05 = LineChartController_EMG05_Plotless.avg_emg_Pod05;
+        prc_emg_Pod06 = LineChartController_EMG06_Plotless.avg_emg_Pod06;
+        prc_emg_Pod07 = LineChartController_EMG07_Plotless.avg_emg_Pod07;
+        prc_emg_Pod08 = LineChartController_EMG08_Plotless.avg_emg_Pod08;
 
-        
+        /*
         UnityEngine.Debug.Log("----------------------------------------------");
         UnityEngine.Debug.Log("Size of Processed EMG 01: " + prc_emg_Pod01.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 02: " + prc_emg_Pod02.Count);
@@ -63,7 +63,7 @@ public class SaveRoutine : MonoBehaviour
         UnityEngine.Debug.Log("Size of Processed EMG 06: " + prc_emg_Pod06.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 07: " + prc_emg_Pod07.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 08: " + prc_emg_Pod08.Count);
-        
+        */
         // The sizes of EMG 01 and 06 are +1 element bigger than the others
         // This is fixed by trimming them in the savePrcCSV function
 
@@ -74,6 +74,7 @@ public class SaveRoutine : MonoBehaviour
         csv.saveRawCSV("EMG_data.csv", raw_emg_Pod01, raw_emg_Pod02, raw_emg_Pod03, raw_emg_Pod04, raw_emg_Pod05, raw_emg_Pod06, raw_emg_Pod07, raw_emg_Pod08, raw_emg_time);
         UnityEngine.Debug.Log("Raw EMG CSV created!");
 
+        /*
         // ------------------------- Processed EMG -------------------------
         // Read timestamps for processed EMG
         DataFltr csvFltr = new DataFltr();
@@ -97,5 +98,6 @@ public class SaveRoutine : MonoBehaviour
         // Write processed EMG into a CSV file
         csv.savePrcCSV("EMG_processed.csv", prc_emg_Pod01, prc_emg_Pod02, prc_emg_Pod03, prc_emg_Pod04, prc_emg_Pod05, prc_emg_Pod06, prc_emg_Pod07, prc_emg_Pod08, prc_emg_time);
         UnityEngine.Debug.Log("Processed EMG CSV creating... (3/3)");
+        */
     }
 }

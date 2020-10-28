@@ -62,6 +62,7 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
     // ===================== Start is called before the first frame update =====================
     void Start()
     {
+        Application.targetFrameRate = 300;
         anim = GetComponent<Animator>();
 
         // Initial location and rotation of entire body
@@ -472,7 +473,7 @@ public class ClientRoutine_Sitting_Plotless : MonoBehaviour
                     SaveRoutine_Plotless save = new SaveRoutine_Plotless();
                     save.emgCSVsave();  // Call function to save the raw and processed EMG CSVs
 
-                    routineStage = routineStage + 1;
+                    routineStage = routineStage;
                     break;
                 }
 

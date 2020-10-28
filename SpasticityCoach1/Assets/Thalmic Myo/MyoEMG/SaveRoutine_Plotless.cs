@@ -76,6 +76,7 @@ public class SaveRoutine_Plotless : MonoBehaviour
         csv.saveRawCSV("EMG_data.csv", raw_emg_Pod01, raw_emg_Pod02, raw_emg_Pod03, raw_emg_Pod04, raw_emg_Pod05, raw_emg_Pod06, raw_emg_Pod07, raw_emg_Pod08, raw_emg_time);
         UnityEngine.Debug.Log("Raw EMG CSV created!");
 
+        /*
         // ------------------------- Processed EMG -------------------------
         // Read timestamps for processed EMG
         DataFltr csvFltr = new DataFltr();
@@ -99,6 +100,6 @@ public class SaveRoutine_Plotless : MonoBehaviour
 
         // Write processed EMG into a CSV file
         csv.savePrcCSV("EMG_processed.csv", prc_emg_Pod01, prc_emg_Pod02, prc_emg_Pod03, prc_emg_Pod04, prc_emg_Pod05, prc_emg_Pod06, prc_emg_Pod07, prc_emg_Pod08, prc_emg_time);
-
+        */
     }
 }

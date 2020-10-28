@@ -66,6 +66,9 @@
     <Compile Include="Assets\3D Models\ExerciseBand\CylinderBetweenTwoPoints.cs" />
     <Compile Include="Assets\3D Models\ExerciseBand\RightHandPosition.cs" />
     <Compile Include="Assets\3D Models\ExerciseBand\RightKneePosition.cs" />
+    <Compile Include="Assets\3D Models\Kira_Girl\Characters\_CommonFiles\_DemoStuff\Scripts\Animations.cs" />
+    <Compile Include="Assets\3D Models\Kira_Girl\Characters\_CommonFiles\_DemoStuff\Scripts\Customizations.cs" />
+    <Compile Include="Assets\3D Models\Kira_Girl\Characters\_CommonFiles\_DemoStuff\Scripts\DragToRotate.cs" />
     <Compile Include="Assets\ClientMotion_Sitting.cs" />
     <Compile Include="Assets\ClientRoutine_Sitting.cs" />
     <Compile Include="Assets\Instructions.cs" />
@@ -244,6 +247,7 @@
     <None Include="Assets\UI\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\3D Models\Kira_Girl\Characters\_CommonFiles\_DemoStuff\Fonts\OFL.txt" />
     <None Include="Assets\UI\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
