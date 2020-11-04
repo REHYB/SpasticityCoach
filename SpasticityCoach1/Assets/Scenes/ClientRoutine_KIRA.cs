@@ -322,23 +322,20 @@ public class ClientRoutine_KIRA : MonoBehaviour
                     if ((secondsNow - secondsChange) >= 3)
                     {
                         ObserveTurnIcon.showCountImage = true;
+                        ObserveTurnIcon.countNumber = 3;
                         if ((secondsNow - secondsChange) >= 4)
                         {
-                            ObserveTurnIcon.countNumber = 3;
+                            ObserveTurnIcon.countNumber = 2;
                             if ((secondsNow - secondsChange) >= 5)
                             {
-                                ObserveTurnIcon.countNumber = 2;
+                                ObserveTurnIcon.countNumber = 1;
                                 if ((secondsNow - secondsChange) >= 6)
                                 {
-                                    ObserveTurnIcon.countNumber = 1;
-                                    if ((secondsNow - secondsChange) >= 7)
-                                    {
-                                        ObserveTurnIcon.showCountImage = false;
-                                        ObserveTurnIcon.countNumber = 4;   // Hide all countdown images
+                                    ObserveTurnIcon.showCountImage = false;
+                                    ObserveTurnIcon.countNumber = 4;   // Hide all countdown images
 
-                                        secondsChange = secondsNow;
-                                        routineStage = routineStage + 1;
-                                    }
+                                    secondsChange = secondsNow;
+                                    routineStage = routineStage + 1;
                                 }
                             }
                         }
@@ -360,7 +357,7 @@ public class ClientRoutine_KIRA : MonoBehaviour
                     clientElbow_error = rightElbow_rot_routine.x - (RadialProgressMarker.clientElbow_rot - 270);
                     ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
                     ProgressBar.minimum = 0;
-                    ProgressBar.current = 180 - rightElbow_rot_routine.y;
+                    ProgressBar.current = (180 - rightElbow_rot_routine.x);
 
                     RadialRoutineMarker.clientElbow_rot_routine = rightElbow_rot_routine.x - 90;  // Set rotation of pair equal to fill amount
 
