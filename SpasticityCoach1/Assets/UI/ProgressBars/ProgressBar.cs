@@ -41,14 +41,14 @@ public class ProgressBar : MonoBehaviour
         bar = GetComponent<Image>();
 
         // Set show bar as false
-        showBar = false;
+        showBar = true;
         fillColor = solid_Snow;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (showBar == false)
+        if (showBar == true)
         {
             // Set as transparent
             bar = GetComponent<Image>();

@@ -74,6 +74,7 @@
     <Compile Include="Assets\Instructions.cs" />
     <Compile Include="Assets\JointOrientationClient.cs" />
     <Compile Include="Assets\ModelColour.cs" />
+    <Compile Include="Assets\Scenes\ClientRoutine_KIRA.cs" />
     <Compile Include="Assets\Scenes\ClientRoutine_Sitting_Plotless.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Thalmic Myo\Myo Samples\Scripts\ColorBoxByPose.cs" />

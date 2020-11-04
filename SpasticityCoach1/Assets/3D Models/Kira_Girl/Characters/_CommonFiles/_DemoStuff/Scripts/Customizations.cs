@@ -50,6 +50,7 @@ public class Customizations : MonoBehaviour
         previosSuit.onClick.AddListener(()=>{ChangeSuit(false);});
         suitText.text=allSuits[suitIndex].suitName;
     }
+
     void NonSuitParts(bool visibility){
         foreach(BodyPart b in allParts){
             if(b.visibleInSuit)
@@ -59,6 +60,7 @@ public class Customizations : MonoBehaviour
             b.previosBodyPart.interactable=visibility;
         }
     }
+
     void ChangeSuit(bool increase){
         if(suitIndex>0)
             allSuits[suitIndex].suitParts.SetActive(false);
@@ -75,6 +77,7 @@ public class Customizations : MonoBehaviour
             allSuits[suitIndex].suitParts.SetActive(true);
         suitText.text=allSuits[suitIndex].suitName;
     }
+
     void ChangePart(BodyPart b, bool increase)
     {
         b.bodyParts[b.currentIndex].SetActive(false);
