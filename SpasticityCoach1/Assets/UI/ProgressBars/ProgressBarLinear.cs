@@ -42,18 +42,17 @@ public class ProgressBarLinear : MonoBehaviour
 
         // Set show bar as false
         showBar = true;
-        fillColor = solid_Snow;
+        fillColor = solid_Maxblue;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (showBar == true)
+        if (showBar == false)
         {
             // Set as transparent
             bar = GetComponent<Image>();
             bar.color = new Color(bar.color.r, bar.color.g, bar.color.b, 0f);
-
             mask.color = new Color(bar.color.r, bar.color.g, bar.color.b, 0f);
             fill.color = new Color(bar.color.r, bar.color.g, bar.color.b, 0f);
         }
@@ -77,6 +76,7 @@ public class ProgressBarLinear : MonoBehaviour
         fillAmount = currentOffset / maximumOffset;
         mask.fillAmount = fillAmount;
 
-        mask.color = somecolor; // ?? solid_Snow;   // Default fill is trans_snow. If other color is input, use other colour
+        //mask.color = somecolor; // ?? solid_Snow;   // Default fill is trans_snow. If other color is input, use other colour
+        fill.color = somecolor; // ?? solid_Snow;   // Default fill is trans_snow. If other color is input, use other colour
     }
 }
