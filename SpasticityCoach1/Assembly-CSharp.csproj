@@ -194,7 +194,8 @@
     <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\BezierPath.cs" />
     <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\CableCurve.cs" />
     <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\SetPropertyUtility.cs" />
-    <Compile Include="Assets\UI\ProgressBars\ProgressBar.cs" />
+    <Compile Include="Assets\UI\ProgressBars\ProgressBarLinear.cs" />
+    <Compile Include="Assets\UI\ProgressBars\ProgressBarRadial.cs" />
     <Compile Include="Assets\UI\ProgressBars\RadialProgressMarker.cs" />
     <Compile Include="Assets\UI\ProgressBars\RadialRoutineMarker.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
@@ -253,6 +254,7 @@
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\ColorfulButtons\Credits.txt" />
     <None Include="Assets\UI\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\UI\Awesome Charts\Notices.txt" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />

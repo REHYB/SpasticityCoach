@@ -246,7 +246,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     if ((secondsNow - secondsChange) >= 7)
                     {
                         instruction1 = "The task is to bend your elbow to catch the pear";
-                        ProgressBar.showBar = true;
+                        ProgressBarRadial.showBar = true;
                         RadialProgressMarker.showMarker = true;
                         RadialRoutineMarker.showMarker = true;
                         YourTurnIcon.showIconImage = false;
@@ -320,9 +320,9 @@ public class ClientRoutine_Sitting : MonoBehaviour
 
                     // Move radial diagram
                     clientElbow_error = rightElbow_rot_routine.y - (RadialProgressMarker.clientElbow_rot - 270);
-                    ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
-                    ProgressBar.minimum = 0;
-                    ProgressBar.current = 180 - rightElbow_rot_routine.y;
+                    ProgressBarRadial.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
+                    ProgressBarRadial.minimum = 0;
+                    ProgressBarRadial.current = 180 - rightElbow_rot_routine.y;
 
                     RadialRoutineMarker.clientElbow_rot_routine = rightElbow_rot_routine.y - 90;  // Set rotation of pair equal to fill amount
 
@@ -400,9 +400,9 @@ public class ClientRoutine_Sitting : MonoBehaviour
                     // Move radial diagram
                     clientElbow_error = rightElbow_phantom - (RadialProgressMarker.clientElbow_rot - 270);
 
-                    ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
-                    ProgressBar.minimum = 0;
-                    ProgressBar.current = 180 - rightElbow_phantom;
+                    ProgressBarRadial.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
+                    ProgressBarRadial.minimum = 0;
+                    ProgressBarRadial.current = 180 - rightElbow_phantom;
 
                     RadialRoutineMarker.clientElbow_rot_routine = rightElbow_phantom - 90;  // Set rotation of pair equal to fill amount
                     // UnityEngine.Debug.Log("Elbow Error: " + clientElbow_error);
@@ -451,7 +451,7 @@ public class ClientRoutine_Sitting : MonoBehaviour
             case (15):
                     {
                         SaveRoutine save = new SaveRoutine();
-                        save.emgCSVsave();  // Call function to save the raw and processed EMG CSVs
+                        save.emgCSVsave("EMG_data.csv");  // Call function to save the raw and processed EMG CSVs
 
                         routineStage = routineStage;
                         break;

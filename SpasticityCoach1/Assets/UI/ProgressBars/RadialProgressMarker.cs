@@ -51,17 +51,17 @@ public class RadialProgressMarker : MonoBehaviour
 
             if (Math.Abs(ClientRoutine_Sitting.clientElbow_error) >= 30)
             {
-                ProgressBar.fillColor = solid_RedSalsa;
+                ProgressBarRadial.fillColor = solid_RedSalsa;
             }
 
             else if (Math.Abs(ClientRoutine_Sitting.clientElbow_error) >= 10 && Math.Abs(ClientRoutine_Sitting.clientElbow_error) < 30)
             {
-                ProgressBar.fillColor = solid_CrayolaMaize;
+                ProgressBarRadial.fillColor = solid_CrayolaMaize;
             }
 
             else if (Math.Abs(ClientRoutine_Sitting.clientElbow_error) < 10)
             {
-                ProgressBar.fillColor = solid_Zomp;
+                ProgressBarRadial.fillColor = solid_Zomp;
             }
         }
     }

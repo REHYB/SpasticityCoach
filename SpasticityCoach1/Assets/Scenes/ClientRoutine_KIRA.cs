@@ -15,7 +15,7 @@ public class ClientRoutine_KIRA : MonoBehaviour
     public static Quaternion elbowMyo = new Quaternion(0, 0, 0, 0);
     public static int routineStage = 0;
     int elbowSpeedCounter = 0;
-    int practiceRoundsCounter = 0;
+    int practiceRoundsCounter = 1;
 
     Animator anim;
 
@@ -57,6 +57,7 @@ public class ClientRoutine_KIRA : MonoBehaviour
     Color trans_maxblue = new Color(71 / 255f, 186 / 255f, 210 / 255f, 0.2f);
     Color trans_fuchsia = new Color(255 / 255f, 0 / 255f, 255 / 255f, 0.2f);
 
+
     // ===================== Start is called before the first frame update =====================
     void Start()
     {
@@ -65,7 +66,6 @@ public class ClientRoutine_KIRA : MonoBehaviour
         // Initial location and rotation of entire body
         body_rot = new Vector3(0, 90, 0);
         body_pos = new Vector3(0, 0, 0);
-        UnityEngine.Debug.Log("Hello my fiend");
 
         GetComponent<Transform>().localPosition = new Vector3(GetComponent<Transform>().localPosition.x + body_pos.x,
             GetComponent<Transform>().localPosition.y + body_pos.y,
@@ -100,6 +100,10 @@ public class ClientRoutine_KIRA : MonoBehaviour
         // Initialise the phantom patient joint, controlling the radial progress bar
         rightElbow_phantom = 0f;
 
+        // Initialise Linear Bar at 0
+        ProgressBarLinear.maximum = 10;  // x2 as we only want for the circle to reach 0-180º, not 360º
+        ProgressBarLinear.minimum = 0;
+        ProgressBarLinear.current = 0;
     }
 
     // ===================== Update is called once per frame =====================
@@ -122,7 +126,8 @@ public class ClientRoutine_KIRA : MonoBehaviour
             case (0):
                 {
                     instruction1 = "Welcome to Piego";
-                    if (secondsNow >= 5)
+
+                    if (secondsNow >= 1)//4
                     {
                         routineStage = routineStage + 1;
                     }
@@ -133,13 +138,14 @@ public class ClientRoutine_KIRA : MonoBehaviour
             case (1):
                 {
                     instruction1 = "I'm your Instructor, Milo";
+
                     // Tilt head towards the camera
                     if (head_rot.y < 80)
                     {
                         head_rot = new Vector3(0, head_rot.y + 2, 0);
                     }
 
-                    if (secondsNow >= 6)
+                    if (secondsNow >= 1.5)//6
                     {
                         routineStage = routineStage + 1;
                     }
@@ -151,7 +157,7 @@ public class ClientRoutine_KIRA : MonoBehaviour
                 {
                     instruction1 = "Let's begin your neuro assessment!";
                     
-                    if (secondsNow >= 9)
+                    if (secondsNow >= 2)//(
                     {
                         routineStage = routineStage + 1;
                     }
@@ -162,6 +168,12 @@ public class ClientRoutine_KIRA : MonoBehaviour
             case (3):
                 {
                     instruction1 = "First, let your arms drop to the sides";
+
+                    // Update Linear Progress Bar
+                    if (ProgressBarLinear.current < 1.5f)
+                    {
+                        ProgressBarLinear.current = ProgressBarLinear.current + 0.01f;
+                    }
 
                     // Tilt head down to the hand
                     if (head_rot.x > -20)
@@ -181,20 +193,11 @@ public class ClientRoutine_KIRA : MonoBehaviour
                             rightElbow_rot_routine.z - (45 / steps_trans));
                     }
 
-                    /*
-                    if (leftElbow_rot.x > 0)
-                    {
-                        leftShoulder_rot = new Vector3(leftShoulder_rot.x - (15 / steps_trans), 0, 0);
-                        leftElbow_rot = new Vector3(leftElbow_rot.x - (15 / steps_trans),
-                            leftElbow_rot.y - (-40 / steps_trans),
-                            leftElbow_rot.z - (-45 / steps_trans));
-                    }
-                    */
                     leftShoulder_rot = new Vector3(70, 0, 0);
                     leftElbow_rot = new Vector3(15,0,0);
 
                     //Next step
-                    if (secondsNow >= 12)
+                    if (secondsNow >= 3)//12
                     {
                         secondsChange = secondsNow;
                         routineStage = routineStage + 1;
@@ -279,10 +282,16 @@ public class ClientRoutine_KIRA : MonoBehaviour
                     YourTurnIcon.showIconImage = true;
                     ObserveTurnIcon.showIconImage = false;
 
+                    // Update Linear Progress Bar
+                    if (ProgressBarLinear.current < 3)
+                    {
+                        ProgressBarLinear.current = ProgressBarLinear.current + 0.01f;
+                    }
+
                     if ((secondsNow - secondsChange) >= 7)
                     {
                         instruction1 = "The task is to bend your elbow to catch the pear";
-                        ProgressBar.showBar = true;
+                        ProgressBarRadial.showBar = true;
                         RadialProgressMarker.showMarker = true;
                         RadialRoutineMarker.showMarker = true;
                         YourTurnIcon.showIconImage = false;
@@ -306,7 +315,7 @@ public class ClientRoutine_KIRA : MonoBehaviour
                     if ((secondsNow - secondsChange) >= 3)
                     {
                         instruction1 = "Now, practice with me by following my motion";
-
+                        
                         secondsChange = secondsNow;
                         routineStage = routineStage + 1;
                     }
@@ -355,20 +364,21 @@ public class ClientRoutine_KIRA : MonoBehaviour
 
                     // Move radial diagram
                     clientElbow_error = rightElbow_rot_routine.x - (RadialProgressMarker.clientElbow_rot - 270);
-                    ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
-                    ProgressBar.minimum = 0;
-                    ProgressBar.current = (180 - rightElbow_rot_routine.x);
+                    ProgressBarRadial.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
+                    ProgressBarRadial.minimum = 0;
+                    ProgressBarRadial.current = (180 - rightElbow_rot_routine.x);
 
                     RadialRoutineMarker.clientElbow_rot_routine = rightElbow_rot_routine.x - 90;  // Set rotation of pair equal to fill amount
 
 
                     // End case when elbow joint reaches target
-                    if (rightElbow_rot_routine.y >= elbowMotion)
+                    if (rightElbow_rot_routine.x >= elbowMotion)
                     {
                         if (practiceRoundsCounter == 0)
                         {
                             practiceRoundsCounter = 1;
                             instruction1 = "Let's practice this again";
+
                             secondsChange = secondsNow;
                             routineStage = 9;
                         }
@@ -389,6 +399,13 @@ public class ClientRoutine_KIRA : MonoBehaviour
             case (11):
                 {
                     instruction1 = "Now's let's do the test run. Get ready";
+
+                    // Update Linear Progress Bar
+                    if (ProgressBarLinear.current < 4)
+                    {
+                        ProgressBarLinear.current = ProgressBarLinear.current + 0.01f;
+                    }
+
                     rightElbow_rot_routine = new Vector3(rightElbow_rot_routine.x, 0, 0);   // Return to original elbow position
 
                     YourTurnIcon.showCountImage = true;
@@ -417,12 +434,12 @@ public class ClientRoutine_KIRA : MonoBehaviour
                     break;
                 }
 
-            // Case 10 - Wait
+            // Wait
             case (12):
                 {
                     instruction1 = "Bend your elbow to catch the pear";
 
-                    if ((secondsNow - secondsChange) > 0)
+                    if ((secondsNow - secondsChange) > 1)
                     {
                         secondsChange = secondsNow;
                         routineStage = routineStage + 1;
@@ -430,15 +447,15 @@ public class ClientRoutine_KIRA : MonoBehaviour
                     break;
                 }
 
-            // Case 11 - Your turn
+            // Test Run
             case (13):
                 {
                     // Move radial diagram
                     clientElbow_error = rightElbow_phantom - (RadialProgressMarker.clientElbow_rot - 270);
 
-                    ProgressBar.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
-                    ProgressBar.minimum = 0;
-                    ProgressBar.current = 180 - rightElbow_phantom;
+                    ProgressBarRadial.maximum = 360;  // x2 as we only want for the circle to reach 0-180º, not 360º
+                    ProgressBarRadial.minimum = 0;
+                    ProgressBarRadial.current = 180 - rightElbow_phantom;
 
                     RadialRoutineMarker.clientElbow_rot_routine = rightElbow_phantom - 90;  // Set rotation of pair equal to fill amount
                     // UnityEngine.Debug.Log("Elbow Error: " + clientElbow_error);
@@ -453,34 +470,129 @@ public class ClientRoutine_KIRA : MonoBehaviour
                     {
                         rightElbow_phantom = 0;
                         secondsChange = secondsNow;
-
+                        
+                        // Define csv name for next step
                         if (elbowSpeedCounter == 0)
                         {
-                            elbowSpeed = 3.0f;
-                            elbowSpeedCounter = 1;
-                            instruction1 = "Great job! Now let's practice moving your elbow faster";
-                            routineStage = 9;
+                            SaveRoutine_Plotless.filename = "RawEMG_Task01.csv";
                         }
 
                         else if (elbowSpeedCounter == 1)
                         {
-                            elbowSpeed = 5.0f;
-                            elbowSpeedCounter = 2;
-                            instruction1 = "Fantastic! Let's practice moving your elbow even faster";
-                            routineStage = 9;
+                            SaveRoutine_Plotless.filename = "RawEMG_Task02.csv";
                         }
 
                         else if (elbowSpeedCounter == 2)
                         {
-                            routineStage = routineStage + 1;
+                            SaveRoutine_Plotless.filename = "RawEMG_Task03.csv";
+                        }
+
+                        //Next step
+                        routineStage = routineStage + 1;
+                        UnityEngine.Debug.Log("Thanks, next ");
+
+                        // Update Linear Progress Bar
+                        if (ProgressBarLinear.current < 5)
+                        {
+                            ProgressBarLinear.current = ProgressBarLinear.current + 0.01f;
                         }
                     }
                     break;
                 }
 
+            // What next?
             case (14):
                 {
-                    instruction1 = "Saving patient data, please wait...";
+                    // Save to CSV
+                    if (elbowSpeedCounter == 0)
+                    {
+                        instruction1 = "Great job! Now wait while I save your progress. This can take a while.";
+
+                        if (SaveRoutine_Plotless.saveSwitch == 0)
+                        {
+                            SaveRoutine_Plotless.saveSwitch = 1;
+                        }
+
+
+                        // Saving Routine
+                        /*
+                        SaveRoutine_Plotless save = new SaveRoutine_Plotless();
+                        save.emgCSVsave("RawEMG_Task01.csv");      // Call function to save both the raw and processed EMG CSVs
+                        save.resetEMGholders();                    // Empty all the list variables that hold/store the EMG data to be saved
+                        saveSwitch = true;
+                        */
+
+                        // If saving is complete, move to next step
+                        if (SaveRoutine_Plotless.saveSwitch == 3)
+                        {
+                            // Move to next step
+                            elbowSpeed = 3.0f;
+                            elbowSpeedCounter = 1;
+
+                            secondsChange = secondsNow;
+                            instruction1 = "Done! Let's practice moving your elbow faster";
+
+                            SaveRoutine_Plotless.saveSwitch = 0;
+                            routineStage = 9;
+                        }
+                    }
+
+                    else if (elbowSpeedCounter == 1)
+                    {
+                        instruction1 = "Fantastic! Now wait while I save your progress. This can take a while.";
+
+                        if (SaveRoutine_Plotless.saveSwitch == 0)
+                        {
+                            SaveRoutine_Plotless.saveSwitch = 1;
+                        }
+
+
+                        // If saving is complete, move to next step
+                        if (SaveRoutine_Plotless.saveSwitch == 3)
+                        {
+                            elbowSpeed = 5.0f;
+                            elbowSpeedCounter = 2;
+
+                            secondsChange = secondsNow;
+                            instruction1 = "Done! Let's practice moving your elbow even faster";
+
+                            SaveRoutine_Plotless.saveSwitch = 0;
+                            routineStage = 9;
+                        }
+                    }
+
+                    else if (elbowSpeedCounter == 2)
+                    {
+                        instruction1 = "Awesome! Wait while I'm saving your patient data... This can take a while.";
+
+                        if (SaveRoutine_Plotless.saveSwitch == 0)
+                        {
+                            SaveRoutine_Plotless.saveSwitch = 1;
+                        }
+
+
+                        // If saving is complete, move to next step
+                        if (SaveRoutine_Plotless.saveSwitch == 3)
+                        {
+                            secondsChange = secondsNow;
+                            instruction1 = "Done! Let's practice moving your elbow even faster";
+
+                            SaveRoutine_Plotless.saveSwitch = 0;
+                            routineStage = routineStage +1;
+                        }
+                    }
+
+                    break;
+                }
+
+            case (15):
+                {
+                    // Update Linear Progress Bar
+                    if (ProgressBarLinear.current < 12)
+                    {
+                        ProgressBarLinear.current = ProgressBarLinear.current + 0.01f;
+                    }
+
                     if ((secondsNow - secondsChange) > 4)
                     {
                         routineStage = routineStage+1;
@@ -488,20 +600,16 @@ public class ClientRoutine_KIRA : MonoBehaviour
                     break;
                 }
 
-            case (15):
+            case (16):
                 {
-                    SaveRoutine save = new SaveRoutine();
-                    save.emgCSVsave();  // Call function to save the raw and processed EMG CSVs
-
-                    routineStage = routineStage + 1;
+                    routineStage = routineStage+1;
                     break;
                 }
 
             // Save the processed EMG data in a CSV file at the end of the routine
-            case (16):
+            case (17):
                 {
                     instruction1 = "Assessment complete. Well Done!";
-                    routineStage = routineStage;
                     break;
                 }
         }
