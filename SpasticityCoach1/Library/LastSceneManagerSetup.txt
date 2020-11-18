@@ -1,5 +1,5 @@
 sceneSetups:
-- path: Assets/UMA-Sitting-EMG.unity
+- path: Assets/Scenes/02-EMG-NoPlots-KIRA.unity
   isLoaded: 1
   isActive: 1
   isSubScene: 0

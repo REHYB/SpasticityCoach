@@ -28,8 +28,8 @@ public class SaveRoutine : MonoBehaviour
     public List<int> raw_emg_Pod08;
     public List<DateTime> raw_emg_time;
 
-    // ---------- Save moving average values to CSV ----------
-    public void emgCSVsave()
+    // ---------- Save moving average values to CSV by name ----------
+    public void emgCSVsave(string filename)
     {
         // Get raw EMG pod data values
         raw_emg_Pod01 = StoreEMG.storeEMG01;
@@ -47,13 +47,13 @@ public class SaveRoutine : MonoBehaviour
         prc_emg_Pod01 = LineChartController_EMG01.avg_emg_Pod01;
         prc_emg_Pod02 = LineChartController_EMG02.avg_emg_Pod02;
         prc_emg_Pod03 = LineChartController_EMG03.avg_emg_Pod03;
-        prc_emg_Pod04 = LineChartController_EMG04.avg_emg_Pod04;
-        prc_emg_Pod05 = LineChartController_EMG05.avg_emg_Pod05;
-        prc_emg_Pod06 = LineChartController_EMG06.avg_emg_Pod06;
-        prc_emg_Pod07 = LineChartController_EMG07.avg_emg_Pod07;
-        prc_emg_Pod08 = LineChartController_EMG08.avg_emg_Pod08;
+        prc_emg_Pod04 = LineChartController_EMG04_Plotless.avg_emg_Pod04;
+        prc_emg_Pod05 = LineChartController_EMG05_Plotless.avg_emg_Pod05;
+        prc_emg_Pod06 = LineChartController_EMG06_Plotless.avg_emg_Pod06;
+        prc_emg_Pod07 = LineChartController_EMG07_Plotless.avg_emg_Pod07;
+        prc_emg_Pod08 = LineChartController_EMG08_Plotless.avg_emg_Pod08;
 
-        
+        /*
         UnityEngine.Debug.Log("----------------------------------------------");
         UnityEngine.Debug.Log("Size of Processed EMG 01: " + prc_emg_Pod01.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 02: " + prc_emg_Pod02.Count);
@@ -63,7 +63,7 @@ public class SaveRoutine : MonoBehaviour
         UnityEngine.Debug.Log("Size of Processed EMG 06: " + prc_emg_Pod06.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 07: " + prc_emg_Pod07.Count);
         UnityEngine.Debug.Log("Size of Processed EMG 08: " + prc_emg_Pod08.Count);
-        
+        */
         // The sizes of EMG 01 and 06 are +1 element bigger than the others
         // This is fixed by trimming them in the savePrcCSV function
 
@@ -71,9 +71,10 @@ public class SaveRoutine : MonoBehaviour
         // ------------------------- Raw EMG -------------------------
         // Write raw EMG into a CSV file
         CsvReadWrite csv = new CsvReadWrite();
-        csv.saveRawCSV("EMG_data.csv", raw_emg_Pod01, raw_emg_Pod02, raw_emg_Pod03, raw_emg_Pod04, raw_emg_Pod05, raw_emg_Pod06, raw_emg_Pod07, raw_emg_Pod08, raw_emg_time);
+        csv.saveRawCSV(filename, raw_emg_Pod01, raw_emg_Pod02, raw_emg_Pod03, raw_emg_Pod04, raw_emg_Pod05, raw_emg_Pod06, raw_emg_Pod07, raw_emg_Pod08, raw_emg_time);
         UnityEngine.Debug.Log("Raw EMG CSV created!");
 
+        /*
         // ------------------------- Processed EMG -------------------------
         // Read timestamps for processed EMG
         DataFltr csvFltr = new DataFltr();
@@ -97,5 +98,32 @@ public class SaveRoutine : MonoBehaviour
         // Write processed EMG into a CSV file
         csv.savePrcCSV("EMG_processed.csv", prc_emg_Pod01, prc_emg_Pod02, prc_emg_Pod03, prc_emg_Pod04, prc_emg_Pod05, prc_emg_Pod06, prc_emg_Pod07, prc_emg_Pod08, prc_emg_time);
         UnityEngine.Debug.Log("Processed EMG CSV creating... (3/3)");
+        */
+    }
+
+    // Function to reset all variables that store data for the CSV
+    public void resetEMGholders()
+    {
+        // Empty raw EMG data holders
+        StoreEMG.storeEMG01.Clear();
+        StoreEMG.storeEMG02.Clear();
+        StoreEMG.storeEMG03.Clear();
+        StoreEMG.storeEMG04.Clear();
+        StoreEMG.storeEMG05.Clear();
+        StoreEMG.storeEMG06.Clear();
+        StoreEMG.storeEMG07.Clear();
+        StoreEMG.storeEMG08.Clear();
+        StoreEMG.timestamp.Clear();
+
+
+        // Get processed EMG pod data values
+        LineChartController_EMG01.avg_emg_Pod01.Clear();
+        LineChartController_EMG02.avg_emg_Pod02.Clear();
+        LineChartController_EMG03.avg_emg_Pod03.Clear();
+        LineChartController_EMG04.avg_emg_Pod04.Clear();
+        LineChartController_EMG05.avg_emg_Pod05.Clear();
+        LineChartController_EMG06.avg_emg_Pod06.Clear();
+        LineChartController_EMG07.avg_emg_Pod07.Clear();
+        LineChartController_EMG08.avg_emg_Pod08.Clear();
     }
 }

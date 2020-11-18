@@ -5,13 +5,21 @@ ScriptsOnlyBuild:
     - AwesomeCharts.LegendEntryView
     - AwesomeCharts.LineChart
     - AwesomeCharts.LineChartController_EMG01
+    - AwesomeCharts.LineChartController_EMG01_Plotless
     - AwesomeCharts.LineChartController_EMG02
+    - AwesomeCharts.LineChartController_EMG02_Plotless
     - AwesomeCharts.LineChartController_EMG03
+    - AwesomeCharts.LineChartController_EMG03_Plotless
     - AwesomeCharts.LineChartController_EMG04
+    - AwesomeCharts.LineChartController_EMG04_Plotless
     - AwesomeCharts.LineChartController_EMG05
+    - AwesomeCharts.LineChartController_EMG05_Plotless
     - AwesomeCharts.LineChartController_EMG06
+    - AwesomeCharts.LineChartController_EMG06_Plotless
     - AwesomeCharts.LineChartController_EMG07
+    - AwesomeCharts.LineChartController_EMG07_Plotless
     - AwesomeCharts.LineChartController_EMG08
+    - AwesomeCharts.LineChartController_EMG08_Plotless
     - AwesomeCharts.LineChartController_Template
     - AwesomeCharts.TextAxisLabel
     - Bar
@@ -22,12 +30,17 @@ ScriptsOnlyBuild:
     - DataFltr
     - Instructions
     - ModelColour
+    - ObserveTurnIcon
+    - ProgressBar
+    - RadialProgressMarker
+    - RadialRoutineMarker
     - RightHandPosition
     - RightKneePosition
     - SaveRoutine
     - StoreEMG
     - ThalmicHub
     - ThalmicMyo
+    - YourTurnIcon
     Unity.Rider.Editor.dll:
     - Packages.Rider.Editor.UnitTesting.CallbackData
     Unity.TextMeshPro.dll:
@@ -37,6 +50,12 @@ ScriptsOnlyBuild:
     - TMPro.TMP_SpriteAsset
     - TMPro.TMP_StyleSheet
     - TMPro.TextMeshProUGUI
+    UnityEditor.Graphs.dll:
+    - UnityEditor.Graphs.AnimationBlendTree.Graph
+    - UnityEditor.Graphs.AnimationBlendTree.GraphGUI
+    - UnityEditor.Graphs.AnimationStateMachine.Graph
+    - UnityEditor.Graphs.AnimationStateMachine.GraphGUI
+    - UnityEditor.Graphs.AnimatorControllerTool
     UnityEditor.TestRunner.dll:
     - UnityEditor.TestTools.TestRunner.Api.CallbacksHolder
     - UnityEditor.TestTools.TestRunner.TestListCacheData
@@ -49,6 +68,7 @@ ScriptsOnlyBuild:
     - UnityEngine.UI.GraphicRaycaster
     - UnityEngine.UI.Image
     - UnityEngine.UI.LayoutElement
+    - UnityEngine.UI.Mask
     - UnityEngine.UI.Text
     - UnityEngine.UI.VerticalLayoutGroup
   sceneClasses:
@@ -110,71 +130,99 @@ ScriptsOnlyBuild:
     - Class: 114
       Script: {instanceID: 11786}
     - Class: 114
+      Script: {instanceID: 11842}
+    - Class: 114
       Script: {instanceID: 11892}
     - Class: 114
-      Script: {instanceID: 12052}
+      Script: {instanceID: 11944}
     - Class: 114
-      Script: {instanceID: 12080}
+      Script: {instanceID: 11962}
     - Class: 114
-      Script: {instanceID: 12088}
+      Script: {instanceID: 12054}
     - Class: 114
-      Script: {instanceID: 12204}
+      Script: {instanceID: 12082}
+    - Class: 114
+      Script: {instanceID: 12090}
+    - Class: 114
+      Script: {instanceID: 12206}
     - Class: 114
       Script: {instanceID: 12240}
     - Class: 114
-      Script: {instanceID: 12276}
+      Script: {instanceID: 12244}
     - Class: 114
-      Script: {instanceID: 12334}
+      Script: {instanceID: 12252}
     - Class: 114
-      Script: {instanceID: 12336}
+      Script: {instanceID: 12280}
     - Class: 114
-      Script: {instanceID: 12358}
+      Script: {instanceID: 12338}
     - Class: 114
-      Script: {instanceID: 12614}
+      Script: {instanceID: 12340}
     - Class: 114
-      Script: {instanceID: 12616}
+      Script: {instanceID: 12362}
     - Class: 114
-      Script: {instanceID: 12640}
+      Script: {instanceID: 12502}
     - Class: 114
-      Script: {instanceID: 12670}
+      Script: {instanceID: 12544}
     - Class: 114
-      Script: {instanceID: 12746}
+      Script: {instanceID: 12618}
     - Class: 114
-      Script: {instanceID: 12828}
+      Script: {instanceID: 12620}
     - Class: 114
-      Script: {instanceID: 12836}
+      Script: {instanceID: 12628}
     - Class: 114
-      Script: {instanceID: 12846}
+      Script: {instanceID: 12646}
     - Class: 114
-      Script: {instanceID: 12864}
+      Script: {instanceID: 12676}
     - Class: 114
-      Script: {instanceID: 13066}
+      Script: {instanceID: 12752}
     - Class: 114
-      Script: {instanceID: 13108}
+      Script: {instanceID: 12834}
     - Class: 114
-      Script: {instanceID: 13188}
+      Script: {instanceID: 12842}
     - Class: 114
-      Script: {instanceID: 13206}
+      Script: {instanceID: 12852}
+    - Class: 114
+      Script: {instanceID: 12870}
+    - Class: 114
+      Script: {instanceID: 12924}
+    - Class: 114
+      Script: {instanceID: 12940}
+    - Class: 114
+      Script: {instanceID: 13030}
+    - Class: 114
+      Script: {instanceID: 13068}
+    - Class: 114
+      Script: {instanceID: 13110}
+    - Class: 114
+      Script: {instanceID: 13178}
+    - Class: 114
+      Script: {instanceID: 13192}
     - Class: 114
       Script: {instanceID: 13212}
     - Class: 114
-      Script: {instanceID: 13238}
+      Script: {instanceID: 13218}
     - Class: 114
-      Script: {instanceID: 13350}
+      Script: {instanceID: 13244}
     - Class: 114
-      Script: {instanceID: 13384}
+      Script: {instanceID: 13358}
     - Class: 114
-      Script: {instanceID: 13400}
+      Script: {instanceID: 13392}
     - Class: 114
-      Script: {instanceID: 13514}
+      Script: {instanceID: 13408}
     - Class: 114
-      Script: {instanceID: 13530}
+      Script: {instanceID: 13520}
     - Class: 114
-      Script: {instanceID: 13612}
+      Script: {instanceID: 13536}
     - Class: 114
       Script: {instanceID: 13618}
     - Class: 114
-      Script: {instanceID: 13654}
+      Script: {instanceID: 13624}
+    - Class: 114
+      Script: {instanceID: 13658}
+    - Class: 114
+      Script: {instanceID: 13660}
+    - Class: 114
+      Script: {instanceID: 13682}
     - Class: 115
       Script: {instanceID: 0}
     - Class: 128
@@ -353,7 +401,7 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 09e1b6be927202a5d2069aecccc84a2a
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: manager
   - hash:
@@ -377,7 +425,7 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: SphereContRot
   - hash:
@@ -502,7 +550,7 @@ ScriptsOnlyBuild:
     className: RectMask2D
   - hash:
       serializedVersion: 2
-      Hash: fd7f0b3188f4ea299843428391e31e48
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: ClientRoutine_Sitting_Plotless
@@ -548,6 +596,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: Shadow
+  - hash:
+      serializedVersion: 2
+      Hash: a47d20c7a99dff308a7355bdd4334e11
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Customizations
   - hash:
       serializedVersion: 2
       Hash: 4d16cfbaa8e821a2b370e80844a0e9bc
@@ -635,7 +689,7 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 8d1af822f80c2dee2a2198097fa9148e
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: BTManager
   - hash:
@@ -650,6 +704,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
     className: RightHandPosition
+  - hash:
+      serializedVersion: 2
+      Hash: b8b1aac4c16b38973818a8904ad5b502
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ProgressBar
   - hash:
       serializedVersion: 2
       Hash: 04d0ac85b2848f546ee6de99776660f8
@@ -766,6 +826,12 @@ ScriptsOnlyBuild:
     className: TextContainer
   - hash:
       serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RadialRoutineMarker
+  - hash:
+      serializedVersion: 2
       Hash: 3cae62e09a50c5d5aae8d0536b3d8fde
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -788,6 +854,12 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: AwesomeCharts
     className: LegendEntryView
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: RadialProgressMarker
   - hash:
       serializedVersion: 2
       Hash: 50c11cfe93a59351f96ec64412d2d2e7
@@ -905,9 +977,15 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: Demo
+  - hash:
+      serializedVersion: 2
+      Hash: 688f32dd7b08fe37f051ad65ec712038
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: YourTurnIcon
   - hash:
       serializedVersion: 2
       Hash: 989a074e5f2cf706f63aa92cbf0223bf
@@ -958,12 +1036,6 @@ ScriptsOnlyBuild:
     className: TMP_TextSelector_B
   - hash:
       serializedVersion: 2
-      Hash: 58e68364412c67eae2bdb4954be2dcc2
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: Readme
-  - hash:
-      serializedVersion: 2
       Hash: d23af8c93cf5137c4b194b81cf2ac175
     assemblyName: Assembly-CSharp.dll
     namespaceName: 
@@ -983,7 +1055,7 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 09e1b6be927202a5d2069aecccc84a2a
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: ScanSceneManager
   - hash:
@@ -1000,6 +1072,12 @@ ScriptsOnlyBuild:
     className: AudioTrack
   - hash:
       serializedVersion: 2
+      Hash: 688f32dd7b08fe37f051ad65ec712038
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: ObserveTurnIcon
+  - hash:
+      serializedVersion: 2
       Hash: dac444417d6f400fb2f1d4dd679a0b95
     assemblyName: Assembly-CSharp.dll
     namespaceName: AwesomeCharts
@@ -1010,6 +1088,12 @@ ScriptsOnlyBuild:
     assemblyName: UnityEngine.UI.dll
     namespaceName: UnityEngine.UI
     className: GraphicRaycaster
+  - hash:
+      serializedVersion: 2
+      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: DragToRotate
   - hash:
       serializedVersion: 2
       Hash: 3bab7f5a3ec108e950807359bc7dde88
@@ -1054,6 +1138,12 @@ ScriptsOnlyBuild:
     className: TextAxisLabel
   - hash:
       serializedVersion: 2
+      Hash: 2f5f9bca549b2198ae0bec7bed828883
+    assemblyName: Assembly-CSharp.dll
+    namespaceName: 
+    className: Animations
+  - hash:
+      serializedVersion: 2
       Hash: 4d16cfbaa8e821a2b370e80844a0e9bc
     assemblyName: Assembly-CSharp.dll
     namespaceName: TMPro.Examples
@@ -1061,7 +1151,7 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: LedOnOff
   - hash:
@@ -1079,7 +1169,7 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 09e1b6be927202a5d2069aecccc84a2a
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: ScanScene2
   - hash:
@@ -1133,7 +1223,7 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 09e1b6be927202a5d2069aecccc84a2a
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: FlexSleeve_manager
   - hash:
@@ -1145,7 +1235,7 @@ ScriptsOnlyBuild:
   - hash:
       serializedVersion: 2
       Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
+    assemblyName: Assembly-CSharp-firstpass.dll
     namespaceName: 
     className: BLEServicesManager
   - hash:
@@ -1160,12 +1250,6 @@ ScriptsOnlyBuild:
     assemblyName: Assembly-CSharp.dll
     namespaceName: AwesomeCharts
     className: LineSegmentsRenderer
-  - hash:
-      serializedVersion: 2
-      Hash: 71bb6a6b6c8f052f948db64c7dd3ca4f
-    assemblyName: Assembly-CSharp.dll
-    namespaceName: 
-    className: ClientMotion
   - hash:
       serializedVersion: 2
       Hash: d5630f96bd5a6a6eed7e1754c3fb8703
@@ -1361,4 +1445,4 @@ ScriptsOnlyBuild:
   platform: 5
   scenePathNames:
   - Assets/UMA-Sitting-EMG.unity
-  playerPath: C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/Humanoid1.exe
+  playerPath: C:/Users/pzhan/Desktop/RA_Spasticity/EXE files/Demo-LiveEMG-VLowQuality/SpasticityCoach.exe

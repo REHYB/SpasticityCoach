@@ -66,13 +66,16 @@
     <Compile Include="Assets\3D Models\ExerciseBand\CylinderBetweenTwoPoints.cs" />
     <Compile Include="Assets\3D Models\ExerciseBand\RightHandPosition.cs" />
     <Compile Include="Assets\3D Models\ExerciseBand\RightKneePosition.cs" />
-    <Compile Include="Assets\ClientMotion.cs" />
+    <Compile Include="Assets\3D Models\Kira_Girl\Characters\_CommonFiles\_DemoStuff\Scripts\Animations.cs" />
+    <Compile Include="Assets\3D Models\Kira_Girl\Characters\_CommonFiles\_DemoStuff\Scripts\Customizations.cs" />
+    <Compile Include="Assets\3D Models\Kira_Girl\Characters\_CommonFiles\_DemoStuff\Scripts\DragToRotate.cs" />
     <Compile Include="Assets\ClientMotion_Sitting.cs" />
     <Compile Include="Assets\ClientRoutine_Sitting.cs" />
-    <Compile Include="Assets\ClientRoutine_Sitting_Plotless.cs" />
     <Compile Include="Assets\Instructions.cs" />
     <Compile Include="Assets\JointOrientationClient.cs" />
     <Compile Include="Assets\ModelColour.cs" />
+    <Compile Include="Assets\Scenes\ClientRoutine_KIRA.cs" />
+    <Compile Include="Assets\Scenes\ClientRoutine_Sitting_Plotless.cs" />
     <Compile Include="Assets\Scripts\SimpleCameraController.cs" />
     <Compile Include="Assets\Thalmic Myo\Myo Samples\Scripts\ColorBoxByPose.cs" />
     <Compile Include="Assets\Thalmic Myo\Myo Samples\Scripts\JointOrientation.cs" />
@@ -191,7 +194,10 @@
     <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\BezierPath.cs" />
     <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\CableCurve.cs" />
     <Compile Include="Assets\UI\Awesome Charts\Dependencies\unity-ui-extensions\Scripts\Utilities\SetPropertyUtility.cs" />
-    <Compile Include="Assets\UI\ProgressBars\ProgressBar.cs" />
+    <Compile Include="Assets\UI\ProgressBars\ProgressBarLinear.cs" />
+    <Compile Include="Assets\UI\ProgressBars\ProgressBarRadial.cs" />
+    <Compile Include="Assets\UI\ProgressBars\RadialProgressMarker.cs" />
+    <Compile Include="Assets\UI\ProgressBars\RadialRoutineMarker.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -225,6 +231,8 @@
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\UI\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\UI\Turn Icons\ObserveTurnIcon.cs" />
+    <Compile Include="Assets\UI\Turn Icons\YourTurnIcon.cs" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro.cginc" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_Bitmap.shader" />
@@ -241,10 +249,12 @@
     <None Include="Assets\UI\TextMesh Pro\Resources\LineBreaking Leading Characters.txt" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMPro_Surface.cginc" />
+    <None Include="Assets\3D Models\Kira_Girl\Characters\_CommonFiles\_DemoStuff\Fonts\OFL.txt" />
     <None Include="Assets\UI\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF Overlay.shader" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_Bitmap-Mobile.shader" />
+    <None Include="Assets\ColorfulButtons\Credits.txt" />
     <None Include="Assets\UI\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\UI\Awesome Charts\Notices.txt" />
     <None Include="Assets\UI\TextMesh Pro\Resources\Shaders\TMP_SDF-Mobile.shader" />
@@ -435,13 +445,13 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/Managed/UnityEditor.dll</HintPath>
     </Reference>
     <Reference Include="ArduinoBluetoothAPI">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/BluetoothAPI/Plugins/ArduinoBluetoothAPI.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/BluetoothAPI/Plugins/ArduinoBluetoothAPI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Compat">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Compat.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Compat.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Tasks">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Tasks.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Assets/Plugins/Parse/Plugins/Unity.Tasks.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.iOS.Extensions.Xcode">
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/PlaybackEngines/iOSSupport/UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
@@ -804,37 +814,37 @@
       <HintPath>C:/Program Files/Unity/Hub/Editor/2019.4.1f1/Editor/Data/MonoBleedingEdge/lib/mono/unityscript/Boo.Lang.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Timeline.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.VSCode.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.VSCode.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.TextMeshPro.Editor.dll</HintPath>
     </Reference>
     <Reference Include="UnityEngine.UI">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEngine.UI.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Timeline">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Timeline.dll</HintPath>
     </Reference>
     <Reference Include="Unity.CollabProxy.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.CollabProxy.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Postprocessing.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Rider.Editor">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Rider.Editor.dll</HintPath>
     </Reference>
     <Reference Include="Unity.Postprocessing.Runtime">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.Postprocessing.Runtime.dll</HintPath>
     </Reference>
     <Reference Include="Unity.TextMeshPro">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/Unity.TextMeshPro.dll</HintPath>
     </Reference>
     <Reference Include="UnityEditor.UI">
-      <HintPath>C:/Users/pzhan/Desktop/RA Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
+      <HintPath>C:/Users/pzhan/Desktop/RA_Spasticity/SpasticityCoach/SpasticityCoach1/Library/ScriptAssemblies/UnityEditor.UI.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>

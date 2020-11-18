@@ -85,14 +85,17 @@ namespace AwesomeCharts
             Color solid_snow = new Color(252 / 255f, 239 / 255f, 239 / 255f, 1);
             Color trans_snow = new Color(252 / 255f, 239 / 255f, 239 / 255f, 0.2f);
 
+            Color solid_blue = new Color(0 / 255f, 110 / 255f, 166 / 255f, 1);
+            Color trans_blue = new Color(0 / 255f, 110 / 255f, 166 / 255f, 0.2f);
+
 
             // Import texture
             graph_grad = (Texture2D)Resources.Load("Assets/Awesome Charts/Core/Examples/LineChart/Resources/gradient_background");
 
             // Configure line
-            set.LineColor = solid_maxblue;
+            set.LineColor = solid_blue;
             set.LineThickness = 2;
-            set.FillColor = trans_maxblue;
+            set.FillColor = trans_blue;
             set.FillTexture = graph_grad;
             set.UseBezier = true;
 
