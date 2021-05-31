@@ -1,5 +1,5 @@
 # Spasticity Assessment
-Spasticity Assessment Device for Children with Cerebral Palsy
+Spasticity Assessment Device using Wearable Technology and Unity.
 
 This is the README for the *REHYB - Spasticity Assessment Device* project, developed by the Human Robotics Group at Imperial College London, Bioengineering Department. 
 
